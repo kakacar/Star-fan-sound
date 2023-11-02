@@ -4080,6 +4080,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3229597428847055960, guid: baf2bcff7c3b10a4185a66e20c95cd42, type: 3}
+      propertyPath: normalText
+      value: 
+      objectReference: {fileID: 172830252}
+    - target: {fileID: 3229597428847055960, guid: baf2bcff7c3b10a4185a66e20c95cd42, type: 3}
+      propertyPath: collectText
+      value: 
+      objectReference: {fileID: 1667588859}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baf2bcff7c3b10a4185a66e20c95cd42, type: 3}
 --- !u!4 &1133178654 stripped
@@ -4896,6 +4904,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 748234835165274144, guid: 39c99cdafd8074c4fbd37093b94d4b79, type: 3}
+      propertyPath: rareText
+      value: 
+      objectReference: {fileID: 931409}
+    - target: {fileID: 748234835165274144, guid: 39c99cdafd8074c4fbd37093b94d4b79, type: 3}
+      propertyPath: collectText
+      value: 
+      objectReference: {fileID: 1667588859}
     - target: {fileID: 7322066705119318711, guid: 39c99cdafd8074c4fbd37093b94d4b79, type: 3}
       propertyPath: m_Name
       value: BOX 1
@@ -4910,7 +4926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7986822173084502029, guid: 39c99cdafd8074c4fbd37093b94d4b79, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.33234
+      value: 12.25
       objectReference: {fileID: 0}
     - target: {fileID: 7986822173084502029, guid: 39c99cdafd8074c4fbd37093b94d4b79, type: 3}
       propertyPath: m_LocalPosition.z
