@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Dash : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class Dash : MonoBehaviour
     public LayerMask whatIsWall;
     private float t;
     private bool canDash;
-    private GameObject dashUI;
+    public GameObject dashUI;
 
     private void Start()
     {
@@ -20,6 +21,7 @@ public class Dash : MonoBehaviour
     }
     void Update()
     {
+        dashUI = GameObject.Find("Dash");
         WallCheck();
         CD();
         // 检测闪避触发条件

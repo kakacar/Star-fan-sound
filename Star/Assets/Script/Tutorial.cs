@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class Tutorial : MonoBehaviour
 {
+    public GameObject player;
     public GameObject[] tutorials;
     public int i = 1;
 
     void Awake()
     {
+        player.GetComponent<Sound>().enabled = false;
+        player.GetComponent<BulletCount>().enabled = false;
         Time.timeScale = 0;
         tutorials[0].SetActive(true);
         tutorials[1].SetActive(false);
@@ -25,6 +28,8 @@ public class Tutorial : MonoBehaviour
         {
             if (i >= tutorials.Length)
             {
+                player.GetComponent<Sound>().enabled = true;
+                player.GetComponent<BulletCount>().enabled = true;
                 Time.timeScale = 1;
                 Destroy(this.gameObject);
             }

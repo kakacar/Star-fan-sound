@@ -7,10 +7,10 @@ public class DisableSoundSkill : MonoBehaviour
 {
     private float t;
     private bool canUse;
-    private GameObject skillUI;
+    [SerializeField] GameObject skillUI;
     public bool isUsingSkill;
     public float skillDuration;
-    [SerializeField] private GameObject skillUsingIcon;
+    [SerializeField] GameObject skillUsingIcon;
     private void Start()
     {
         skillUI = GameObject.Find("SkillUI");
@@ -19,6 +19,8 @@ public class DisableSoundSkill : MonoBehaviour
     }
     void Update()
     {
+        skillUI = GameObject.Find("SkillUI");
+        skillUsingIcon = GameObject.Find("skillUsingIcon");
         CD();
         if (Input.GetKeyDown(KeyCode.K) && !isUsingSkill && canUse)
         {

@@ -1434,6 +1434,7 @@ MonoBehaviour:
   whatIsWall:
     serializedVersion: 2
     m_Bits: 520
+  dashUI: {fileID: 0}
 --- !u!114 &5177615164859334914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1446,6 +1447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560459b023925ba47a9b6b9e7d8a42d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillUI: {fileID: 0}
   isUsingSkill: 0
   skillDuration: 5
   skillUsingIcon: {fileID: 0}
