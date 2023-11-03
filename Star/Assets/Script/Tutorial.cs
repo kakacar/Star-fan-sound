@@ -11,6 +11,7 @@ public class Tutorial : MonoBehaviour
 
     void Awake()
     {
+        player = GameObject.Find("Player");
         player.GetComponent<Sound>().enabled = false;
         player.GetComponent<BulletCount>().enabled = false;
         Time.timeScale = 0;
@@ -31,7 +32,8 @@ public class Tutorial : MonoBehaviour
                 player.GetComponent<Sound>().enabled = true;
                 player.GetComponent<BulletCount>().enabled = true;
                 Time.timeScale = 1;
-                Destroy(this.gameObject);
+                gameObject.SetActive(false);
+                //Destroy(this.gameObject);
             }
             else
             {

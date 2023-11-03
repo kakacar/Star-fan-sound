@@ -1331,12 +1331,14 @@ MonoBehaviour:
   CanAss: 0
   StateSwitch: 0
   firstToBase: 1
+  OGSpeed: 0
   playerHeight: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
   grounded: 0
   StateType: 0
+  CurrentState: 0
 --- !u!114 &6133204328516957775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1435,6 +1437,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 520
   dashUI: {fileID: 0}
+  Player: {fileID: 1064511418834689117}
 --- !u!114 &5177615164859334914
 MonoBehaviour:
   m_ObjectHideFlags: 0

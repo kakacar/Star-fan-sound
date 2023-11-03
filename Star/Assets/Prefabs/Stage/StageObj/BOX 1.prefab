@@ -137,6 +137,7 @@ MonoBehaviour:
   rareText: {fileID: 0}
   rareCollecting: 0
   rareCollected: 0
+  CollectTime: 15
   Bot: {fileID: 0}
   BotModel: {fileID: 4714133180165723913, guid: 3152a4c3bbeee7f449f2e95ba8fe900b, type: 3}
   BotPos: {fileID: 3850450900785444340}
@@ -151,5 +152,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.010772725, y: 0.040738605, z: 0.032493263}
-  m_Center: {x: -0.00048537695, y: 0.0152084455, z: -0.0104802335}
+  m_Size: {x: 0.010772725, y: 0.011507487, z: 0.038772997}
+  m_Center: {x: -0.00048537695, y: 0.00059287617, z: -0.013620098}

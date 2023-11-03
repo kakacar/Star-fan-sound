@@ -14,10 +14,12 @@ public class Dash : MonoBehaviour
     private float t;
     private bool canDash;
     public GameObject dashUI;
+    [SerializeField] Player Player;
 
     private void Start()
     {
         dashUI = GameObject.Find("Dash");
+        
     }
     void Update()
     {
@@ -36,8 +38,8 @@ public class Dash : MonoBehaviour
     {
         // 开始闪避
         isDodging = true;
-        // 提高移动速度或者应用其他闪避效果
-        float originalSpeed = GetComponent<Player>().speed;
+        
+        
         GetComponent<Rigidbody>().useGravity = false;
         if (!isWall)
         {
@@ -52,7 +54,7 @@ public class Dash : MonoBehaviour
         // 恢复玩家原始速度或者其他状态
         GetComponent<Rigidbody>().useGravity = true;
         GetComponent<CapsuleCollider>().enabled = true;
-        GetComponent<Player>().speed = originalSpeed;
+        Player.speed = Player.OGSpeed;
         isDodging = false; // 结束闪避
     }
 

@@ -119,6 +119,7 @@ MonoBehaviour:
   normalText: {fileID: 0}
   normalCollecting: 0
   normalCollected: 0
+  CollectTime: 15
   Bot: {fileID: 0}
   BotModel: {fileID: 4714133180165723913, guid: 3152a4c3bbeee7f449f2e95ba8fe900b, type: 3}
   BotPos: {fileID: 7042633394170966811}

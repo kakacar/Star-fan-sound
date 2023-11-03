@@ -1299,12 +1299,14 @@ MonoBehaviour:
   CanAss: 0
   StateSwitch: 0
   firstToBase: 1
+  OGSpeed: 0
   playerHeight: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
   grounded: 0
   StateType: 0
+  CurrentState: 0
 --- !u!114 &680599469226896375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1402,6 +1404,8 @@ MonoBehaviour:
   whatIsWall:
     serializedVersion: 2
     m_Bits: 520
+  dashUI: {fileID: 0}
+  Player: {fileID: 8123819915468519878}
 --- !u!114 &6662678235486535000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1414,6 +1418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560459b023925ba47a9b6b9e7d8a42d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillUI: {fileID: 0}
   isUsingSkill: 0
   skillDuration: 5
   skillUsingIcon: {fileID: 0}

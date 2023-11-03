@@ -15,7 +15,9 @@ public class Sound : MonoBehaviour
     public float enemyWarning;
 
     public float Soundloss = 3f;
-    
+
+    GameObject sliderObject;
+    GameObject sliderObject2;
 
     // Start is called before the first frame update
     void Start()
@@ -28,8 +30,8 @@ public class Sound : MonoBehaviour
     void Update()
     {
         string currentScene = SceneManager.GetActiveScene().name;
-        GameObject sliderObject = GameObject.Find("Player Sound");
-        GameObject sliderObject2 = GameObject.Find("Warning");
+        sliderObject = GameObject.Find("Player Sound");
+        sliderObject2 = GameObject.Find("Warning");
         
         if (warning == null)
         {

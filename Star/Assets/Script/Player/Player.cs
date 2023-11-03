@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     [SerializeField] Slider hpSlider;
 
     [Header("Public Value")]
-    public float speed = 0.1f;
+    public float speed = 5f;
     [SerializeField] Vector3 jump = new Vector3(0.0f, 2.0f, 0.0f);
     public float jumpForce = 5.0f;
     //[SerializeField] bool isOnGround;
@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     public bool CanAss;
     public bool StateSwitch;
     public bool firstToBase = true;
+    public float OGSpeed;
 
     [Header("Ground Check")]
     [SerializeField] public float playerHeight;
@@ -50,7 +51,7 @@ public class Player : MonoBehaviour
         Ladder
     }
 
-    private LiveOrDie CurrentState;
+    [SerializeField] private LiveOrDie CurrentState;
     private enum LiveOrDie
     {
         Alive,
@@ -73,6 +74,7 @@ public class Player : MonoBehaviour
         jumpCount = 2;
         rb = GetComponent<Rigidbody>();
         spawn = GameObject.Find("Spawn");
+        OGSpeed = speed;
         
         currentScene = SceneManager.GetActiveScene().name;
     }
@@ -162,6 +164,10 @@ public class Player : MonoBehaviour
         {
             rb.velocity = new Vector3(0, 0, 0);
         }
+        else if(CurrentState == LiveOrDie.Dead)
+        {
+            rb.velocity = new Vector3(0, 0, 0);
+        }
 
     }
 
@@ -175,11 +181,12 @@ public class Player : MonoBehaviour
             CurrentState = LiveOrDie.Dead;
             if (!HasPlayedDeadAni)
             {
+                
                 animator.SetTrigger("Dead");
                 HasPlayedDeadAni = true;
+                
             }
-
-            //Debug.Log("Player is dead");
+            
         }
     }
 
@@ -398,6 +405,8 @@ public class Player : MonoBehaviour
     {
         SceneManager.LoadScene("Base");
         hp = 100;
+        speed = OGSpeed;
         CurrentState = LiveOrDie.Alive;
+        animator.SetTrigger("BeingHit");
     }
 }

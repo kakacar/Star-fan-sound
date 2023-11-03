@@ -15,6 +15,7 @@ public class NormalCollect : MonoBehaviour
     public float normalCollecting;
     public float normalCollected;
 
+    [SerializeField] float CollectTime;
     [SerializeField] GameObject Bot;
     [SerializeField] GameObject BotModel;
     [SerializeField] GameObject BotPos;
@@ -33,7 +34,7 @@ public class NormalCollect : MonoBehaviour
             time += Time.deltaTime;
             normalCollecting = Mathf.Floor(plus)*10;
         }
-        if(Mathf.Floor(time) >= 100)
+        if(Mathf.Floor(time) >= CollectTime)
         {
             collecting = false;
             Debug.Log("Collect End");

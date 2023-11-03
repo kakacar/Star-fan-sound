@@ -27,13 +27,13 @@ public class FadeIn : MonoBehaviour
     private IEnumerator WaitSce()
     {
         anim[0].Play("Fade in");
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         anim[1].Play("Fade in");
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         anim[2].Play("Fade in");
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         anim[3].Play("Fade in");
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         anim[4].Play("Fade in");
         yield return new WaitForSeconds(1);
         canFadeOut = true;

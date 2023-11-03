@@ -16,7 +16,8 @@ public class Kill : MonoBehaviour
         {
             if (player.GetComponent<Player>().firstToBase)
             {
-                other.GetComponent<Player>().hp -= 100;
+                //other.GetComponent<Player>().hp -= 100;
+                other.GetComponent<Player>().hp = 0;
             }
             else
             {

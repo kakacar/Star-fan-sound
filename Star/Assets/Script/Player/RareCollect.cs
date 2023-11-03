@@ -15,6 +15,7 @@ public class RareCollect : MonoBehaviour
     public float rareCollecting;
     public float rareCollected;
 
+    [SerializeField] float CollectTime;
     [SerializeField] GameObject Bot;
     [SerializeField] GameObject BotModel;
     [SerializeField] GameObject BotPos;
@@ -33,7 +34,7 @@ public class RareCollect : MonoBehaviour
             time += Time.deltaTime;
             rareCollecting = Mathf.Floor(plus)*5;
         }
-        if(Mathf.Floor(time) >= 100)
+        if(Mathf.Floor(time) >= CollectTime)
         {
             collecting = false;
             Debug.Log("Collect End");
