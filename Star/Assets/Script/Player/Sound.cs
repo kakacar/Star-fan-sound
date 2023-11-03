@@ -25,6 +25,15 @@ public class Sound : MonoBehaviour
         currentSound = 0;
         enemyWarning = 0;
         UpdateSound();
+
+        if (warning == null)
+        {
+            warning = sliderObject2.GetComponent<Slider>();
+        }
+        if (playerSound == null)
+        {
+            playerSound = sliderObject.GetComponent<Slider>();
+        }
     }
 
     void Update()

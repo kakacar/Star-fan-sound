@@ -13,14 +13,34 @@ public class DisableSoundSkill : MonoBehaviour
     [SerializeField] GameObject skillUsingIcon;
     private void Start()
     {
-        skillUI = GameObject.Find("SkillUI");
-        skillUsingIcon = GameObject.Find("skillUsingIcon");
-        skillUsingIcon.SetActive(false);
+        if (skillUI == null)
+        {
+            skillUI = GameObject.Find("SkillUI");
+
+        }
+
+        if (skillUsingIcon == null)
+        {
+
+            skillUsingIcon = GameObject.Find("skillUsingIcon");
+            skillUsingIcon.SetActive(false);
+        }
+        
+        
     }
     void Update()
     {
-        skillUI = GameObject.Find("SkillUI");
-        skillUsingIcon = GameObject.Find("skillUsingIcon");
+        if(skillUI == null)
+        {
+            skillUI = GameObject.Find("SkillUI");
+            
+        }
+        if (skillUsingIcon == null)
+        {
+            
+            skillUsingIcon = GameObject.Find("skillUsingIcon");
+        }
+
         CD();
         if (Input.GetKeyDown(KeyCode.K) && !isUsingSkill && canUse)
         {

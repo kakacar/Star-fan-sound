@@ -26,7 +26,6 @@ namespace MonoBehaviours
         {
             CurrentweaponR = null;
             CurrentweaponL = null;
-            skillUI = GameObject.Find("WeaponUI").GetComponent<RawImage>();
 
             //Àq»{ªZ¾¹¬°ºj
             SwitchGun();
@@ -34,6 +33,10 @@ namespace MonoBehaviours
         void Update()
         {
             AnimatorSwitch();
+            if(skillUI == null)
+            {
+                skillUI = GameObject.Find("WeaponUI").GetComponent<RawImage>();
+            }
         }
 
         void AnimatorSwitch()
