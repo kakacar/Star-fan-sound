@@ -36,7 +36,14 @@ public class Pause : MonoBehaviour
     }
     public void OnQuitClick()
     {
-        SceneManager.LoadScene("Base");
+        if(SceneManager.GetActiveScene().name != ("Base"))
+        {
+            SceneManager.LoadScene("Base");
+        }
+        else
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
     public void OnReturnClick()
     {

@@ -16,39 +16,28 @@ public class Sound : MonoBehaviour
 
     public float Soundloss = 3f;
 
-    GameObject sliderObject;
-    GameObject sliderObject2;
-
     // Start is called before the first frame update
     void Start()
     {
         currentSound = 0;
         enemyWarning = 0;
         UpdateSound();
-
-        if (warning == null)
-        {
-            warning = sliderObject2.GetComponent<Slider>();
-        }
-        if (playerSound == null)
-        {
-            playerSound = sliderObject.GetComponent<Slider>();
-        }
     }
 
     void Update()
     {
         string currentScene = SceneManager.GetActiveScene().name;
-        sliderObject = GameObject.Find("Player Sound");
-        sliderObject2 = GameObject.Find("Warning");
-        
-        if (warning == null)
+        if (warning != null && playerSound != null)
         {
-             warning = sliderObject2.GetComponent<Slider>();
+            UpdateSound();
         }
-        if(playerSound == null)
+        else if (warning == null)
         {
-            playerSound = sliderObject.GetComponent<Slider>();
+             warning = GameObject.Find("Warning").GetComponent<Slider>();
+        }
+        else if(playerSound == null)
+        {
+            playerSound = GameObject.Find("Player Sound").GetComponent<Slider>();
         }
         if(currentSound < 0)
         {
@@ -57,10 +46,6 @@ public class Sound : MonoBehaviour
         if(enemyWarning < 0)
         {
             enemyWarning = 0;
-        }
-        if (warning != null && playerSound != null)
-        {
-            UpdateSound();
         }
     }
 

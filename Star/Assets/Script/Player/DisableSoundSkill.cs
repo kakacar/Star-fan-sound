@@ -21,7 +21,6 @@ public class DisableSoundSkill : MonoBehaviour
 
         if (skillUsingIcon == null)
         {
-
             skillUsingIcon = GameObject.Find("skillUsingIcon");
             skillUsingIcon.SetActive(false);
         }
@@ -39,6 +38,7 @@ public class DisableSoundSkill : MonoBehaviour
         {
             
             skillUsingIcon = GameObject.Find("skillUsingIcon");
+            skillUsingIcon.SetActive(false);
         }
 
         CD();
