@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 32606
+  controlID: 32905
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 32607
+  controlID: 32906
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 32551
+  controlID: 32883
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -432,9 +432,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.010302, y: 2.8670776, z: 0.30145067}
+    m_Target: {x: 2.007142, y: 2.88, z: 0.04801334}
     speed: 2
-    m_Value: {x: 2.010302, y: 2.8670776, z: 0.30145067}
+    m_Value: {x: 2.007142, y: 2.88, z: 0.04801334}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -485,9 +485,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 6.6562033
+    m_Target: 9.891751
     speed: 2
-    m_Value: 6.6562033
+    m_Value: 9.891751
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -780,7 +780,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 32608
+  controlID: 32907
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -841,7 +841,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: b843feff045bfeffae85feffba85feffd485feffd885feffdc85fefff885feff84a4feff1caffeff88ddfeff8ce5feff18f5feffecf7feff6406ffff4c09ffffac17ffff281affff9426ffff2429fffff237ffff403cffffc051ffff2058ffff0666ffff7e68ffffb487ffff5e94ffff6898fffffca5ffff2cacffff0eb0ffffcabbffffd2d5ffff26d8ffff4ae5ffff22ebffff54f6ffff14fbfffff4ffffff686b0000687c0000728400007aac00007cad0000b4ad00001cae000030af00003caf0000ccef000054f10000c4fb00000efe000056110100ae110100d412010070130100b6140100d01401000e1501001a1501008e150100fe5d0100b2620100d2670100c268010080c30100d8ca0100da6e02002ad30200e8d30200b20d0300
+      m_ExpandedIDs: 3237feffb843feff045bfeffae85feffba85feffd485feffd885feffdc85fefff885feff84a4feff1caffeff88ddfeff8ce5feff18f5feffecf7feff6406ffff4c09ffffac17ffff281affff9426ffff2429fffff237ffff403cffffc051ffff2058ffff0666ffff7e68ffffb487ffff5e94ffff6898fffffca5ffff2cacffff0eb0ffffcabbffffd2d5ffff26d8ffff4ae5ffff22ebffff54f6ffff14fbfffff4ffffff686b0000687c0000728400007aac00007cad0000b4ad00001cae000030af00003caf0000ccef000054f10000c4fb00000efe000056110100ae110100d412010070130100b6140100d01401000e1501001a1501008e150100fe5d0100b2620100d2670100c268010080c30100d8ca0100da6e02002ad30200e8d30200b20d0300f85d0300
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -935,21 +935,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Editor
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 56
   m_LastFolders:
-  - Assets/Editor
+  - Assets/Scenes
   m_LastFoldersGridSize: 56
   m_LastProjectPath: "C:\\Users\\Jackson\\OneDrive\\\u6587\u4EF6\\Star-fan-sound\\Star"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 927c0000
-    m_LastClickedID: 31890
+    m_SelectedIDs: 9a7c0000
+    m_LastClickedID: 31898
     m_ExpandedIDs: 000000006c6600006e66000070660000726600007466000076660000786600007a66000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1003,9 +1003,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: d00a0000
-    m_LastClickedInstanceID: 2768
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 9a2cfeff
+    m_LastClickedInstanceID: -119654
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: e4cb0000e466000068040100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1065,7 +1065,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -110484
+  m_LastSelectedObjectID: -119654
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1157,7 +1157,7 @@ MonoBehaviour:
     m_CachedPref: 251
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 2768
+  m_LastInspectedObjectInstanceID: -119654
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
