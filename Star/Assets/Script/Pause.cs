@@ -42,6 +42,8 @@ public class Pause : MonoBehaviour
         }
         else
         {
+            Destroy(GameObject.Find("Player"));
+            Time.timeScale = 1;
             SceneManager.LoadScene("MainMenu");
         }
     }
