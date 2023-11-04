@@ -11,7 +11,7 @@ public class FieldOfViewEditor : Editor
         Vector3 fovP = fov.transform.GetChild(2).gameObject.transform.position;
         //µø³¥½d³ò
         Handles.color = Color.white;
-        Handles.DrawWireArc(fovP, Vector3.up, Vector3.forward, 360, fov.radius);
+        Handles.DrawWireArc(fovP, Vector3.forward, Vector3.up, 360, fov.radius);
 
         Vector3 viewAngle01 = DirectionFromAngle(fov.transform.eulerAngles.y, -fov.angle / 2);
         Vector3 viewAngle02 = DirectionFromAngle(fov.transform.eulerAngles.y, fov.angle / 2);
