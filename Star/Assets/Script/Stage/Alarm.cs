@@ -29,13 +29,13 @@ public class Alarm : MonoBehaviour
 
     void TurnOnAlarm()
     {
-        if (Sound.currentSound != 100)
+        if (Sound.enemyWarning != 100)
         {
             if (Sound.Soundloss <= 0)
             {
-                Sound.currentSound -= 10f;
                 Sound.enemyWarning -= 5f;
-                
+                Sound.currentSound -= 10f;
+
                 Sound.Soundloss = 3f;
             }
             else
@@ -54,6 +54,10 @@ public class Alarm : MonoBehaviour
             anim[2].Play("Flash");
             anim[3].Play("Flash");
             anim[4].Play("Flash");
+        }
+        if (Sound.currentSound == 100)
+        {
+            Sound.enemyWarning += Time.deltaTime;
         }
     }
 }

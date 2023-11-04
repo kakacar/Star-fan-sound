@@ -42,10 +42,17 @@ public class Sound : MonoBehaviour
         if(currentSound < 0)
         {
             currentSound = 0;
+        }else if(currentSound >= maxSound)
+        {
+            currentSound = maxSound;
         }
         if(enemyWarning < 0)
         {
             enemyWarning = 0;
+        }
+        else if (enemyWarning >= maxSound)
+        {
+            enemyWarning = maxSound;
         }
     }
 

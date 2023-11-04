@@ -32,7 +32,7 @@ public class AniEvent : MonoBehaviour
     public void ComputerDone()
     {
         Player.StateSwitch = false;
-        Sound.currentSound = 0;
+        Sound.enemyWarning = 0;
     }
     public void AtkMomantumStart()
     {
