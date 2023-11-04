@@ -21,6 +21,7 @@ public class Tutorial : MonoBehaviour
         tutorials[3].SetActive(false);
         tutorials[4].SetActive(false);
         tutorials[5].SetActive(false);
+        tutorials[6].SetActive(false);
     }
 
     void Update()

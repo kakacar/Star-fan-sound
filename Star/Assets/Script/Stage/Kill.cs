@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Kill : MonoBehaviour
 {
     public GameObject player;
+    public GameObject clearText;
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -21,12 +22,19 @@ public class Kill : MonoBehaviour
             }
             else
             {
-
+                clearText.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     SceneManager.LoadScene("Base");
                 }
             }
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == ("Player"))
+        {
+            clearText.SetActive(false);
         }
     }
 }
