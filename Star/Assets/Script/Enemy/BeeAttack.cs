@@ -120,7 +120,7 @@ public class BeeAttack : MonoBehaviour
             Impact[0].transform.rotation = Quaternion.LookRotation(ImpactDir);
             if(Hit.transform.gameObject.tag == "Player")
             {
-                Hit.transform.gameObject.GetComponent<Player>().BeingHit(10);
+                Hit.transform.gameObject.GetComponent<Player>().BeingHit(1);
                 
             }
             //Debug.Log(ImpactDir);

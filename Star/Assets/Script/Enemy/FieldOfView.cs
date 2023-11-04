@@ -73,11 +73,11 @@ public class FieldOfView : MonoBehaviour
             Transform target = rangeChecks[0].transform;
             Vector3 directionToTarget = (target.position - transform.position).normalized;
 
-            if (Vector3.Angle(transform.forward, directionToTarget) < angle /2)
+            if (Vector3.Angle(Eye.transform.forward, directionToTarget) < angle /2)
             {
                 distanceToTarget = Vector3.Distance(transform.position, target.position);
 
-                if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
+                if (!Physics.Raycast(Eye.transform.position, directionToTarget, distanceToTarget, obstructionMask))
                 {
                     canSeePlayer = true;
                     HeadLt.color = new Color(255f, 0f, 0f);
@@ -89,6 +89,7 @@ public class FieldOfView : MonoBehaviour
                     //Debug.Log("CantSeePlayer");
                     StopChase();
                 }
+                //Debug.Log(Vector3.Angle(Eye.transform.forward, directionToTarget));
             }
             else
             {
@@ -174,12 +175,12 @@ public class FieldOfView : MonoBehaviour
             }
         }
 
-        if(distanceToTarget > 10f && HasRoll == false && canSeePlayer)
+        if(distanceToTarget > 7f && HasRoll == false && canSeePlayer)
         {
             RState = Random.Range(1, 10);
             HasRoll = true;
         }
-        else if(distanceToTarget <= 10f && HasRoll == false && canSeePlayer)
+        else if(distanceToTarget <= 7f && HasRoll == false && canSeePlayer)
         {
             RState = Random.Range(1, 3);
             HasRoll = true;

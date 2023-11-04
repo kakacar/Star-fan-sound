@@ -55,6 +55,7 @@ public class Dash : MonoBehaviour
         GetComponent<Rigidbody>().useGravity = true;
         GetComponent<CapsuleCollider>().enabled = true;
         Player.speed = Player.OGSpeed;
+
         isDodging = false; // 结束闪避
     }
 

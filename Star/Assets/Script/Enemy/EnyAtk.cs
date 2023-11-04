@@ -22,7 +22,7 @@ public class EnyAtk : MonoBehaviour
         if (other.tag == "Player")
         {
             
-            other.gameObject.GetComponent<Player>().BeingHit(1);
+            other.gameObject.GetComponent<Player>().BeingHit(10);
             
 
         }

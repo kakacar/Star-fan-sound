@@ -155,10 +155,7 @@ public class Player : MonoBehaviour
                 animator.SetBool("Jumping", true);
                 jumpCount--;
             }
-            if (grounded)
-            {
-                jumpCount = 2;
-            }
+            
         }
         else if (CurrentState == LiveOrDie.Alive && StateType == State.Animation)
         {
@@ -394,12 +391,17 @@ public class Player : MonoBehaviour
         else
         {
             animator.SetBool("InAir", false);
+            
         }
     }
 
     public void JumpReset()
     {
-        jumpCount = 2;
+        if (grounded)
+        {
+            jumpCount = 2;
+        }
+        
     }
     public void Dead()
     {

@@ -21,6 +21,7 @@ public class Kill : MonoBehaviour
             }
             else
             {
+
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     SceneManager.LoadScene("Base");
