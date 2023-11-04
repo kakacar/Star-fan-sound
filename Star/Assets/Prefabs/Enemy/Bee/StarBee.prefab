@@ -9926,7 +9926,7 @@ MonoBehaviour:
   PDestination: 0
   Eye: {fileID: 7382768508911459077}
   radius: 10
-  angle: 10
+  angle: 15
   canSeePlayer: 0
   HasRoll: 0
   lostChase: 1
