@@ -12,8 +12,8 @@ public class RareCollect : MonoBehaviour
 
     public GameObject rareText;
     private float plus; //每10秒加1次
-    public float rareCollecting;
-    public float rareCollected;
+    public float rareCollecting = 5;
+    public float i;
 
     [SerializeField] float CollectTime;
     [SerializeField] GameObject Bot;
@@ -32,19 +32,20 @@ public class RareCollect : MonoBehaviour
         if (collecting)
         {
             time += Time.deltaTime;
-            rareCollecting = Mathf.Floor(plus)*5;
+            if(Mathf.Floor(plus) == i)
+            {
+                player.GetComponent<Player>().rareCollected += rareCollecting;
+                i++;
+            }
         }
-        if(Mathf.Floor(time) >= CollectTime)
+        if(Mathf.Floor(time) > CollectTime)
         {
             collecting = false;
             Debug.Log("Collect End");
             time = 0;
-
-            rareCollected += rareCollecting;
-            rareCollecting = 0;
             Destroy(Bot);
+            i = 1;
         }
-        rareText.GetComponent<Text>().text = "稀有資源：" + (rareCollected + rareCollecting);
     }
     void OnTriggerStay(Collider other)
     {
@@ -66,14 +67,5 @@ public class RareCollect : MonoBehaviour
         {
             collectText.SetActive(false);
         }
-    }
-
-    public void LoadData(GameData data)
-    {
-        rareCollected = data.rareCollected;
-    }
-    public void SaveData(GameData data)
-    {
-        data.rareCollected = rareCollected;
     }
 }

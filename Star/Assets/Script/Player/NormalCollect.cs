@@ -12,8 +12,8 @@ public class NormalCollect : MonoBehaviour
 
     public GameObject normalText;
     private float plus; //每10秒加1次
-    public float normalCollecting;
-    public float normalCollected;
+    public float normalCollecting = 10;
+    public float i;
 
     [SerializeField] float CollectTime;
     [SerializeField] GameObject Bot;
@@ -32,7 +32,11 @@ public class NormalCollect : MonoBehaviour
         if (collecting)
         {
             time += Time.deltaTime;
-            normalCollecting = Mathf.Floor(plus)*10;
+            if (Mathf.Floor(plus) == i)
+            {
+                player.GetComponent<Player>().normalCollected += normalCollecting;
+                i++;
+            }
         }
         if(Mathf.Floor(time) >= CollectTime)
         {
@@ -40,10 +44,8 @@ public class NormalCollect : MonoBehaviour
             Debug.Log("Collect End");
             time = 0;
             Destroy(Bot);
-            normalCollected += normalCollecting;
-            normalCollecting = 0;
+            i = 1;
         }
-        normalText.GetComponent<Text>().text = "普通資源：" + (normalCollected + normalCollecting);
     }
     void OnTriggerStay(Collider other)
     {
@@ -66,14 +68,5 @@ public class NormalCollect : MonoBehaviour
         {
             collectText.SetActive(false);
         }
-    }
-
-    public void LoadData(GameData data)
-    {
-        normalCollected = data.normalCollected;
-    }
-    public void SaveData(GameData data)
-    {
-        data.normalCollected = normalCollected;
     }
 }

@@ -34,6 +34,12 @@ public class Player : MonoBehaviour
     [SerializeField] LayerMask whatIsGround;
     [SerializeField] bool grounded;
 
+    [Header("Collect")]
+    [SerializeField] public float rareCollected;
+    [SerializeField] public float normalCollected;
+    [SerializeField] private GameObject rareText;
+    [SerializeField] private GameObject normalText;
+
     float xVelocity;
     float climbSpeed = 5f;
     bool HasPlayedDeadAni;
@@ -86,6 +92,7 @@ public class Player : MonoBehaviour
         VCameraSet();
         hpLeft();
         GroundCheck();
+        CollectedCount();
     }
 
     private void VCameraSet()
@@ -410,5 +417,25 @@ public class Player : MonoBehaviour
         speed = OGSpeed;
         CurrentState = LiveOrDie.Alive;
         animator.SetTrigger("BeingHit");
+    }
+    private void CollectedCount()
+    {
+        if(rareText == null && normalText == null)
+        {
+            rareText = GameObject.Find("Rare");
+            normalText = GameObject.Find("Normal");
+        }
+        rareText.GetComponent<Text>().text = "稀有資源：" + (rareCollected);
+        normalText.GetComponent<Text>().text = "普通資源：" + (normalCollected);
+    }
+    public void LoadData(GameData data)
+    {
+        rareCollected = data.rareCollected;
+        normalCollected = data.normalCollected;
+    }
+    public void SaveData(GameData data)
+    {
+        data.rareCollected = rareCollected;
+        data.normalCollected = normalCollected;
     }
 }
