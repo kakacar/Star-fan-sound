@@ -25,7 +25,8 @@ public class Kill : MonoBehaviour
                 clearText.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    SceneManager.LoadScene("Base");
+                    SceneManager.UnloadSceneAsync("1-2");
+                    SceneManager.LoadScene("Base", LoadSceneMode.Additive);
                 }
             }
         }

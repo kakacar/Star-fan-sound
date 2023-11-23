@@ -15,15 +15,8 @@ public class Dash : MonoBehaviour
     private bool canDash;
     public GameObject dashUI;
     [SerializeField] Player Player;
-
-    private void Start()
-    {
-        dashUI = GameObject.Find("Dash");
-        
-    }
     void Update()
     {
-        dashUI = GameObject.Find("Dash");
         WallCheck();
         CD();
         // 检测闪避触发条件

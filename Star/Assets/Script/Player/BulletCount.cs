@@ -12,7 +12,6 @@ public class BulletCount : MonoBehaviour
 
     void Awake()
     {
-        bulletText = GameObject.Find("BulletText");
         bulletText.GetComponent<Text>().text = bullet + "/" + bulletCount;
     }
 
@@ -31,7 +30,6 @@ public class BulletCount : MonoBehaviour
             bullet = bulletCount;
             bulletCount = 0;
         }
-        bulletText = GameObject.Find("BulletText");
         bulletText.GetComponent<Text>().text = bullet + "/" + bulletCount;
     }
 }

@@ -20,7 +20,7 @@ public class FadeIn : MonoBehaviour
         {
             anim[5].Play("Fade in");
             text.SetActive(true);
-            SceneManager.LoadSceneAsync("1-1");
+            SceneManager.LoadScene("Player&UI");
         }
     }
 

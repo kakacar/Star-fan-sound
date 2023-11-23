@@ -10,7 +10,6 @@ public class RareCollect : MonoBehaviour
     public float time;
     public GameObject collectText;
 
-    public GameObject rareText;
     private float plus; //¨C10¬í¥[1¦¸
     public float rareCollecting = 5;
     public float i;
@@ -23,7 +22,6 @@ public class RareCollect : MonoBehaviour
     {
         player = GameObject.Find("Player");
         collectText.SetActive(false);
-        rareText = GameObject.Find("Rare");
 
     }
     void Update()

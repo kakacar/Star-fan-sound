@@ -79,7 +79,6 @@ public class Player : MonoBehaviour
     {
         jumpCount = 2;
         rb = GetComponent<Rigidbody>();
-        spawn = GameObject.Find("Spawn");
         OGSpeed = speed;
         
         currentScene = SceneManager.GetActiveScene().name;
@@ -111,19 +110,6 @@ public class Player : MonoBehaviour
         if (currentScene == "MainMenu")
         {
             Destroy(this.gameObject);
-        }
-
-        if (currentScene != SceneManager.GetActiveScene().name)
-        {
-            if (SceneManager.GetActiveScene().name != "2")
-            {
-                if (spawn == null)
-                {
-                    spawn = GameObject.Find("Spawn");
-                    gameObject.transform.position = spawn.transform.position;
-                }
-            }
-            currentScene = SceneManager.GetActiveScene().name;
         }
     }
 
@@ -412,7 +398,8 @@ public class Player : MonoBehaviour
     }
     public void Dead()
     {
-        SceneManager.LoadScene("Base");
+        SceneManager.UnloadSceneAsync("1-1");
+        SceneManager.LoadScene("Base", LoadSceneMode.Additive);
         hp = 100;
         speed = OGSpeed;
         CurrentState = LiveOrDie.Alive;
@@ -430,12 +417,12 @@ public class Player : MonoBehaviour
     }
     public void LoadData(GameData data)
     {
-        rareCollected = data.rareCollected;
-        normalCollected = data.normalCollected;
+        data.rareCollected = rareCollected;
+        data.normalCollected = normalCollected;
     }
     public void SaveData(GameData data)
     {
-        data.rareCollected = rareCollected;
-        data.normalCollected = normalCollected;
+        rareCollected = data.rareCollected;
+        normalCollected = data.normalCollected;
     }
 }

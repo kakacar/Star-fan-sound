@@ -16,13 +16,11 @@ public class DisableSoundSkill : MonoBehaviour
         if (skillUI == null)
         {
             skillUI = GameObject.Find("SkillUI");
-
         }
 
         if (skillUsingIcon == null)
         {
             skillUsingIcon = GameObject.Find("skillUsingIcon");
-            
         }
         
         

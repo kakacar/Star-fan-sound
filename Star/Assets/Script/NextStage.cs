@@ -38,6 +38,7 @@ public class NextStage : MonoBehaviour
     public void nextStage()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("1-2");
+        SceneManager.UnloadSceneAsync("1-1");
+        SceneManager.LoadScene("1-2", LoadSceneMode.Additive);
     }
 }

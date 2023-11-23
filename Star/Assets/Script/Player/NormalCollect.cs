@@ -9,8 +9,6 @@ public class NormalCollect : MonoBehaviour
     public bool collecting = false;
     public float time;
     public GameObject collectText;
-
-    public GameObject normalText;
     private float plus; //¨C10¬í¥[1¦¸
     public float normalCollecting = 10;
     public float i;
@@ -23,7 +21,6 @@ public class NormalCollect : MonoBehaviour
     {
         player = GameObject.Find("Player");
         collectText.SetActive(false);
-        normalText = GameObject.Find("Normal");
 
     }
     void Update()
