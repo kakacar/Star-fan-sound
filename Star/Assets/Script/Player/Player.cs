@@ -96,13 +96,13 @@ public class Player : MonoBehaviour
 
     private void VCameraSet()
     {
-        VCamera = GameObject.Find("CM vcam1");
-        if (SceneManager.GetActiveScene().name != "2")
+        if(VCamera == null)
         {
-            if (VCamera.GetComponent<CinemachineVirtualCamera>().Follow == null)
-            {
-                VCamera.GetComponent<CinemachineVirtualCamera>().Follow = this.transform;
-            }
+            VCamera = GameObject.Find("CM vcam1");
+        }
+        if (VCamera.GetComponent<CinemachineVirtualCamera>().Follow == null)
+        {
+            VCamera.GetComponent<CinemachineVirtualCamera>().Follow = this.transform;
         }
     }
     private void Spawn()
@@ -398,8 +398,12 @@ public class Player : MonoBehaviour
     }
     public void Dead()
     {
-        SceneManager.UnloadSceneAsync("1-1");
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         SceneManager.LoadScene("Base", LoadSceneMode.Additive);
+        SceneManager.sceneLoaded += (Scene sc, LoadSceneMode loadSceneMode) =>
+        {
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("Base"));
+        };
         hp = 100;
         speed = OGSpeed;
         CurrentState = LiveOrDie.Alive;

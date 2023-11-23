@@ -27,6 +27,10 @@ public class Kill : MonoBehaviour
                 {
                     SceneManager.UnloadSceneAsync("1-2");
                     SceneManager.LoadScene("Base", LoadSceneMode.Additive);
+                    SceneManager.sceneLoaded += (Scene sc, LoadSceneMode loadSceneMode) =>
+                    {
+                        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Base"));
+                    };
                 }
             }
         }

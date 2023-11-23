@@ -4188,7 +4188,7 @@ GameObject:
   - component: {fileID: 1074663813}
   - component: {fileID: 1074663812}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: SceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4208,6 +4208,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1096105582}
   tutorial: {fileID: 835114127}
+  loaded1: 0
+  loaded2: 0
+  loadedBase: 0
 --- !u!4 &1074663813
 Transform:
   m_ObjectHideFlags: 0
