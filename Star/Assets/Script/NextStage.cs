@@ -40,9 +40,5 @@ public class NextStage : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.UnloadSceneAsync("1-1");
         SceneManager.LoadScene("1-2", LoadSceneMode.Additive);
-        SceneManager.sceneLoaded += (Scene sc, LoadSceneMode loadSceneMode) =>
-        {
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName("1-2"));
-        };
     }
 }

@@ -107,6 +107,11 @@ public class Player : MonoBehaviour
     }
     private void Spawn()
     {
+        if(spawn == null)
+        {
+            spawn = GameObject.Find("Spawn");
+            player.transform.position = spawn.transform.position;
+        }
         if (currentScene == "MainMenu")
         {
             Destroy(this.gameObject);
@@ -400,10 +405,6 @@ public class Player : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         SceneManager.LoadScene("Base", LoadSceneMode.Additive);
-        SceneManager.sceneLoaded += (Scene sc, LoadSceneMode loadSceneMode) =>
-        {
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName("Base"));
-        };
         hp = 100;
         speed = OGSpeed;
         CurrentState = LiveOrDie.Alive;
