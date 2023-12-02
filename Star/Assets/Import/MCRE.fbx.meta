@@ -3,7 +3,37 @@ guid: a8c1796b66bf12b469419d6cc1d9da69
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hei_kui_jia
+    second: {fileID: 2100000, guid: 0c8064283ea178144b227c735b9b2ae4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hong_kui_jia
+    second: {fileID: 2100000, guid: de67018e0e455aa498f9ee8eb2830297, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hui_kui_jia
+    second: {fileID: 2100000, guid: 2404521af607dd84b9a75e382b1a1141, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jin_shen_yi
+    second: {fileID: 2100000, guid: b906291818bb9674cb861acdf83ef32f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: ece7ad3facfc4c941a73157a36646540, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert6
+    second: {fileID: 2100000, guid: f9d6c8bbd34a4934f9ab5cb09268084c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
