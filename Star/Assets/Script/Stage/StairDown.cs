@@ -5,7 +5,7 @@ using UnityEngine;
 public class StairDown : MonoBehaviour
 {
     public bool TD = true;
-    [SerializeField] private MeshCollider TDCollider;
+    [SerializeField] private BoxCollider TDCollider;
     [SerializeField] private Stair Stair;
     // Start is called before the first frame update
     void Start()
