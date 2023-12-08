@@ -49,11 +49,10 @@ public class Alarm : MonoBehaviour
         {
             normalLight.SetActive(false);
             redLight.SetActive(true);
-            anim[0].Play("Flash");
-            anim[1].Play("Flash");
-            anim[2].Play("Flash");
-            anim[3].Play("Flash");
-            anim[4].Play("Flash");
+            for (int i = 0; i < anim.Length; i++)
+            {
+                anim[i].Play("Flash");
+            }
         }
         if (Sound.currentSound == 100)
         {
