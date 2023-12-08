@@ -6,13 +6,13 @@ public class KillStory : MonoBehaviour
 {
     public GameObject plotKillStory;
     public GameObject player;
-    private void Awake()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
 
     private void Update()
     {
+        if(player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
         if (player.GetComponent<Player>().firstToBase)
         {
             Time.timeScale = 0;

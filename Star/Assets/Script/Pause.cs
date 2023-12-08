@@ -16,7 +16,7 @@ public class Pause : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !pauseWindow.activeSelf && !settingWindow.activeSelf && Time.timeScale == 0)
+        if (Input.GetKeyDown(KeyCode.Escape) && !pauseWindow.activeSelf && !settingWindow.activeSelf && Time.timeScale != 0)
         {
             pauseWindow.SetActive(true);
             Time.timeScale = 0;

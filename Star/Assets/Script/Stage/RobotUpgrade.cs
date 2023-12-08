@@ -15,7 +15,7 @@ public class RobotUpgrade : MonoBehaviour
             {
                 upgradeWindow.SetActive(true);
             }
-            if (Input.GetKeyDown(KeyCode.Escape) && upgradeWindow.activeSelf)
+            if (Input.GetKeyUp(KeyCode.Escape) && upgradeWindow.activeSelf)
             {
                 upgradeWindow.SetActive(false);
             }
