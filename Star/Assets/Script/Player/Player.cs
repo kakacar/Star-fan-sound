@@ -87,8 +87,8 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
-        Spawn();
         VCameraSet();
+        Spawn();
         hpLeft();
         GroundCheck();
         CollectedCount();
@@ -100,14 +100,14 @@ public class Player : MonoBehaviour
         {
             VCamera = GameObject.Find("CM vcam1");
         }
-        if (VCamera.GetComponent<CinemachineVirtualCamera>().Follow == null)
+        else if (VCamera.GetComponent<CinemachineVirtualCamera>().Follow == null)
         {
             VCamera.GetComponent<CinemachineVirtualCamera>().Follow = this.transform;
         }
     }
     private void Spawn()
     {
-        if(spawn == null)
+        if(spawn == null && SceneManager.GetActiveScene().name != ("Player&UI"))
         {
             spawn = GameObject.Find("Spawn");
             player.transform.position = spawn.transform.position;
