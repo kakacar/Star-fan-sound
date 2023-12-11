@@ -12,7 +12,7 @@ public class StageQuest : MonoBehaviour
     public bool noDamage = true;
     private float playerMaxHp;
 
-    void Awake()
+    void Start()
     {
         playerMaxHp = GameObject.Find("Player").GetComponent<Player>().hp;
     }

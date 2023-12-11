@@ -19,11 +19,17 @@ public class NormalCollect : MonoBehaviour
     [SerializeField] GameObject BotPos;
     private void Awake()
     {
-        player = GameObject.Find("Player");
         collectText.SetActive(false);
-
     }
     void Update()
+    {
+        if (player == null)
+        {
+            player = GameObject.Find("Player");
+        }
+        Collect();
+    }
+    private void Collect()
     {
         plus = time / 10;
         if (collecting)
@@ -35,7 +41,7 @@ public class NormalCollect : MonoBehaviour
                 i++;
             }
         }
-        if(Mathf.Floor(time) >= CollectTime)
+        if (Mathf.Floor(time) >= CollectTime)
         {
             collecting = false;
             Debug.Log("Collect End");
