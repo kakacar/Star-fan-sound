@@ -40,6 +40,9 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject rareText;
     [SerializeField] private GameObject normalText;
 
+    [Header("Items")]
+    [SerializeField] public int money;
+
     float xVelocity;
     float climbSpeed = 5f;
     bool HasPlayedDeadAni;
@@ -422,11 +425,13 @@ public class Player : MonoBehaviour
     }
     public void LoadData(GameData data)
     {
+        data.money = money;
         data.rareCollected = rareCollected;
         data.normalCollected = normalCollected;
     }
     public void SaveData(GameData data)
     {
+        money = data.money;
         rareCollected = data.rareCollected;
         normalCollected = data.normalCollected;
     }

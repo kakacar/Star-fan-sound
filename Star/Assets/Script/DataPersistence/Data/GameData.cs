@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using UnityEngine;
 
 [System.Serializable]
@@ -11,9 +12,11 @@ public class GameData
     public float normalCollected;
     public float rareCollected;
     public SerializableDictionary<string, bool> enemyLeft;
+    public int money;
 
     public GameData()
     {
+        money = 0;
         deathCount = 0;
         this.level = 0;
         normalCollected = 0;
