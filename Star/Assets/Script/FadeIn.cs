@@ -7,35 +7,33 @@ using UnityEngine.SceneManagement;
 public class FadeIn : MonoBehaviour
 {
     public Animation[] anim;
-    private bool canFadeOut;
     public GameObject text;
+    public int i;
+    bool test;
 
     void Awake()
     {
-        StartCoroutine(WaitSce());
+        anim[0].Play("Fade in");
+        text.SetActive(true);
     }
     void Update()
     {
-        if (canFadeOut && Input.anyKey)
+        if(i <= 5)
         {
-            anim[5].Play("Fade in");
-            text.SetActive(true);
+            test = true;
+        }
+        else
+        {
+            test = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Mouse0) && test)
+        {
+            i++;
+            anim[i].Play("Fade in");
+        }
+        if (!test)
+        {
             SceneManager.LoadScene("Player&UI");
         }
-    }
-
-    private IEnumerator WaitSce()
-    {
-        anim[0].Play("Fade in");
-        yield return new WaitForSeconds(1);
-        anim[1].Play("Fade in");
-        yield return new WaitForSeconds(1);
-        anim[2].Play("Fade in");
-        yield return new WaitForSeconds(1);
-        anim[3].Play("Fade in");
-        yield return new WaitForSeconds(1);
-        anim[4].Play("Fade in");
-        yield return new WaitForSeconds(1);
-        canFadeOut = true;
     }
 }
