@@ -513,7 +513,7 @@ GameObject:
   - component: {fileID: 44994559}
   - component: {fileID: 44994558}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Stuff1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1088,6 +1088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae72498006129c469c427c178ca6590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stuffCount: []
 --- !u!114 &124796082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1338,6 +1339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae72498006129c469c427c178ca6590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stuffCount: []
 --- !u!114 &136362661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2078,7 +2080,7 @@ GameObject:
   - component: {fileID: 243066497}
   - component: {fileID: 243066496}
   m_Layer: 5
-  m_Name: Text (Legacy) (6)
+  m_Name: Stuff7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2252,7 +2254,7 @@ GameObject:
   - component: {fileID: 258582424}
   - component: {fileID: 258582423}
   m_Layer: 5
-  m_Name: Text (Legacy) (3)
+  m_Name: Stuff4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2545,6 +2547,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae72498006129c469c427c178ca6590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stuffCount:
+  - {fileID: 44994558}
+  - {fileID: 690238297}
+  - {fileID: 1416135451}
+  - {fileID: 258582423}
+  - {fileID: 1581897164}
+  - {fileID: 1318253041}
+  - {fileID: 243066496}
+  - {fileID: 657017973}
 --- !u!1 &315533047
 GameObject:
   m_ObjectHideFlags: 0
@@ -3083,7 +3094,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &400627433
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4263,6 +4274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae72498006129c469c427c178ca6590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stuffCount: []
 --- !u!114 &647866205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4310,7 +4322,7 @@ GameObject:
   - component: {fileID: 657017974}
   - component: {fileID: 657017973}
   m_Layer: 5
-  m_Name: Text (Legacy) (7)
+  m_Name: Stuff8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4749,7 +4761,7 @@ GameObject:
   - component: {fileID: 690238298}
   - component: {fileID: 690238297}
   m_Layer: 5
-  m_Name: Text (Legacy) (1)
+  m_Name: Stuff2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8028,7 +8040,7 @@ GameObject:
   - component: {fileID: 1318253042}
   - component: {fileID: 1318253041}
   m_Layer: 5
-  m_Name: Text (Legacy) (5)
+  m_Name: Stuff6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8489,7 +8501,7 @@ GameObject:
   - component: {fileID: 1416135452}
   - component: {fileID: 1416135451}
   m_Layer: 5
-  m_Name: Text (Legacy) (2)
+  m_Name: Stuff3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8816,6 +8828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae72498006129c469c427c178ca6590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stuffCount: []
 --- !u!114 &1488396539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9021,7 +9034,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1509373240
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9133,6 +9146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae72498006129c469c427c178ca6590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stuffCount: []
 --- !u!114 &1563664986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9180,7 +9194,7 @@ GameObject:
   - component: {fileID: 1581897165}
   - component: {fileID: 1581897164}
   m_Layer: 5
-  m_Name: Text (Legacy) (4)
+  m_Name: Stuff5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10179,6 +10193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae72498006129c469c427c178ca6590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stuffCount: []
 --- !u!114 &1898895142
 MonoBehaviour:
   m_ObjectHideFlags: 0

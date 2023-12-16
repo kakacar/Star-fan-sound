@@ -24,31 +24,31 @@ public class Sell : MonoBehaviour
     private void Update()
     {
         moneyText.text = "" + player.money;
-        //if (No Item)
+        if (player.item[0] == 0)
         {
             sellButton[0].interactable = false;
-        }//else
+        }else
         {
             sellButton[0].interactable = true;
         }
-        //if (No Item)
+        if (player.item[1] == 0)
         {
             sellButton[1].interactable = false;
-        }//else
+        }else
         {
             sellButton[1].interactable = true;
         }
-        //if (No Item)
+        if (player.item[2] == 0)
         {
             sellButton[2].interactable = false;
-        }//else
+        }else
         {
             sellButton[2].interactable = true;
         }
-        //if (No Item)
+        if (player.item[3] == 0)
         {
             sellButton[3].interactable = false;
-        }//else
+        }else
         {
             sellButton[3].interactable = true;
         }

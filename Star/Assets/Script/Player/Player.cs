@@ -42,6 +42,8 @@ public class Player : MonoBehaviour
 
     [Header("Items")]
     [SerializeField] public int money;
+    [SerializeField] public int[] stuff;
+    [SerializeField] public int[] item;
 
     float xVelocity;
     float climbSpeed = 5f;

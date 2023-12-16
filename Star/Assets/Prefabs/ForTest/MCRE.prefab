@@ -1600,6 +1600,9 @@ MonoBehaviour:
   normalCollected: 0
   rareText: {fileID: 0}
   normalText: {fileID: 0}
+  money: 0
+  stuff: 0000000000000000000000000000000000000000000000000000000000000000
+  item: 00000000000000000000000000000000
   StateType: 0
   CurrentState: 0
 --- !u!114 &5435300360129195598
