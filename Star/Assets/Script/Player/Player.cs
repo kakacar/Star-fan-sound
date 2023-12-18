@@ -377,6 +377,8 @@ public class Player : MonoBehaviour
         }
         else if (jumpPress && jumpCount >= 0 && !grounded)
         {
+            Vector3 TndJump = new Vector3(5f, 0.0f, 0.0f);
+            rb.AddForce(TndJump * 2.5f, ForceMode.Impulse);
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, 0);
             jumpPress = false;
         }
