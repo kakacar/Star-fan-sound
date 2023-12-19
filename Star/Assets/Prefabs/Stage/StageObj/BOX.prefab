@@ -98,8 +98,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.010772724, y: 0.034534045, z: 0.0107727125}
-  m_Center: {x: -0.0004853771, y: 0.012106203, z: 0.00038005342}
+  m_Size: {x: 0.010772725, y: 0.023299469, z: 0.010772711}
+  m_Center: {x: -0.00048537695, y: 0.0064889668, z: 0.00038005327}
 --- !u!114 &3229597428847055960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,8 +116,8 @@ MonoBehaviour:
   collecting: 0
   time: 0
   collectText: {fileID: 0}
-  normalText: {fileID: 0}
   normalCollecting: 10
+  i: 0
   CollectTime: 15
   Bot: {fileID: 0}
   BotModel: {fileID: 4714133180165723913, guid: 3152a4c3bbeee7f449f2e95ba8fe900b, type: 3}

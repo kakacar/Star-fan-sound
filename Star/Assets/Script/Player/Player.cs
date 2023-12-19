@@ -59,7 +59,8 @@ public class Player : MonoBehaviour
     {
         CanMove,
         Animation,
-        Ladder
+        Ladder,
+        Duct
     }
 
     [SerializeField] private LiveOrDie CurrentState;
@@ -131,12 +132,12 @@ public class Player : MonoBehaviour
             xVelocity = Input.GetAxisRaw("Horizontal");
             rb.velocity = new Vector3(xVelocity * speed, rb.velocity.y, 0);
 
-            if (xVelocity == 1 && StateType != State.Ladder)
+            if (xVelocity == 1 && StateType == State.CanMove)
             {
                 animator.SetBool("Walking", true);
                 player.gameObject.transform.rotation = Quaternion.Euler(0, 90, 0);
             }
-            else if (xVelocity == -1 && StateType != State.Ladder)
+            else if (xVelocity == -1 && StateType == State.CanMove)
             {
                 animator.SetBool("Walking", true);
                 player.gameObject.transform.rotation = Quaternion.Euler(0, -90, 0);
@@ -196,7 +197,11 @@ public class Player : MonoBehaviour
         if (CurrentState == LiveOrDie.Alive)
         {
             hp = hp - Damage;
-            animator.SetTrigger("BeingHit");
+            if(StateType == State.CanMove)
+            {
+                animator.SetTrigger("BeingHit");
+            }
+            
         }
 
     }
@@ -214,7 +219,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (other.gameObject.CompareTag("Stair"))
+        if (other.gameObject.CompareTag("Stair") && StateType != State.Animation)
         {
             grounded = true;
             if (Input.GetKey("w"))
@@ -395,19 +400,19 @@ public class Player : MonoBehaviour
         }
         else
         {
-            animator.SetBool("InAir", false);
+            animator.SetBool("InAir", false);         
             
         }
     }
 
-    public void JumpReset()
+    public void ResetJump()
     {
-        if (grounded)
+        if (jumpCount < 2)
         {
             jumpCount = 2;
         }
-        
     }
+
     public void Dead()
     {
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());

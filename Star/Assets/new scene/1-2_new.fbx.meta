@@ -3,7 +3,12 @@ guid: b15236ecf9e5a6b488fa72d1be02ea62
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ying_mu
+    second: {fileID: -7328699699647804834, guid: b4f52ba5937ae9a498a150d202f55e1f, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
