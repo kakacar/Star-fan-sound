@@ -4906,6 +4906,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyFOV: {fileID: 6599616321637792251}
+  enemy: {fileID: 6599616321637792250}
+  BeStab: 0
 --- !u!1 &5446759716361041811
 GameObject:
   m_ObjectHideFlags: 0
@@ -9960,7 +9962,10 @@ MonoBehaviour:
   StunTime: 5
   StunTimer: 0
   BeeATK: {fileID: -6302845047384963425}
+  maxHp: 10
   hp: 20
+  hpSlider: {fileID: 0}
+  hpPrefab: {fileID: 6359988537636185169, guid: 23f42ae930363ab4ab44d64730663d56, type: 3}
   enemyDead: 0
 --- !u!114 &6599616321637792251
 MonoBehaviour:

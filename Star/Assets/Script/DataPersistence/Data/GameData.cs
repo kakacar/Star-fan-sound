@@ -11,7 +11,6 @@ public class GameData
     public int level;
     public float normalCollected;
     public float rareCollected;
-    public SerializableDictionary<string, bool> enemyLeft;
     public int money;
 
     public GameData()
@@ -21,6 +20,5 @@ public class GameData
         this.level = 0;
         normalCollected = 0;
         rareCollected = 0;
-        enemyLeft = new SerializableDictionary<string, bool>();
     }
 }

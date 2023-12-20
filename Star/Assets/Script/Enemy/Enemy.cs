@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Enemy : MonoBehaviour, IDataPersistence
+public class Enemy : MonoBehaviour
 {
-    [SerializeField] private string id;
     [SerializeField] private FieldOfView FOV;
     [SerializeField] private Animator Ani;
     [SerializeField] int Stun;
@@ -16,30 +16,14 @@ public class Enemy : MonoBehaviour, IDataPersistence
     bool StunAni;
     bool PlayDeadAni;
 
-    [ContextMenu("Generate guid for id")]
-    private void GenerateGuid()
-    {
-        id = System.Guid.NewGuid().ToString();
-    }
-
-    public float hp = 10f;
+    public float maxHp;
+    public float hp;
+    public GameObject hpSlider;
+    public GameObject hpPrefab;
     public bool enemyDead = false;
-
-    public void LoadData(GameData data)
+    private void Start()
     {
-        data.enemyLeft.TryGetValue(id, out enemyDead);
-        if (enemyDead)
-        {
-            gameObject.SetActive(false);
-        }
-    }
-    public void SaveData(GameData data)
-    {
-        if (data.enemyLeft.ContainsKey(id))
-        {
-            data.enemyLeft.Remove(id);
-        }
-        data.enemyLeft.Add(id, enemyDead);
+        maxHp = hp;
     }
 
     void Update()
@@ -56,6 +40,7 @@ public class Enemy : MonoBehaviour, IDataPersistence
             }
         }
         StunTimeCount();
+        HpSlider();
     }
 
     void StunTimeCount()
@@ -78,10 +63,24 @@ public class Enemy : MonoBehaviour, IDataPersistence
             }
         }
     }
-
+    private void HpSlider()
+    {
+        if(hpSlider == null)
+        {
+            hpSlider = Instantiate(hpPrefab, transform.position, Quaternion.identity);
+            hpSlider.transform.SetParent(GameObject.Find("Canvas").transform);
+        }
+        else
+        {
+            Vector3 worldToScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
+            hpSlider.transform.position = worldToScreenPoint + new Vector3(0f, 30f, 0f);
+        }
+    }
     public void TakeDamage(float Damage)
     {
         hp=hp-Damage;
+        hpSlider.GetComponent<Slider>().maxValue = maxHp;
+        hpSlider.GetComponent<Slider>().value = hp;
         FOV.canSeePlayer = true;
         GetHit++;
     }
@@ -93,7 +92,7 @@ public class Enemy : MonoBehaviour, IDataPersistence
 
     public void Dead()
     {
-        gameObject.SetActive(false);
-        //GameObject.Find("BuffManager").GetComponent<BuffSelect>().enemyCount -= 1;
+        Destroy(hpSlider.gameObject);
+        Destroy(this.gameObject);
     }
 }
