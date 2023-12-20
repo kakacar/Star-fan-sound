@@ -246,7 +246,7 @@ public class FieldOfView : MonoBehaviour
 
                 if(Vector3.Distance(transform.position, PatrolPoints[0].position) < Vector3.Distance(transform.position, PatrolPoints[1].position))
                 {
-                    PDestination = 0;
+                    PDestination = 1;
                     Vector3 Direction = PatrolPoints[PDestination].position - transform.position;
                     Quaternion rotation = Quaternion.LookRotation(Direction);
                     transform.rotation = rotation;
@@ -255,7 +255,7 @@ public class FieldOfView : MonoBehaviour
                 else if((Vector3.Distance(transform.position, PatrolPoints[0].position) > Vector3.Distance(transform.position, PatrolPoints[1].position)))
                 {
                     
-                    PDestination = 1;
+                    PDestination = 0;
                     Vector3 Direction = PatrolPoints[PDestination].position - transform.position;
                     Quaternion rotation = Quaternion.LookRotation(Direction);
                     transform.rotation = rotation;
