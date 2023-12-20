@@ -40,7 +40,7 @@ public class DisableSoundSkill : MonoBehaviour
         }
 
         CD();
-        if (Input.GetKeyDown(KeyCode.K) && !isUsingSkill && canUse)
+        if (Input.GetKeyDown(KeyCode.E) && !isUsingSkill && canUse)
         {
             StartCoroutine(UseingSkill());
             t = 10f;

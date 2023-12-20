@@ -20,7 +20,7 @@ public class Dash : MonoBehaviour
         WallCheck();
         CD();
         // 检测闪避触发条件
-        if (Input.GetKeyDown(KeyCode.L) && !isDodging && canDash && Player.StateType == Player.State.CanMove)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !isDodging && canDash && Player.StateType == Player.State.CanMove)
         {
             StartCoroutine(Dodge());
             t = 2f;
