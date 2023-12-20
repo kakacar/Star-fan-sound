@@ -12,6 +12,7 @@ public class NormalCollect : MonoBehaviour
     private float plus; //¨C10¬í¥[1¦¸
     public float normalCollecting = 10;
     public float i;
+    public Sound sound;
 
     [SerializeField] float CollectTime;
     [SerializeField] GameObject Bot;
@@ -27,6 +28,10 @@ public class NormalCollect : MonoBehaviour
         {
             player = GameObject.Find("Player");
         }
+        if (sound == null)
+        {
+            sound = player.GetComponent<Sound>();
+        }
         Collect();
     }
     private void Collect()
@@ -40,6 +45,8 @@ public class NormalCollect : MonoBehaviour
                 player.GetComponent<Player>().normalCollected += normalCollecting;
                 i++;
             }
+            float amount = 0.1f;
+            sound.addSound(amount);
         }
         if (Mathf.Floor(time) >= CollectTime)
         {

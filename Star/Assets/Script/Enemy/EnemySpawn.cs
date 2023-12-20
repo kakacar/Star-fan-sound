@@ -7,13 +7,13 @@ public class EnemySpawn : MonoBehaviour
     public GameObject enemyPrefab;
     public Camera mainCamera;
     public GameObject spawn;
+    public Alarm alarm;
 
     void Update()
     {
-        if (IsOutsideCameraView())
+        if (IsOutsideCameraView() && alarm.warning)
         {
-            Debug.Log("Spawn");
-            //SpawnEnemy();
+            StartCoroutine(SpawnEnemy());
         }
     }
 
@@ -23,8 +23,9 @@ public class EnemySpawn : MonoBehaviour
         return enemyScreenPos.x < 0 || enemyScreenPos.x > Screen.width || enemyScreenPos.y < 0 || enemyScreenPos.y > Screen.height;
     }
 
-    void SpawnEnemy()
+    IEnumerator SpawnEnemy()
     {
+        yield return new WaitForSeconds(5);
         Instantiate(enemyPrefab, spawn.transform.position, Quaternion.identity);
     }
 }

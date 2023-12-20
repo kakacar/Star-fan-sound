@@ -13,6 +13,7 @@ public class RareCollect : MonoBehaviour
     private float plus; //¨C10¬í¥[1¦¸
     public float rareCollecting = 5;
     public float i;
+    public Sound sound;
 
     [SerializeField] float CollectTime;
     [SerializeField] GameObject Bot;
@@ -20,23 +21,35 @@ public class RareCollect : MonoBehaviour
     [SerializeField] GameObject BotPos;
     private void Awake()
     {
-        player = GameObject.Find("Player");
         collectText.SetActive(false);
-
     }
     void Update()
+    {
+        if (player == null)
+        {
+            player = GameObject.Find("Player");
+        }
+        if (sound == null)
+        {
+            sound = player.GetComponent<Sound>();
+        }
+        Collect();
+    }
+    private void Collect()
     {
         plus = time / 10;
         if (collecting)
         {
             time += Time.deltaTime;
-            if(Mathf.Floor(plus) == i)
+            if (Mathf.Floor(plus) == i)
             {
                 player.GetComponent<Player>().rareCollected += rareCollecting;
                 i++;
             }
+            float amount = 0.1f;
+            sound.addSound(amount);
         }
-        if(Mathf.Floor(time) > CollectTime)
+        if (Mathf.Floor(time) > CollectTime)
         {
             collecting = false;
             Debug.Log("Collect End");

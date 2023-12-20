@@ -4,8 +4,10 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - enemyPrefab: {fileID: 6599616321637792196, guid: 80ece4dc00b74054dba1493776494fb7, type: 3}
+  - enemyPrefab: {fileID: 6599616321637792196, guid: 2020b9bc815a9dc4cbfa614b17760c86, type: 3}
   - mainCamera: {instanceID: 0}
+  - spawn: {instanceID: 0}
+  - alarm: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
