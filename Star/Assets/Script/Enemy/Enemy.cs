@@ -55,7 +55,6 @@ public class Enemy : MonoBehaviour, IDataPersistence
                 Ani.SetTrigger("Dead");
             }
         }
-
         StunTimeCount();
     }
 
@@ -75,9 +74,9 @@ public class Enemy : MonoBehaviour, IDataPersistence
             if (StunTimer > StunTime)
             {
                 GetHit = 0;
-                StunTimer = 0;            }
+                StunTimer = 0;            
+            }
         }
-        
     }
 
     public void TakeDamage(float Damage)
@@ -85,14 +84,11 @@ public class Enemy : MonoBehaviour, IDataPersistence
         hp=hp-Damage;
         FOV.canSeePlayer = true;
         GetHit++;
-        
-        
     }
 
     public void ReFromStun()
     {
         FOV.ActState = FieldOfView.ActionState.Standy;
-        
     }
 
     public void Dead()

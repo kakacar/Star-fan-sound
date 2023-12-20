@@ -1448,6 +1448,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5805939121033023086, guid: b4f52ba5937ae9a498a150d202f55e1f, type: 3}
   m_PrefabInstance: {fileID: 558977907}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &558977911 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b4f52ba5937ae9a498a150d202f55e1f, type: 3}
+  m_PrefabInstance: {fileID: 558977907}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &558977912
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1462,6 +1467,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5343615601732148468, guid: b4f52ba5937ae9a498a150d202f55e1f, type: 3}
+--- !u!114 &558977913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558977911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eec07e070c54f1442970ef4a417e1137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sound: {fileID: 0}
+  anim:
+  - {fileID: 842721606}
+  - {fileID: 71092960}
+  - {fileID: 1073826754}
+  - {fileID: 1523234384}
+  - {fileID: 1370284944}
+  normalLight: {fileID: 1869053946}
+  redLight: {fileID: 1012740661}
 --- !u!1 &565810857
 GameObject:
   m_ObjectHideFlags: 0
