@@ -23,7 +23,14 @@ public class Sell : MonoBehaviour
     }
     private void Update()
     {
-        moneyText.text = "" + player.money;
+        if (player == null)
+        {
+            player = GameObject.Find("Player").GetComponent<Player>();
+        }
+        else
+        {
+            moneyText.text = "" + player.money;
+        }
         if (player.item[0] <= 0)
         {
             sellButton[0].interactable = false;
@@ -84,5 +91,6 @@ public class Sell : MonoBehaviour
     public void CloseWindow()
     {
         gameObject.SetActive(false);
+        Time.timeScale = 1.0f;
     }
 }

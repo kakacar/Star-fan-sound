@@ -12,19 +12,26 @@ public class Craft : MonoBehaviour
     public Button[] craftButton;
     private void Update()
     {
-        stuffCount[0].text = "電路板" + "<br>" + "：" + player.stuff[0];
-        stuffCount[1].text = "貴金屬" + "<br>" + "：" + player.stuff[1];
-        stuffCount[2].text = "能源金屬" + "<br>" + "：" + player.stuff[2];
-        stuffCount[3].text = "合成液" + "<br>" + "：" + player.stuff[3];
-        stuffCount[4].text = "生物組織" + "<br>" + "：" + player.stuff[4];
-        stuffCount[5].text = "生物DNA" + "<br>" + "：" + player.stuff[5];
-        stuffCount[6].text = "複合金屬" + "<br>" + "：" + player.stuff[6];
-        stuffCount[7].text = "能量精華" + "<br>" + "：" + player.stuff[7];
+        if (player == null)
+        {
+            player = GameObject.Find("Player").GetComponent<Player>();
+        }
+        else
+        {
+            stuffCount[0].text = "電路板" + "<\n>" + "：" + player.stuff[0];
+            stuffCount[1].text = "貴金屬" + "<\n>" + "：" + player.stuff[1];
+            stuffCount[2].text = "能源金屬" + "<\n>" + "：" + player.stuff[2];
+            stuffCount[3].text = "合成液" + "<\n>" + "：" + player.stuff[3];
+            stuffCount[4].text = "生物組織" + "<\n>" + "：" + player.stuff[4];
+            stuffCount[5].text = "生物DNA" + "<\n>" + "：" + player.stuff[5];
+            stuffCount[6].text = "複合金屬" + "<\n>" + "：" + player.stuff[6];
+            stuffCount[7].text = "能量精華" + "<\n>" + "：" + player.stuff[7];
+        }
         CanCraftOrNot();
     }
     private void CanCraftOrNot()
     {
-        if (player.stuff[0]! <= 0 || player.stuff[1]! <= 0 || player.stuff[4]! <= 0)
+        if (player.stuff[0] != 0 || player.stuff[1]!= 0 || player.stuff[4]!= 0)
         {
             craftButton[0].interactable = true;
         }
@@ -33,7 +40,7 @@ public class Craft : MonoBehaviour
             craftButton[0].interactable = false;
         }
 
-        if (player.stuff[5]! <= 0 || player.stuff[6]! <= 0 || player.stuff[7]! <= 0)
+        if (player.stuff[5] != 0 || player.stuff[6] != 0 || player.stuff[7]!= 0)
         {
             craftButton[1].interactable = true;
         }
@@ -42,7 +49,7 @@ public class Craft : MonoBehaviour
             craftButton[1].interactable = false;
         }
 
-        if (player.stuff[0]! <= 0 || player.stuff[1]! <= 0 || player.stuff[2]! <= 0)
+        if (player.stuff[0] != 0 || player.stuff[1] != 0 || player.stuff[2] != 0)
         {
             craftButton[2].interactable = true;
         }
@@ -51,7 +58,7 @@ public class Craft : MonoBehaviour
             craftButton[2].interactable = false;
         }
 
-        if (player.stuff[3]! <= 0 || player.stuff[4]! <= 0 || player.stuff[5]! <= 0 || player.stuff[7]! <= 0)
+        if (player.stuff[3] != 0 || player.stuff[4] != 0 || player.stuff[5] != 0 || player.stuff[7] != 0)
         {
             craftButton[3].interactable = true;
         }
@@ -92,5 +99,6 @@ public class Craft : MonoBehaviour
     public void CloseWindow()
     {
         gameObject.SetActive(false);
+        Time.timeScale = 1.0f;
     }
 }
