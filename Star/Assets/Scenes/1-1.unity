@@ -3886,6 +3886,10 @@ PrefabInstance:
       propertyPath: collectText
       value: 
       objectReference: {fileID: 662589513}
+    - target: {fileID: 3229597428847055960, guid: baf2bcff7c3b10a4185a66e20c95cd42, type: 3}
+      propertyPath: CollectPrefab
+      value: 
+      objectReference: {fileID: 1670735397760561575, guid: 48e8283cba7be2c45864f0fc57fe2643, type: 3}
     - target: {fileID: 8214967205699955542, guid: baf2bcff7c3b10a4185a66e20c95cd42, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

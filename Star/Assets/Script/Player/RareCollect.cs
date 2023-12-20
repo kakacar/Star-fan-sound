@@ -9,7 +9,6 @@ public class RareCollect : MonoBehaviour
     public bool collecting = false;
     public float time;
     public GameObject collectText;
-
     private float plus; //¨C10¬í¥[1¦¸
     public float rareCollecting = 5;
     public float i;
@@ -19,6 +18,8 @@ public class RareCollect : MonoBehaviour
     [SerializeField] GameObject Bot;
     [SerializeField] GameObject BotModel;
     [SerializeField] Transform BotPos;
+    [SerializeField] GameObject CollectBar;
+    [SerializeField] GameObject CollectPrefab;
     private void Awake()
     {
         collectText.SetActive(false);
@@ -41,12 +42,13 @@ public class RareCollect : MonoBehaviour
         if (collecting)
         {
             time += Time.deltaTime;
+            CollectBar.GetComponent<Slider>().value = time;
             if (Mathf.Floor(plus) == i)
             {
                 player.GetComponent<Player>().rareCollected += rareCollecting;
                 i++;
             }
-            float amount = 0.1f;
+            float amount = 0.05f;
             sound.addSound(amount);
         }
         if (Mathf.Floor(time) > CollectTime)
@@ -56,6 +58,15 @@ public class RareCollect : MonoBehaviour
             time = 0;
             Destroy(Bot);
             i = 1;
+        }
+        CollectSlider();
+    }
+    private void CollectSlider()
+    {
+        if (CollectBar != null)
+        {
+            Vector3 worldToScreenPoint = Camera.main.WorldToScreenPoint(BotPos.position);
+            CollectBar.transform.position = worldToScreenPoint + new Vector3(0f, 30f, 0f);
         }
     }
     void OnTriggerStay(Collider other)
@@ -70,6 +81,9 @@ public class RareCollect : MonoBehaviour
 
                 Bot = Instantiate(BotModel);
                 Bot.transform.position = BotPos.position;
+                CollectBar = Instantiate(CollectPrefab);
+                CollectBar.transform.SetParent(GameObject.Find("Canvas").transform);
+                CollectBar.GetComponent<Slider>().maxValue = CollectTime;
             }
         }
     }

@@ -18,6 +18,8 @@ public class NormalCollect : MonoBehaviour
     [SerializeField] GameObject Bot;
     [SerializeField] GameObject BotModel;
     [SerializeField] Transform BotPos;
+    [SerializeField] GameObject CollectBar;
+    [SerializeField] GameObject CollectPrefab;
     private void Awake()
     {
         collectText.SetActive(false);
@@ -40,6 +42,7 @@ public class NormalCollect : MonoBehaviour
         if (collecting)
         {
             time += Time.deltaTime;
+            CollectBar.GetComponent<Slider>().value = time;
             if (Mathf.Floor(plus) == i)
             {
                 player.GetComponent<Player>().stuff[0] += normalCollecting;
@@ -52,7 +55,7 @@ public class NormalCollect : MonoBehaviour
                 player.GetComponent<Player>().stuff[7] += normalCollecting;
                 i++;
             }
-            float amount = 0.1f;
+            float amount = 0.05f;
             sound.addSound(amount);
             player.GetComponent<Player>().collectingPoint = this.gameObject;
         }
@@ -62,8 +65,18 @@ public class NormalCollect : MonoBehaviour
             Debug.Log("Collect End");
             time = 0;
             Destroy(Bot);
+            Destroy(CollectBar);
             i = 1;
             player.GetComponent<Player>().collectingPoint = null;
+        }
+        CollectSlider();
+    }
+    private void CollectSlider()
+    {
+        if (CollectBar != null)
+        {
+            Vector3 worldToScreenPoint = Camera.main.WorldToScreenPoint(BotPos.position);
+            CollectBar.transform.position = worldToScreenPoint + new Vector3(0f, 30f, 0f);
         }
     }
     void OnTriggerStay(Collider other)
@@ -78,6 +91,9 @@ public class NormalCollect : MonoBehaviour
 
                 Bot = Instantiate(BotModel);
                 Bot.transform.position = BotPos.position;
+                CollectBar = Instantiate(CollectPrefab);
+                CollectBar.transform.SetParent(GameObject.Find("Canvas").transform);
+                CollectBar.GetComponent<Slider>().maxValue = CollectTime;
             }
         }
     }

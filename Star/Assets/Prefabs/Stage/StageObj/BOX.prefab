@@ -123,6 +123,8 @@ MonoBehaviour:
   Bot: {fileID: 0}
   BotModel: {fileID: 5306425957888643739, guid: 5254d7e6f20ec3544b4c32f3c3aafe0c, type: 3}
   BotPos: {fileID: 2061355904771076606}
+  CollectBar: {fileID: 0}
+  CollectPrefab: {fileID: 0}
 --- !u!1 &7042633394170966811
 GameObject:
   m_ObjectHideFlags: 0
