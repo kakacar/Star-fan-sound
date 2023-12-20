@@ -9,7 +9,7 @@ public class FieldOfView : MonoBehaviour
     public GameObject playerRef;
     public LayerMask targetMask;
     public LayerMask obstructionMask;
-    [SerializeField] private Light HeadLt;
+    [SerializeField] public Light HeadLt;
     [SerializeField] private Transform[] PatrolPoints;
     [SerializeField] private int PDestination;
     [SerializeField] private GameObject Eye;
@@ -52,28 +52,16 @@ public class FieldOfView : MonoBehaviour
         lostPlayer = lostChase;
         HeadLt.color = new Color(0f, 176f, 255f);
     }
-
-    private IEnumerator FOVRoutine()
+    public void FieldOfViewCheck()
     {
-        WaitForSeconds wait = new WaitForSeconds(0.2f);
-
-        while (true)
-        {
-            yield return wait;
-            FieldOfViewCheck();
-        }
-    }
-
-    private void FieldOfViewCheck()
-    {
-        rangeChecks = Physics.OverlapSphere(Eye.transform.position, radius, targetMask);
+        rangeChecks = Physics.OverlapSphere(Eye.transform.position, float.PositiveInfinity, targetMask);
 
         if (rangeChecks.Length != 0)
         {
             Transform target = rangeChecks[0].transform;
             Vector3 directionToTarget = (target.position - transform.position).normalized;
 
-            if (Vector3.Angle(Eye.transform.forward, directionToTarget) < angle /2)
+            if (Vector3.Angle(Eye.transform.forward, directionToTarget) < 1)
             {
                 distanceToTarget = Vector3.Distance(transform.position, target.position);
 
@@ -104,24 +92,18 @@ public class FieldOfView : MonoBehaviour
         }
         
     }
-
-
-
     void Update()
     {
         if(Enemy.enemyDead == false)
         {
             if (!BeStab)
             {
-                FieldOfViewCheck();
                 Action();
             }
-            
         }
-        
     }
 
-    void Action()
+    public void Action()
     {
         Vector3 playerPosition = new Vector3(playerRef.transform.position.x, transform.position.y, 0);
 
@@ -231,7 +213,7 @@ public class FieldOfView : MonoBehaviour
         
     }
 
-    private void StopChase()
+    public void StopChase()
     {
         if (canSeePlayer)
         {
@@ -246,7 +228,7 @@ public class FieldOfView : MonoBehaviour
 
                 if(Vector3.Distance(transform.position, PatrolPoints[0].position) < Vector3.Distance(transform.position, PatrolPoints[1].position))
                 {
-                    PDestination = 1;
+                    PDestination = 0;
                     Vector3 Direction = PatrolPoints[PDestination].position - transform.position;
                     Quaternion rotation = Quaternion.LookRotation(Direction);
                     transform.rotation = rotation;
@@ -255,7 +237,7 @@ public class FieldOfView : MonoBehaviour
                 else if((Vector3.Distance(transform.position, PatrolPoints[0].position) > Vector3.Distance(transform.position, PatrolPoints[1].position)))
                 {
                     
-                    PDestination = 0;
+                    PDestination = 1;
                     Vector3 Direction = PatrolPoints[PDestination].position - transform.position;
                     Quaternion rotation = Quaternion.LookRotation(Direction);
                     transform.rotation = rotation;

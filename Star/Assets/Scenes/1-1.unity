@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &12492898 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6599616321637792250, guid: 80ece4dc00b74054dba1493776494fb7, type: 3}
+  m_PrefabInstance: {fileID: 6599616322032323803}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 939576bf144ba994ebe24d7444bb1533, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &16163339 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -489492719671330106, guid: b4f52ba5937ae9a498a150d202f55e1f, type: 3}
@@ -4335,9 +4346,13 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4051753229454651855, guid: 80ece4dc00b74054dba1493776494fb7, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 12492898}
     - target: {fileID: 4574356789250216290, guid: 80ece4dc00b74054dba1493776494fb7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5446759716361041811, guid: 80ece4dc00b74054dba1493776494fb7, type: 3}
       propertyPath: m_Layer
@@ -4438,6 +4453,14 @@ PrefabInstance:
     - target: {fileID: 6599616321637792250, guid: 80ece4dc00b74054dba1493776494fb7, type: 3}
       propertyPath: id
       value: a42836eb-d4ce-4169-8cfd-a43d108514cd
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599616321637792251, guid: 80ece4dc00b74054dba1493776494fb7, type: 3}
+      propertyPath: angle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599616321637792251, guid: 80ece4dc00b74054dba1493776494fb7, type: 3}
+      propertyPath: radius
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6599616321637792251, guid: 80ece4dc00b74054dba1493776494fb7, type: 3}
       propertyPath: PatrolPoints.Array.size
