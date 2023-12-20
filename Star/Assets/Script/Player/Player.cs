@@ -38,8 +38,7 @@ public class Player : MonoBehaviour
     [Header("Collect")]
     [SerializeField] public float rareCollected;
     [SerializeField] public float normalCollected;
-    [SerializeField] private GameObject rareText;
-    [SerializeField] private GameObject normalText;
+    [SerializeField] private Text[] normalText;
 
     [Header("Items")]
     [SerializeField] public int money;
@@ -466,13 +465,14 @@ public class Player : MonoBehaviour
     }
     private void CollectedCount()
     {
-        if(rareText == null && normalText == null)
-        {
-            rareText = GameObject.Find("Rare");
-            normalText = GameObject.Find("Normal");
-        }
-        rareText.GetComponent<Text>().text = "稀有資源：" + (rareCollected);
-        normalText.GetComponent<Text>().text = "普通資源：" + (normalCollected);
+        normalText[0].text = "電路板" + "\n" + "：" + stuff[0];
+        normalText[1].text = "貴金屬" + "\n" + "：" + stuff[1];
+        normalText[2].text = "能源金屬" + "\n" + "：" + stuff[2];
+        normalText[3].text = "合成液" + "\n" + "：" + stuff[3];
+        normalText[4].text = "生物組織" + "\n" + "：" + stuff[4];
+        normalText[5].text = "生物DNA" + "\n" + "：" + stuff[5];
+        normalText[6].text = "複合金屬" + "\n" + "：" + stuff[6];
+        normalText[7].text = "能量精華" + "\n" + "：" + stuff[7];
     }
     public void LoadData(GameData data)
     {

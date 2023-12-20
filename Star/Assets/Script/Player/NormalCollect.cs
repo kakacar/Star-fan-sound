@@ -10,7 +10,7 @@ public class NormalCollect : MonoBehaviour
     public float time;
     public GameObject collectText;
     private float plus; //¨C10¬í¥[1¦¸
-    public float normalCollecting = 10;
+    public int normalCollecting = 10;
     public float i;
     public Sound sound;
 
@@ -42,7 +42,14 @@ public class NormalCollect : MonoBehaviour
             time += Time.deltaTime;
             if (Mathf.Floor(plus) == i)
             {
-                player.GetComponent<Player>().normalCollected += normalCollecting;
+                player.GetComponent<Player>().stuff[0] += normalCollecting;
+                player.GetComponent<Player>().stuff[1] += normalCollecting;
+                player.GetComponent<Player>().stuff[2] += normalCollecting;
+                player.GetComponent<Player>().stuff[3] += normalCollecting;
+                player.GetComponent<Player>().stuff[4] += normalCollecting;
+                player.GetComponent<Player>().stuff[5] += normalCollecting;
+                player.GetComponent<Player>().stuff[6] += normalCollecting;
+                player.GetComponent<Player>().stuff[7] += normalCollecting;
                 i++;
             }
             float amount = 0.1f;
