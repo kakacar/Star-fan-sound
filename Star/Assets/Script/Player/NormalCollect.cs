@@ -17,7 +17,7 @@ public class NormalCollect : MonoBehaviour
     [SerializeField] float CollectTime;
     [SerializeField] GameObject Bot;
     [SerializeField] GameObject BotModel;
-    [SerializeField] GameObject BotPos;
+    [SerializeField] Transform BotPos;
     private void Awake()
     {
         collectText.SetActive(false);
@@ -66,9 +66,9 @@ public class NormalCollect : MonoBehaviour
             {
                 collectText.SetActive(false);
                 collecting = true;
-                
-                Bot= Instantiate(BotModel, BotPos.transform);
-                
+
+                Bot = Instantiate(BotModel);
+                Bot.transform.position = BotPos.position;
             }
         }
     }

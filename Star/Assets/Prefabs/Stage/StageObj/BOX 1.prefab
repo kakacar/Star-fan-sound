@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5188873424631483121}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BotPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3850450900785444340}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.00052, y: 0.00569, z: 0}
+  m_LocalPosition: {x: -0.00052, y: -0.0029, z: -0.0131}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 9123669077875077986}
   - component: {fileID: 748234835165274144}
   - component: {fileID: 8248919331408928414}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BOX 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,12 +134,13 @@ MonoBehaviour:
   collecting: 0
   time: 0
   collectText: {fileID: 0}
-  rareText: {fileID: 0}
   rareCollecting: 5
+  i: 0
+  sound: {fileID: 0}
   CollectTime: 15
   Bot: {fileID: 0}
-  BotModel: {fileID: 4714133180165723913, guid: 3152a4c3bbeee7f449f2e95ba8fe900b, type: 3}
-  BotPos: {fileID: 3850450900785444340}
+  BotModel: {fileID: 5306425957888643739, guid: 5254d7e6f20ec3544b4c32f3c3aafe0c, type: 3}
+  BotPos: {fileID: 5188873424631483121}
 --- !u!65 &8248919331408928414
 BoxCollider:
   m_ObjectHideFlags: 0

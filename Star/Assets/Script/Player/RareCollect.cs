@@ -18,7 +18,7 @@ public class RareCollect : MonoBehaviour
     [SerializeField] float CollectTime;
     [SerializeField] GameObject Bot;
     [SerializeField] GameObject BotModel;
-    [SerializeField] GameObject BotPos;
+    [SerializeField] Transform BotPos;
     private void Awake()
     {
         collectText.SetActive(false);
@@ -68,7 +68,8 @@ public class RareCollect : MonoBehaviour
                 collectText.SetActive(false);
                 collecting = true;
 
-                Bot = Instantiate(BotModel, BotPos.transform);
+                Bot = Instantiate(BotModel);
+                Bot.transform.position = BotPos.position;
             }
         }
     }

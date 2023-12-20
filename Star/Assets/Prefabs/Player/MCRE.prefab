@@ -1361,9 +1361,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.18424322
-  m_Height: 1.5580932
+  m_Height: 1.5
   m_Direction: 1
-  m_Center: {x: 0.0058911443, y: 0.7576758, z: 0.021529317}
+  m_Center: {x: 0.0058911443, y: 0.7298369, z: 0.02152932}
 --- !u!114 &5435300360129195574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1578,6 +1578,7 @@ MonoBehaviour:
   player: {fileID: 5165480547690396240}
   body: {fileID: 5165480547690396240}
   animator: {fileID: 1874769892071914128}
+  PYcollider: {fileID: 5435300360129195599}
   rb: {fileID: 5435300360129195584}
   spawn: {fileID: 0}
   hpSlider: {fileID: 0}

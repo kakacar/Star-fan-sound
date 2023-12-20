@@ -14,6 +14,7 @@ TagManager:
   - End
   - Computer
   - Point
+  - Duct
   layers:
   - Default
   - TransparentFX

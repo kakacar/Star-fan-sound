@@ -7,8 +7,10 @@ public class AniEvent : MonoBehaviour
     [SerializeField] Animator Ani;
     [SerializeField] Player Player;
     [SerializeField] Sound Sound;
+    
     public bool IsAtk;
     public bool CanDealDamage;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -54,4 +56,7 @@ public class AniEvent : MonoBehaviour
         CanDealDamage = false;
         //Debug.Log("SWOff");
     }
+
+    
+
 }

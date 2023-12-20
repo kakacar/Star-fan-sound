@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public GameObject player;
     public GameObject body;
     public Animator animator;
+    public CapsuleCollider PYcollider;
     public Rigidbody rb;
     public GameObject spawn;
     [SerializeField] Slider hpSlider;
@@ -85,6 +86,7 @@ public class Player : MonoBehaviour
     {
         jumpCount = 2;
         rb = GetComponent<Rigidbody>();
+        PYcollider = GetComponent<CapsuleCollider>();
         OGSpeed = speed;
         
         currentScene = SceneManager.GetActiveScene().name;
@@ -132,12 +134,12 @@ public class Player : MonoBehaviour
             xVelocity = Input.GetAxisRaw("Horizontal");
             rb.velocity = new Vector3(xVelocity * speed, rb.velocity.y, 0);
 
-            if (xVelocity == 1 && StateType == State.CanMove)
+            if (xVelocity == 1 && StateType == State.CanMove || xVelocity == 1 && StateType == State.Duct)
             {
                 animator.SetBool("Walking", true);
                 player.gameObject.transform.rotation = Quaternion.Euler(0, 90, 0);
             }
-            else if (xVelocity == -1 && StateType == State.CanMove)
+            else if (xVelocity == -1 && StateType == State.CanMove|| xVelocity == -1 && StateType == State.Duct)
             {
                 animator.SetBool("Walking", true);
                 player.gameObject.transform.rotation = Quaternion.Euler(0, -90, 0);
@@ -147,13 +149,13 @@ public class Player : MonoBehaviour
                 animator.SetBool("Walking", false);
             }
 
-            if (Input.GetKeyDown(KeyCode.Space) && jumpCount > 1 && grounded)
+            if (Input.GetKeyDown(KeyCode.Space) && jumpCount > 1 && grounded && StateType == State.CanMove)
             {
                 animator.SetTrigger("1stJump");
                 animator.SetBool("Jumping", true);
                 jumpCount--;
             }
-            if (Input.GetKeyDown(KeyCode.Space) && jumpCount > 0 && !grounded)
+            if (Input.GetKeyDown(KeyCode.Space) && jumpCount > 0 && !grounded && StateType == State.CanMove)
             {
                 animator.SetTrigger("2ndJump");
                 animator.SetBool("Jumping", true);
@@ -324,6 +326,7 @@ public class Player : MonoBehaviour
                 }
 
             }
+
             if (StateType == State.Animation && StateSwitch == false)
             {
 
@@ -345,6 +348,44 @@ public class Player : MonoBehaviour
 
             }
 
+        }
+
+        if (other.gameObject.CompareTag("Duct"))
+        {
+            Duct duct = other.GetComponent<Duct>();
+            if (Input.GetKeyDown(KeyCode.F) && StateType == State.CanMove && grounded)
+            {
+                StateType = State.Duct;
+                //StateSwitch = true;
+                
+                transform.position = duct.Leave.transform.position;
+                if(Vector3.Distance(transform.position.normalized, duct.Enter.transform.position.normalized) > 0)
+                {
+                     animator.SetFloat("DuctDir", 1);
+                }
+                else
+                {
+                     animator.SetFloat("DuctDir", 0);
+                }
+                
+                animator.SetTrigger("DuctIn");
+                PYcollider.center = new Vector3(0.006f, 0.46f, 0.02f);
+                PYcollider.height = 0.9f;
+                
+
+            }
+            else if (Input.GetKeyDown(KeyCode.F) && StateType == State.Duct)
+            {
+
+                //StateSwitch = true;
+                StateType = State.CanMove;
+                transform.position = duct.Enter.transform.position;
+                
+
+                animator.SetTrigger("DuctOut");
+                PYcollider.center = new Vector3(0.006f, 0.73f, 0.02f);
+                PYcollider.height = 1.5f;
+            }
         }
 
         animator.SetBool("Jumping", false);
@@ -382,8 +423,8 @@ public class Player : MonoBehaviour
         }
         else if (jumpPress && jumpCount >= 0 && !grounded)
         {
-            Vector3 TndJump = new Vector3(5f, 0.0f, 0.0f);
-            rb.AddForce(TndJump * 2.5f, ForceMode.Impulse);
+            //Vector3 TndJump = new Vector3(5f, 0.0f, 0.0f);
+            //rb.AddForce(TndJump * 2.5f, ForceMode.Impulse);
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, 0);
             jumpPress = false;
         }
