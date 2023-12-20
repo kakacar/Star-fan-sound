@@ -9954,7 +9954,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 939576bf144ba994ebe24d7444bb1533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
   FOV: {fileID: 6599616321637792251}
   Ani: {fileID: 6599616321637792249}
   Stun: 5
@@ -9990,8 +9989,8 @@ MonoBehaviour:
   PatrolPoints: []
   PDestination: 0
   Eye: {fileID: 7382768508911459077}
-  radius: 10
-  angle: 45
+  radius: 0
+  angle: 0
   canSeePlayer: 0
   HasRoll: 0
   lostChase: 1

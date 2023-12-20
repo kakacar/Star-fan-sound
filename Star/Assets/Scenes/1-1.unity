@@ -2034,7 +2034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 426e87f6ebab7b843867b2f68240501a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 6599616321637792196, guid: 80ece4dc00b74054dba1493776494fb7, type: 3}
+  enemyPrefab: {fileID: 6599616321637792196, guid: a10562c8591b41645b110a47feacfa49, type: 3}
   mainCamera: {fileID: 1015535971}
   spawn: {fileID: 859935521}
   alarm: {fileID: 558977913}
@@ -2046,12 +2046,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859935521}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.8, y: -3.072043, z: -0.12952048}
+  m_LocalPosition: {x: 15.75, y: -3.072043, z: -0.12952048}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &938567899 stripped
 Transform:
@@ -3598,7 +3598,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1752978556
 GameObject:
@@ -4465,7 +4465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6599616321637792196, guid: 80ece4dc00b74054dba1493776494fb7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6599616321637792248, guid: 80ece4dc00b74054dba1493776494fb7, type: 3}
       propertyPath: m_RootOrder
@@ -4514,14 +4514,6 @@ PrefabInstance:
     - target: {fileID: 6599616321637792250, guid: 80ece4dc00b74054dba1493776494fb7, type: 3}
       propertyPath: id
       value: a42836eb-d4ce-4169-8cfd-a43d108514cd
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599616321637792251, guid: 80ece4dc00b74054dba1493776494fb7, type: 3}
-      propertyPath: angle
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599616321637792251, guid: 80ece4dc00b74054dba1493776494fb7, type: 3}
-      propertyPath: radius
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6599616321637792251, guid: 80ece4dc00b74054dba1493776494fb7, type: 3}
       propertyPath: PatrolPoints.Array.size

@@ -10,7 +10,7 @@ public class FieldOfView : MonoBehaviour
     public LayerMask targetMask;
     public LayerMask obstructionMask;
     [SerializeField] public Light HeadLt;
-    [SerializeField] private Transform[] PatrolPoints;
+    [SerializeField] public Transform[] PatrolPoints;
     [SerializeField] private int PDestination;
     [SerializeField] private GameObject Eye;
 

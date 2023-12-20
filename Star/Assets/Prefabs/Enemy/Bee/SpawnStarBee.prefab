@@ -4906,6 +4906,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyFOV: {fileID: 6599616321637792251}
+  enemy: {fileID: 6599616321637792250}
+  BeStab: 0
 --- !u!1 &5446759716361041811
 GameObject:
   m_ObjectHideFlags: 0
@@ -9893,7 +9895,7 @@ GameObject:
   - component: {fileID: 6410278264414418331}
   - component: {fileID: 5052267539786082792}
   m_Layer: 8
-  m_Name: StarBee 1
+  m_Name: SpawnStarBee
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9906,8 +9908,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6599616321637792196}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 19.05, y: -3.84, z: 0}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 19.05, y: -3.072043, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -9918,7 +9920,7 @@ Transform:
   - {fileID: 6707038683047875748}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!95 &6599616321637792249
 Animator:
   serializedVersion: 5
@@ -9952,7 +9954,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 939576bf144ba994ebe24d7444bb1533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
   FOV: {fileID: 6599616321637792251}
   Ani: {fileID: 6599616321637792249}
   Stun: 5
@@ -9960,7 +9961,10 @@ MonoBehaviour:
   StunTime: 5
   StunTimer: 0
   BeeATK: {fileID: -6302845047384963425}
+  maxHp: 10
   hp: 20
+  hpSlider: {fileID: 0}
+  hpPrefab: {fileID: 6359988537636185169, guid: 23f42ae930363ab4ab44d64730663d56, type: 3}
   enemyDead: 0
 --- !u!114 &6599616321637792251
 MonoBehaviour:
@@ -9982,11 +9986,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   HeadLt: {fileID: 385063878917165620}
-  PatrolPoints: []
+  PatrolPoints:
+  - {fileID: 0}
+  - {fileID: 0}
   PDestination: 0
   Eye: {fileID: 7382768508911459077}
-  radius: 10
-  angle: 45
+  radius: 0
+  angle: 0
   canSeePlayer: 0
   HasRoll: 0
   lostChase: 1

@@ -47,6 +47,7 @@ public class NormalCollect : MonoBehaviour
             }
             float amount = 0.1f;
             sound.addSound(amount);
+            player.GetComponent<Player>().collectingPoint = this.gameObject;
         }
         if (Mathf.Floor(time) >= CollectTime)
         {
@@ -55,6 +56,7 @@ public class NormalCollect : MonoBehaviour
             time = 0;
             Destroy(Bot);
             i = 1;
+            player.GetComponent<Player>().collectingPoint = null;
         }
     }
     void OnTriggerStay(Collider other)

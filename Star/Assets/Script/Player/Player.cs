@@ -52,6 +52,7 @@ public class Player : MonoBehaviour
     bool UsingComputer;
     private string currentScene;
     private GameObject VCamera;
+    public GameObject collectingPoint;
     
     public static Player morePlayer { get; private set; }
 

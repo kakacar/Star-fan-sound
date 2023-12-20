@@ -8,12 +8,18 @@ public class EnemySpawn : MonoBehaviour
     public Camera mainCamera;
     public GameObject spawn;
     public Alarm alarm;
+    private GameObject spawnedEnemy;
+    private Player player;
 
     void Update()
     {
         if (IsOutsideCameraView() && alarm.warning)
         {
             StartCoroutine(SpawnEnemy());
+        }
+        if(player == null)
+        {
+            player = GameObject.Find("Player").GetComponent<Player>();
         }
     }
 
@@ -26,6 +32,7 @@ public class EnemySpawn : MonoBehaviour
     IEnumerator SpawnEnemy()
     {
         yield return new WaitForSeconds(5);
-        Instantiate(enemyPrefab, spawn.transform.position, Quaternion.identity);
+        spawnedEnemy = Instantiate(enemyPrefab, spawn.transform.position, Quaternion.identity);
+        spawnedEnemy.GetComponent<FieldOfView>().PatrolPoints[0] = player.collectingPoint.transform;
     }
 }
