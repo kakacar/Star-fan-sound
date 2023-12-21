@@ -8,6 +8,7 @@ public class BaseToStage : MonoBehaviour
 {
     public GameObject nextStage;
     public GameObject player;
+    public string[] scenes;
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -22,11 +23,12 @@ public class BaseToStage : MonoBehaviour
             nextStage.SetActive(true);
             if (Input.GetKeyDown(KeyCode.F))
             {
+                int i = Random.Range(0, scenes.Length - 1);
                 SceneManager.UnloadSceneAsync("Base");
-                SceneManager.LoadScene("1-2", LoadSceneMode.Additive);
+                SceneManager.LoadScene(scenes[i], LoadSceneMode.Additive);
                 SceneManager.sceneLoaded += (Scene sc, LoadSceneMode loadSceneMode) =>
                 {
-                    SceneManager.SetActiveScene(SceneManager.GetSceneByName("1-2"));
+                    SceneManager.SetActiveScene(SceneManager.GetSceneByName(scenes[i]));
                 };
             }
         }

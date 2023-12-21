@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     public GameObject spawn;
     [SerializeField] Slider hpSlider;
     [SerializeField] public GameObject F;
+    [SerializeField] public GameObject result;
 
     [Header("Public Value")]
     public float speed = 5f;
@@ -394,7 +395,15 @@ public class Player : MonoBehaviour
             }
             
         }
-
+        if(other.tag == "Clear")
+        {
+            F.SetActive(true);
+            if (Input.GetKeyUp(KeyCode.F))
+            {
+                F.SetActive(false);
+                result.SetActive(true);
+            }
+        }
         animator.SetBool("Jumping", false);
         animator.SetBool("InAir", false);
     }
@@ -413,7 +422,6 @@ public class Player : MonoBehaviour
 
             other.gameObject.GetComponent<StairDown>().TD = true;
         }
-
         if (other.gameObject.CompareTag("Stair"))
         {
             StateType = State.CanMove;
@@ -421,6 +429,10 @@ public class Player : MonoBehaviour
             gameObject.GetComponent<Rigidbody>().useGravity = true;
             animator.SetBool("UsingLadder", false);
             animator.SetFloat("ClimbLadder", 0.5f);
+        }
+        if (other.tag == "Clear")
+        {
+            F.SetActive(false);
         }
     }
     public void Jump()
