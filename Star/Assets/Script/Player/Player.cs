@@ -172,6 +172,7 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector3(0, 0, 0);
         }
 
+        
     }
 
     private void hpLeft()
@@ -352,40 +353,45 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.CompareTag("Duct"))
         {
+            
             Duct duct = other.GetComponent<Duct>();
-            if (Input.GetKeyDown(KeyCode.F) && StateType == State.CanMove && grounded)
+            if (Input.GetKeyUp(KeyCode.F) && StateType == State.Duct)
             {
-                StateType = State.Duct;
+                
                 //StateSwitch = true;
-                
-                transform.position = duct.Leave.transform.position;
-                if(Vector3.Distance(transform.position.normalized, duct.Enter.transform.position.normalized) > 0)
-                {
-                     animator.SetFloat("DuctDir", 1);
-                }
-                else
-                {
-                     animator.SetFloat("DuctDir", 0);
-                }
-                
-                animator.SetTrigger("DuctIn");
-                PYcollider.center = new Vector3(0.006f, 0.46f, 0.02f);
-                PYcollider.height = 0.9f;
-                
-
-            }
-            else if (Input.GetKeyDown(KeyCode.F) && StateType == State.Duct)
-            {
-
-                //StateSwitch = true;
-                StateType = State.CanMove;
+                StateType = State.Animation;
                 transform.position = duct.Enter.transform.position;
-                
+
 
                 animator.SetTrigger("DuctOut");
+                duct.DuctOut();
                 PYcollider.center = new Vector3(0.006f, 0.73f, 0.02f);
                 PYcollider.height = 1.5f;
             }
+            else if (Input.GetKeyUp(KeyCode.F) && StateType == State.CanMove && grounded)
+            {
+                
+                    StateType = State.Animation;
+                    //StateSwitch = true;
+
+                    transform.position = duct.Leave.transform.position;
+                    if (Vector3.Distance(transform.position.normalized, duct.Enter.transform.position.normalized) > 0)
+                    {
+                        animator.SetFloat("DuctDir", 1);
+                    }
+                    else
+                    {
+                        animator.SetFloat("DuctDir", 0);
+                    }
+
+                    animator.SetTrigger("DuctIn");
+                    duct.DuctIn();
+                    PYcollider.center = new Vector3(0.006f, 0.46f, 0.02f);
+                    PYcollider.height = 0.9f;
+                        
+
+            }
+            
         }
 
         animator.SetBool("Jumping", false);

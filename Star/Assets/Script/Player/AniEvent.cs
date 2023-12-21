@@ -57,6 +57,14 @@ public class AniEvent : MonoBehaviour
         //Debug.Log("SWOff");
     }
 
-    
+    public void GetInDuct()
+    {
+        Player.StateType = Player.State.Duct;
+    }
+
+    public void GetOutDuct()
+    {
+        Player.StateType = Player.State.CanMove;
+    }
 
 }

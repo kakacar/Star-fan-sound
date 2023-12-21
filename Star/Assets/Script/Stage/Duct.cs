@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Duct : MonoBehaviour
 {
+    [SerializeField] Animator Ani;
     public Transform Enter;
     public Transform Leave;
     // Start is called before the first frame update
@@ -16,5 +17,13 @@ public class Duct : MonoBehaviour
     void Update()
     {
         
+    }
+    public void DuctIn()
+    {
+        Ani.SetTrigger("Enter");
+    }
+    public void DuctOut()
+    {
+        Ani.SetTrigger("Leave");
     }
 }

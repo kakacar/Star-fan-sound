@@ -42,11 +42,11 @@ namespace MonoBehaviours
         void AnimatorSwitch()
         {
             
-            if (Input.GetKeyDown(KeyCode.Alpha2) && skillUI.texture == weaponImages[0])
+            if (Input.GetKeyDown(KeyCode.Alpha2) && skillUI.texture == weaponImages[0] && player.StateType == Player.State.CanMove)
             {
                 SwitchSword();
             }
-            else if (Input.GetKeyDown(KeyCode.Alpha1) && skillUI.texture == weaponImages[1])
+            else if (Input.GetKeyDown(KeyCode.Alpha1) && skillUI.texture == weaponImages[1] && player.StateType == Player.State.CanMove)
             {
                 SwitchGun();
             }
