@@ -16,13 +16,13 @@ public class Dialog2 : MonoBehaviour
     public Alarm alarm;
     public Animation black;
     public Player player;
-    private void Awake()
-    {
-        fadeIn.Play("Fade in");
-    }
     private void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
+        if (player.firstToBase)
+        {
+            fadeIn.Play("Fade in");
+        }
     }
     private void Update()
     {
@@ -56,8 +56,8 @@ public class Dialog2 : MonoBehaviour
         }
         else
         {
-            black.GetComponent<CanvasGroup>().alpha = 0;
-            dialogBox.GetComponent<CanvasGroup>().alpha = 0;
+            black.gameObject.SetActive(false);
+            dialogBox.gameObject.SetActive(false);
         }
         
     }

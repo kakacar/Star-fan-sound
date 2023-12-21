@@ -1547,7 +1547,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 067d94ee04d446e4281f233fdf866976, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!222 &452753411
@@ -3621,6 +3621,7 @@ MonoBehaviour:
   cow: {fileID: 2132097906}
   alarm: {fileID: 135048450}
   black: {fileID: 1840239781}
+  player: {fileID: 0}
 --- !u!1 &1395511273 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 782147673069807659, guid: b15236ecf9e5a6b488fa72d1be02ea62, type: 3}

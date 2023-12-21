@@ -21,6 +21,14 @@ public class Pause : MonoBehaviour
             pauseWindow.SetActive(true);
             Time.timeScale = 0;
         }
+        if (settingWindow.activeSelf || pauseWindow.activeSelf)
+        {
+            GetComponent<Canvas>().sortingOrder = 100;
+        }
+        else
+        {
+            GetComponent<Canvas>().sortingOrder = -1;
+        }
     }
     public void OnResumeClick()
     {
@@ -36,9 +44,15 @@ public class Pause : MonoBehaviour
     }
     public void OnQuitClick()
     {
+        pauseWindow.SetActive(false);
         if(SceneManager.GetActiveScene().name != ("Base"))
         {
-            SceneManager.LoadScene("Base");
+            SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("Base", LoadSceneMode.Additive);
+            SceneManager.sceneLoaded += (Scene sc, LoadSceneMode loadSceneMode) =>
+            {
+                SceneManager.SetActiveScene(SceneManager.GetSceneByName("Base"));
+            };
         }
         else
         {

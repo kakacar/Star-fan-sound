@@ -9,27 +9,38 @@ public class BaseToStage : MonoBehaviour
     public GameObject nextStage;
     public GameObject player;
     public string[] scenes;
+    public string loadedScene;
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         nextStage = GameObject.Find("EnterStageText");
         nextStage.SetActive(false);
     }
-
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
     private void OnTriggerStay(Collider other)
     {
         if(other.tag == "Player")
         {
             nextStage.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyUp(KeyCode.F))
             {
-                int i = Random.Range(0, scenes.Length - 1);
-                SceneManager.UnloadSceneAsync("Base");
-                SceneManager.LoadScene(scenes[i], LoadSceneMode.Additive);
-                SceneManager.sceneLoaded += (Scene sc, LoadSceneMode loadSceneMode) =>
+                bool load = false;
+                load = true;
+                player.GetComponent<Player>().firstToBase = false;
+                if (load) 
                 {
-                    SceneManager.SetActiveScene(SceneManager.GetSceneByName(scenes[i]));
-                };
+                    int i = Random.Range(0, scenes.Length - 1);
+                    loadedScene = scenes[i];
+                    SceneManager.UnloadSceneAsync("Base");
+                    SceneManager.LoadScene(loadedScene, LoadSceneMode.Additive);
+                    SceneManager.sceneLoaded += (Scene sc, LoadSceneMode loadSceneMode) =>
+                    {
+                        SceneManager.SetActiveScene(SceneManager.GetSceneByName(loadedScene));
+                    };
+                    load = false;
+                }
             }
         }
     }
