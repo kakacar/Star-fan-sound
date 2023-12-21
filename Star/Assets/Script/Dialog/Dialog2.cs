@@ -15,36 +15,51 @@ public class Dialog2 : MonoBehaviour
     public GameObject cow;
     public Alarm alarm;
     public Animation black;
+    public Player player;
     private void Awake()
     {
         fadeIn.Play("Fade in");
     }
+    private void Start()
+    {
+        player = GameObject.Find("Player").GetComponent<Player>();
+    }
     private void Update()
     {
-        if(dialogBox.GetComponent<CanvasGroup>().alpha == 1 && i <= 1)
+        if (player.firstToBase)
         {
-            Time.timeScale = 0f;
-            FirstDialog();
-        }
-        else if(dialogBox.GetComponent<CanvasGroup>().alpha == 1 && i == 2)
-        {
-            Time.timeScale = 0f;
-            SecondDialog();
-        }else if(dialogBox.GetComponent<CanvasGroup>().alpha == 1 && i >= 3 && i <= dialog.Length-1 && cow.transform.position.y <= 9.5f)
-        {
-            Time.timeScale = 0f;
-            ThirdDialog();
-        }
-        else if(i >= dialog.Length)
-        {
-            Time.timeScale = 1f;
-            black.Play("Fade in");
-            if(black.transform.GetComponent<CanvasGroup>().alpha == 1)
+            if (dialogBox.GetComponent<CanvasGroup>().alpha == 1 && i <= 1)
             {
-                //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-                //SceneManager.LoadScene("Base", LoadSceneMode.Additive);
+                Time.timeScale = 0f;
+                FirstDialog();
+            }
+            else if (dialogBox.GetComponent<CanvasGroup>().alpha == 1 && i == 2)
+            {
+                Time.timeScale = 0f;
+                SecondDialog();
+            }
+            else if (dialogBox.GetComponent<CanvasGroup>().alpha == 1 && i >= 3 && i <= dialog.Length - 1 && cow.transform.position.y <= 9.5f)
+            {
+                Time.timeScale = 0f;
+                ThirdDialog();
+            }
+            else if (i >= dialog.Length)
+            {
+                Time.timeScale = 1f;
+                black.Play("Fade in");
+                if (black.transform.GetComponent<CanvasGroup>().alpha == 1)
+                {
+                    SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+                    SceneManager.LoadScene("Base", LoadSceneMode.Additive);
+                }
             }
         }
+        else
+        {
+            black.GetComponent<CanvasGroup>().alpha = 0;
+            dialogBox.GetComponent<CanvasGroup>().alpha = 0;
+        }
+        
     }
     private void FirstDialog()
     {

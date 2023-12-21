@@ -1,18 +1,116 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class BaseDialog : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int i;
+    public string[] dialog;
+    public Text dialogText;
+    public Animation fadeIn;
+    public Texture cg2;
+    public GameObject dialogBox;
+    public Animation black;
+    public GameObject people;
+    public GameObject peopleName;
+    public Player player;
+    private void Awake()
     {
-        
+        Time.timeScale = 0f;
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        player = GameObject.Find("Player").GetComponent<Player>();
+    }
+    private void Update()
+    {
+        if (player.firstToBase)
+        {
+            if (dialogBox.GetComponent<CanvasGroup>().alpha == 1 && i <= 1)
+            {
+                Time.timeScale = 0f;
+                FirstDialog();
+            }
+            else if (black.transform.GetComponent<CanvasGroup>().alpha == 0 && i == 2)
+            {
+                Time.timeScale = 0f;
+                SecondDialog();
+            }
+            else if (dialogBox.GetComponent<CanvasGroup>().alpha == 1 && i >= 3 && i < 7)
+            {
+                Time.timeScale = 0f;
+                ThirdDialog();
+            }
+            else if (dialogBox.GetComponent<CanvasGroup>().alpha == 1 && i == 7)
+            {
+                Time.timeScale = 0f;
+                FourthDialog();
+            }
+            if (dialogBox.GetComponent<CanvasGroup>().alpha == 0 && i == 3)
+            {
+                fadeIn.Play("Fade in");
+            }
+        }
+        else
+        {
+            black.GetComponent<CanvasGroup>().alpha = 0;
+            dialogBox.GetComponent<CanvasGroup>().alpha = 0;
+        }
+    }
+    private void FirstDialog()
+    {
+        dialogText.text = dialog[i];
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            i++;
+            if (i == 2)
+            {
+                black.transform.GetComponent<CanvasGroup>().alpha = 1;
+                dialogBox.GetComponent<RawImage>().texture = cg2;
+                dialogBox.GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                Time.timeScale = 1f;
+                black.Play("Fade out");
+            }
+        }
+    }
+    private void SecondDialog()
+    {
+        dialogText.text = dialog[i];
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            i++;
+            if (i == 3)
+            {
+                dialogBox.GetComponent<RawImage>().texture = null;
+                dialogBox.GetComponent<RawImage>().color = new Color(0, 0, 0, 0.51f);
+                dialogBox.GetComponent<CanvasGroup>().alpha = 0;
+                Time.timeScale = 1f;
+            }
+        }
+    }
+    private void ThirdDialog()
+    {
+        dialogText.text = dialog[i];
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            i++;
+            if (i == 7)
+            {
+                dialogBox.GetComponent<CanvasGroup>().alpha = 0;
+                Time.timeScale = 1f;
+            }
+        }
+    }
+    private void FourthDialog()
+    {
+        dialogText.text = dialog[i];
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            i++;
+            player.firstToBase = false;
+            Time.timeScale = 1f;
+        }
     }
 }
