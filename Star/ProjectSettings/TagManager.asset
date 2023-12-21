@@ -15,6 +15,7 @@ TagManager:
   - Computer
   - Point
   - Duct
+  - Cow
   layers:
   - Default
   - TransparentFX

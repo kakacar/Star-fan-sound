@@ -30,7 +30,7 @@ public class Dialog2 : MonoBehaviour
         {
             Time.timeScale = 0f;
             SecondDialog();
-        }else if(dialogBox.GetComponent<CanvasGroup>().alpha == 1 && i >= 3 && i <= dialog.Length-1)
+        }else if(dialogBox.GetComponent<CanvasGroup>().alpha == 1 && i >= 3 && i <= dialog.Length-1 && cow.transform.position.y <= 9.5f)
         {
             Time.timeScale = 0f;
             ThirdDialog();
@@ -41,8 +41,8 @@ public class Dialog2 : MonoBehaviour
             black.Play("Fade in");
             if(black.transform.GetComponent<CanvasGroup>().alpha == 1)
             {
-                SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-                SceneManager.LoadScene("Base", LoadSceneMode.Additive);
+                //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+                //SceneManager.LoadScene("Base", LoadSceneMode.Additive);
             }
         }
     }

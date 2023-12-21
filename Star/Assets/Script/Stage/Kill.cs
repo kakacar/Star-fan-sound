@@ -20,7 +20,7 @@ public class Kill : MonoBehaviour
             dialog.enabled = false;
         }
     }
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
@@ -28,7 +28,20 @@ public class Kill : MonoBehaviour
             {
                 dialog.fadeIn.Play("Fade in");
             }
-            else
+        }
+        if(other.tag == "Cow")
+        {
+            if (player.GetComponent<Player>().firstToBase)
+            {
+                dialog.fadeIn.Play("Fade in");
+            }
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            if (!player.GetComponent<Player>().firstToBase)
             {
                 clearText.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.F))

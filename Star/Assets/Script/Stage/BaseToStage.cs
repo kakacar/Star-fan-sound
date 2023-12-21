@@ -20,7 +20,7 @@ public class BaseToStage : MonoBehaviour
         if(other.tag == "Player")
         {
             nextStage.SetActive(true);
-            if (Input.GetKey(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 SceneManager.UnloadSceneAsync("Base");
                 SceneManager.LoadScene("1-2", LoadSceneMode.Additive);
