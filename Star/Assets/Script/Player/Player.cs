@@ -473,7 +473,8 @@ public class Player : MonoBehaviour
         hp = 100;
         speed = OGSpeed;
         CurrentState = LiveOrDie.Alive;
-        animator.SetTrigger("BeingHit");
+        HasPlayedDeadAni = false;
+        animator.Rebind();
     }
     private void CollectedCount()
     {
