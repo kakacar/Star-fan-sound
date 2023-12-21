@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public Rigidbody rb;
     public GameObject spawn;
     [SerializeField] Slider hpSlider;
+    [SerializeField] public GameObject F;
 
     [Header("Public Value")]
     public float speed = 5f;
@@ -211,7 +212,7 @@ public class Player : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-
+        
         if (other.gameObject.CompareTag("CanDown"))
         {
             grounded = true;
@@ -298,7 +299,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.CompareTag("Computer"))
         {
-
+            F.SetActive(true);
             if (Input.GetKeyDown(KeyCode.F) && StateType == State.CanMove)
             {
                 StateType = State.Animation;
@@ -353,7 +354,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.CompareTag("Duct"))
         {
-            
+            F.SetActive(true);
             Duct duct = other.GetComponent<Duct>();
             if (Input.GetKeyUp(KeyCode.F) && StateType == State.Duct)
             {
@@ -399,9 +400,14 @@ public class Player : MonoBehaviour
     }
     void OnTriggerExit(Collider other)
     {
-
-
-
+        if(other.gameObject.CompareTag("Computer"))
+        {
+            F.SetActive(false);
+        }
+        if (other.gameObject.CompareTag("Duct"))
+        {
+            F.SetActive(false);
+        }
         if (other.gameObject.CompareTag("CanDown"))
         {
 
