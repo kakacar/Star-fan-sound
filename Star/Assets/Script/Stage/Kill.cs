@@ -7,9 +7,18 @@ public class Kill : MonoBehaviour
 {
     public GameObject player;
     public GameObject clearText;
-    private void Awake()
+    public Dialog2 dialog;
+    private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        if (player.GetComponent<Player>().firstToBase)
+        {
+            dialog.enabled = true;
+        }
+        else
+        {
+            dialog.enabled = false;
+        }
     }
     private void OnTriggerStay(Collider other)
     {
@@ -17,8 +26,7 @@ public class Kill : MonoBehaviour
         {
             if (player.GetComponent<Player>().firstToBase)
             {
-                //other.GetComponent<Player>().hp -= 100;
-                other.GetComponent<Player>().hp = 0;
+                dialog.fadeIn.Play("Fade in");
             }
             else
             {
