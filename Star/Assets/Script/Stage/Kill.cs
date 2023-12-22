@@ -8,6 +8,8 @@ public class Kill : MonoBehaviour
     public GameObject player;
     public GameObject clearText;
     public Dialog2 dialog;
+    public string[] scenes;
+    public string loadedScene;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -44,14 +46,23 @@ public class Kill : MonoBehaviour
             if (!player.GetComponent<Player>().firstToBase)
             {
                 clearText.SetActive(true);
+                bool load = false;
+                load = true;
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    SceneManager.UnloadSceneAsync("1-2");
-                    SceneManager.LoadScene("Base", LoadSceneMode.Additive);
-                    SceneManager.sceneLoaded += (Scene sc, LoadSceneMode loadSceneMode) =>
+                    if (load)
                     {
-                        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Base"));
-                    };
+                        clearText.SetActive(false);
+                        int i = Random.Range(0, scenes.Length - 1);
+                        loadedScene = scenes[i];
+                        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
+                        SceneManager.LoadScene(loadedScene, LoadSceneMode.Additive);
+                        SceneManager.sceneLoaded += (Scene sc, LoadSceneMode loadSceneMode) =>
+                        {
+                            SceneManager.SetActiveScene(SceneManager.GetSceneByName(loadedScene));
+                        };
+                        load = false;
+                    }
                 }
             }
         }

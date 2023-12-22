@@ -16,13 +16,13 @@ public class BaseDialog : MonoBehaviour
     public GameObject people;
     public GameObject peopleName;
     public Player player;
-    private void Awake()
-    {
-        Time.timeScale = 0f;
-    }
     private void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
+        if (player.firstToBase)
+        {
+            Time.timeScale = 0;
+        }
     }
     private void Update()
     {

@@ -1180,6 +1180,11 @@ MonoBehaviour:
   player: {fileID: 0}
   clearText: {fileID: 964497168}
   dialog: {fileID: 1377421885}
+  scenes:
+  - 1-2
+  - 1-3
+  - 1-4
+  loadedScene: 
 --- !u!1001 &386126399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1923,6 +1928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c306865c6eb7446851309358b064e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisScene: 1-2
 --- !u!1 &787232915
 GameObject:
   m_ObjectHideFlags: 0
