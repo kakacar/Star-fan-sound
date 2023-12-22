@@ -27,7 +27,7 @@ public class Pause : MonoBehaviour
         }
         else
         {
-            GetComponent<Canvas>().sortingOrder = -1;
+            GetComponent<Canvas>().sortingOrder = 0;
         }
     }
     public void OnResumeClick()
@@ -45,6 +45,7 @@ public class Pause : MonoBehaviour
     public void OnQuitClick()
     {
         pauseWindow.SetActive(false);
+        GetComponent<Next>().loadedScene = "Base";
         if(SceneManager.GetActiveScene().name != ("Base"))
         {
             SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);

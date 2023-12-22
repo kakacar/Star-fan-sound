@@ -18,6 +18,7 @@ public class BaseToStage : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<Player>().hp = 100;
     }
     private void OnTriggerStay(Collider other)
     {
@@ -31,15 +32,18 @@ public class BaseToStage : MonoBehaviour
                 player.GetComponent<Player>().firstToBase = false;
                 if (load) 
                 {
-                    int i = Random.Range(0, scenes.Length - 1);
+                    int i = Random.Range(0, scenes.Length);
                     loadedScene = scenes[i];
-                    SceneManager.UnloadSceneAsync("Base");
-                    SceneManager.LoadScene(loadedScene, LoadSceneMode.Additive);
-                    SceneManager.sceneLoaded += (Scene sc, LoadSceneMode loadSceneMode) =>
+                    if (loadedScene != SceneManager.GetActiveScene().name)
                     {
-                        SceneManager.SetActiveScene(SceneManager.GetSceneByName(loadedScene));
-                    };
-                    load = false;
+                        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
+                        SceneManager.LoadScene(loadedScene, LoadSceneMode.Additive);
+                        SceneManager.sceneLoaded += (Scene sc, LoadSceneMode loadSceneMode) =>
+                        {
+                            SceneManager.SetActiveScene(SceneManager.GetSceneByName(loadedScene));
+                        };
+                        load = false;
+                    }
                 }
             }
         }

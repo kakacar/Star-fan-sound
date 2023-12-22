@@ -65,7 +65,7 @@ public class MainMenu : Menu
     {
         DisableMenuButtons();
         DataPersistenceManager.Instance.SaveGame();
-        SceneManager.LoadSceneAsync("1-1");
+        SceneManager.LoadSceneAsync("Player&UI");
         continueGameBeChoose.SetActive(false);
     }
 

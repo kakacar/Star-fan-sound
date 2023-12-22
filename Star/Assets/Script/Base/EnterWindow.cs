@@ -7,6 +7,7 @@ public class EnterWindow : MonoBehaviour
 {
     public GameObject Text;
     public GameObject Window;
+    public Canvas canvas;
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
@@ -14,6 +15,7 @@ public class EnterWindow : MonoBehaviour
             Text.SetActive(true);
             if (Input.GetKey(KeyCode.F) && !Window.activeSelf)
             {
+                canvas.sortingOrder = 10;
                 Window.SetActive(true);
                 Time.timeScale = 0;
             }

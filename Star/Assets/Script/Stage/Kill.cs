@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Kill : MonoBehaviour
 {
     public GameObject player;
-    public GameObject clearText;
+    public GameObject clear;
     public Dialog2 dialog;
     public string[] scenes;
     public string loadedScene;
@@ -16,10 +16,14 @@ public class Kill : MonoBehaviour
         if (player.GetComponent<Player>().firstToBase)
         {
             dialog.enabled = true;
+            clear.SetActive(false);
+            gameObject.SetActive(true);
         }
         else
         {
             dialog.enabled = false;
+            clear.SetActive(true);
+            gameObject.SetActive(false);
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -37,41 +41,6 @@ public class Kill : MonoBehaviour
             {
                 dialog.fadeIn.Play("Fade in");
             }
-        }
-    }
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            if (!player.GetComponent<Player>().firstToBase)
-            {
-                clearText.SetActive(true);
-                bool load = false;
-                load = true;
-                if (Input.GetKeyDown(KeyCode.F))
-                {
-                    if (load)
-                    {
-                        clearText.SetActive(false);
-                        int i = Random.Range(0, scenes.Length - 1);
-                        loadedScene = scenes[i];
-                        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
-                        SceneManager.LoadScene(loadedScene, LoadSceneMode.Additive);
-                        SceneManager.sceneLoaded += (Scene sc, LoadSceneMode loadSceneMode) =>
-                        {
-                            SceneManager.SetActiveScene(SceneManager.GetSceneByName(loadedScene));
-                        };
-                        load = false;
-                    }
-                }
-            }
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == ("Player"))
-        {
-            clearText.SetActive(false);
         }
     }
 }

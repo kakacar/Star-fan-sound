@@ -10,6 +10,7 @@ public class Sell : MonoBehaviour
     public Button[] sellButton;
     public GameObject[] sell;
     public GameObject[] noDeal;
+    public Canvas canvas;
     private void Awake()
     {
         for (int i = 0; i < sell.Length; i++)
@@ -92,5 +93,6 @@ public class Sell : MonoBehaviour
     {
         gameObject.SetActive(false);
         Time.timeScale = 1.0f;
+        canvas.sortingOrder = -1;
     }
 }

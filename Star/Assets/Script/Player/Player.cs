@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
     private string currentScene;
     private GameObject VCamera;
     public GameObject collectingPoint;
+    public Next canvas;
     
     public static Player morePlayer { get; private set; }
 
@@ -121,6 +122,7 @@ public class Player : MonoBehaviour
         {
             spawn = GameObject.Find("Spawn");
             player.transform.position = spawn.transform.position;
+            player.transform.rotation = spawn.transform.rotation;
         }
         if (currentScene == "MainMenu")
         {
@@ -278,7 +280,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            if (Input.GetKeyDown(KeyCode.F) && StateType == State.CanMove && CanAss == true && grounded)
+            if (Input.GetKeyDown(KeyCode.Mouse1) && StateType == State.CanMove && CanAss == true && grounded)
             {
                 //Debug.Log("ASS");
                 StateType = State.Animation;
@@ -400,8 +402,15 @@ public class Player : MonoBehaviour
             F.SetActive(true);
             if (Input.GetKeyUp(KeyCode.F))
             {
-                F.SetActive(false);
-                result.SetActive(true);
+                if(SceneManager.GetActiveScene().name == "Base")
+                {
+                    canvas.NextStage();
+                }
+                else
+                {
+                    F.SetActive(false);
+                    result.SetActive(true);
+                }
             }
         }
         animator.SetBool("Jumping", false);

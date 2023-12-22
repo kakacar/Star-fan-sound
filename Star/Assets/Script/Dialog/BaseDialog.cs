@@ -22,6 +22,11 @@ public class BaseDialog : MonoBehaviour
         if (player.firstToBase)
         {
             Time.timeScale = 0;
+            GetComponent<Canvas>().sortingOrder = 1;
+        }
+        else
+        {
+            GetComponent<Canvas>().sortingOrder = -1;
         }
     }
     private void Update()
@@ -31,21 +36,25 @@ public class BaseDialog : MonoBehaviour
             if (dialogBox.GetComponent<CanvasGroup>().alpha == 1 && i <= 1)
             {
                 Time.timeScale = 0f;
+                GetComponent<Canvas>().sortingOrder = 1;
                 FirstDialog();
             }
             else if (black.transform.GetComponent<CanvasGroup>().alpha == 0 && i == 2)
             {
                 Time.timeScale = 0f;
+                GetComponent<Canvas>().sortingOrder = 1;
                 SecondDialog();
             }
             else if (dialogBox.GetComponent<CanvasGroup>().alpha == 1 && i >= 3 && i < 7)
             {
                 Time.timeScale = 0f;
+                GetComponent<Canvas>().sortingOrder = 1;
                 ThirdDialog();
             }
             else if (dialogBox.GetComponent<CanvasGroup>().alpha == 1 && i == 7)
             {
                 Time.timeScale = 0f;
+                GetComponent<Canvas>().sortingOrder = 1;
                 FourthDialog();
             }
             if (dialogBox.GetComponent<CanvasGroup>().alpha == 0 && i == 3)
@@ -99,6 +108,7 @@ public class BaseDialog : MonoBehaviour
             if (i == 7)
             {
                 dialogBox.GetComponent<CanvasGroup>().alpha = 0;
+                GetComponent<Canvas>().sortingOrder = -1;
                 Time.timeScale = 1f;
             }
         }
@@ -110,6 +120,7 @@ public class BaseDialog : MonoBehaviour
         {
             i++;
             player.firstToBase = false;
+            GetComponent<Canvas>().sortingOrder = -1;
             Time.timeScale = 1f;
         }
     }

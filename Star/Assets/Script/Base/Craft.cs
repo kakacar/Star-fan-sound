@@ -10,6 +10,7 @@ public class Craft : MonoBehaviour
     private Player player;
     public Text[] stuffCount;
     public Button[] craftButton;
+    public Canvas canvas;
     private void Update()
     {
         if (player == null)
@@ -100,5 +101,6 @@ public class Craft : MonoBehaviour
     {
         gameObject.SetActive(false);
         Time.timeScale = 1.0f;
+        canvas.sortingOrder = -1;
     }
 }

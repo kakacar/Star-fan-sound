@@ -68,7 +68,7 @@ public class Enemy : MonoBehaviour
         if(hpSlider == null)
         {
             hpSlider = Instantiate(hpPrefab, transform.position, Quaternion.identity);
-            hpSlider.transform.SetParent(GameObject.Find("Canvas").transform);
+            hpSlider.transform.SetParent(GameObject.Find("EnemyHpBar").transform);
         }
         else
         {
