@@ -64,7 +64,7 @@ namespace MonoBehaviours
 
             CurrentweaponR = Instantiate(Weapon[1], weaponHolderR.transform);
             CurrentweaponR.transform.localPosition = new Vector3(0.046f, -0.217f, 0.024f);
-            CurrentweaponR.transform.localRotation = Quaternion.Euler(-0.345f, -167f, -90.9f);
+            CurrentweaponR.transform.localRotation = Quaternion.Euler(-0.024f, -167.067f, -96.377f);
         }
 
         void SwitchSword()
