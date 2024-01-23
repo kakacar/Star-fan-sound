@@ -6262,6 +6262,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 841596462}
     - target: {fileID: 4305143702059315583, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
+      propertyPath: firstToBase
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4305143702059315583, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
       propertyPath: normalText.Array.data[0]
       value: 
       objectReference: {fileID: 345116001}

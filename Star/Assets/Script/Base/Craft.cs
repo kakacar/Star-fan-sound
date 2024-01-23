@@ -19,14 +19,14 @@ public class Craft : MonoBehaviour
         }
         else
         {
-            stuffCount[0].text = "電路板" + "<\n>" + "：" + player.stuff[0];
-            stuffCount[1].text = "貴金屬" + "<\n>" + "：" + player.stuff[1];
-            stuffCount[2].text = "能源金屬" + "<\n>" + "：" + player.stuff[2];
-            stuffCount[3].text = "合成液" + "<\n>" + "：" + player.stuff[3];
-            stuffCount[4].text = "生物組織" + "<\n>" + "：" + player.stuff[4];
-            stuffCount[5].text = "生物DNA" + "<\n>" + "：" + player.stuff[5];
-            stuffCount[6].text = "複合金屬" + "<\n>" + "：" + player.stuff[6];
-            stuffCount[7].text = "能量精華" + "<\n>" + "：" + player.stuff[7];
+            stuffCount[0].text = "電路板" + "\n" + "：" + player.stuff[0];
+            stuffCount[1].text = "貴金屬" + "\n" + "：" + player.stuff[1];
+            stuffCount[2].text = "能源金屬" + "\n" + "：" + player.stuff[2];
+            stuffCount[3].text = "合成液" + "\n" + "：" + player.stuff[3];
+            stuffCount[4].text = "生物組織" + "\n" + "：" + player.stuff[4];
+            stuffCount[5].text = "生物DNA" + "\n" + "：" + player.stuff[5];
+            stuffCount[6].text = "複合金屬" + "\n" + "：" + player.stuff[6];
+            stuffCount[7].text = "能量精華" + "\n" + "：" + player.stuff[7];
         }
         CanCraftOrNot();
     }
