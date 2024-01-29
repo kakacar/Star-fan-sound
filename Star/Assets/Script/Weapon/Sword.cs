@@ -32,46 +32,87 @@ public class Sword : MonoBehaviour
         noCombo -= Time.deltaTime;
 
         Atk();
+        AtkAni();
         HitBoxSwitch();
     }
 
     void Atk()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && attackCount == 0 && attackCD <= 0 || Input.GetKeyDown(KeyCode.J) && attackCount == 3 && attackCD <= 0)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && attackCD <= 0)
         {
-            HasReset = false;
-            //第一段攻擊
-            attackCount =1;
-            noCombo = 0.5f;
-            Player.speed = 1.5f;
+            
+            attackCount ++;
             AE.IsAtk = true;
-
-            ani.SetInteger("Attack", 1);
-            ani.SetBool("IsAtk", true);
         }
-        else if (Input.GetKeyDown(KeyCode.Mouse0) && attackCount == 1 && noCombo >= 0)
+        else if (noCombo < 0)
         {
-            //第二段攻擊
-            attackCount=2;
-            noCombo = 1f;
-
-            ani.SetInteger("Attack", 2);
-        }
-        else if (Input.GetKeyDown(KeyCode.Mouse0) && attackCount == 2 && noCombo >= 0)
-        {
-            //第三段攻擊
-            attackCD = 1.25f;
-            noCombo = 1.5f;
-            attackCount = 3;
-            ani.SetInteger("Attack", 3);
-        }
-        else if (noCombo < 0 && !HasReset)
-        {
-            HasReset = true;
+            
             attackCount = 0;
             Player.speed = 5f;
-            ani.SetInteger("Attack", 0);
-            ani.SetBool("IsAtk", false);
+            
+        }
+    }
+
+    void AtkAni()
+    {
+        if (ani.GetCurrentAnimatorStateInfo(1).IsName("Idle"))
+        {
+            if(attackCount > 0)
+            {
+                ani.SetInteger("Attack", 1);
+                ani.SetBool("IsAtk", true);
+                noCombo = 0.25f;
+                Player.speed = 1.5f;
+            }
+            else if(noCombo < 0 && !HasReset)
+            {
+                ani.SetInteger("Attack", 0);
+                ani.SetBool("IsAtk", false);
+            }
+        }
+        else if (ani.GetCurrentAnimatorStateInfo(1).IsName("DS"))
+        {
+            if (attackCount > 1)
+            {
+                ani.SetInteger("Attack", 2);
+                noCombo = 0.4f;
+            }
+            else if (noCombo < 0 && !HasReset)
+            {
+                ani.SetInteger("Attack", 0);
+                ani.SetBool("IsAtk", false);
+            }
+            
+        }
+        else if (ani.GetCurrentAnimatorStateInfo(1).IsName("DS 1"))
+        {
+            if (attackCount > 2)
+            {
+                ani.SetInteger("Attack", 3);
+                noCombo = 0.9f;
+            }
+            else if (noCombo < 0 && !HasReset)
+            {
+                ani.SetInteger("Attack", 0);
+                ani.SetBool("IsAtk", false);
+            }
+            
+        }
+        else if (ani.GetCurrentAnimatorStateInfo(1).IsName("DS 2"))
+        {
+            if (attackCount > 2)
+            {
+                attackCount = 1;
+                ani.SetInteger("Attack", 1);
+                ani.SetBool("IsAtk", true);
+                noCombo = 0.6f;
+                Player.speed = 1.5f;
+            }
+            else if (noCombo < 0 && !HasReset)
+            {
+                ani.SetInteger("Attack", 0);
+                ani.SetBool("IsAtk", false);
+            }
         }
     }
 
