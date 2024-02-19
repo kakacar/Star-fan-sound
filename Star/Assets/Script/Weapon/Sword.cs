@@ -28,7 +28,7 @@ public class Sword : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        attackCD -= Time.deltaTime;
+        //attackCD -= Time.deltaTime;
         noCombo -= Time.deltaTime;
 
         Atk();
@@ -38,7 +38,7 @@ public class Sword : MonoBehaviour
 
     void Atk()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && attackCD <= 0)
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             
             attackCount ++;
@@ -100,12 +100,11 @@ public class Sword : MonoBehaviour
         }
         else if (ani.GetCurrentAnimatorStateInfo(1).IsName("DS 2"))
         {
-            if (attackCount > 2)
+            if (attackCount > 3)
             {
                 attackCount = 1;
-                ani.SetInteger("Attack", 1);
+                ani.SetInteger("Attack", 4);
                 ani.SetBool("IsAtk", true);
-                noCombo = 0.6f;
                 Player.speed = 1.5f;
             }
             else if (noCombo < 0 && !HasReset)

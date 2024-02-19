@@ -31,7 +31,7 @@ public class FadeIn : MonoBehaviour
             i++;
             anim[i].Play("Fade in");
         }
-        if (!test)
+        if(!test)
         {
             SceneManager.LoadScene("Player&UI");
         }
