@@ -11,7 +11,7 @@ public class Sword : MonoBehaviour
     public Animator ani;
     public Player Player;
     public AniEvent AE;
-    bool HasReset;
+    [SerializeField]bool HasReset;
     [SerializeField] private Collider AtkCollider;
 
     // Start is called before the first frame update
@@ -43,14 +43,9 @@ public class Sword : MonoBehaviour
             
             attackCount ++;
             AE.IsAtk = true;
+            HasReset = false;
         }
-        else if (noCombo < 0)
-        {
-            
-            attackCount = 0;
-            Player.speed = 5f;
-            
-        }
+        
     }
 
     void AtkAni()
@@ -63,11 +58,15 @@ public class Sword : MonoBehaviour
                 ani.SetBool("IsAtk", true);
                 noCombo = 0.25f;
                 Player.speed = 1.5f;
+                
             }
             else if(noCombo < 0 && !HasReset)
             {
                 ani.SetInteger("Attack", 0);
                 ani.SetBool("IsAtk", false);
+                attackCount = 0;
+                Player.speed = 5f;
+                HasReset = true;
             }
         }
         else if (ani.GetCurrentAnimatorStateInfo(1).IsName("DS"))
@@ -81,6 +80,9 @@ public class Sword : MonoBehaviour
             {
                 ani.SetInteger("Attack", 0);
                 ani.SetBool("IsAtk", false);
+                attackCount = 0;
+                Player.speed = 5f;
+                HasReset = true;
             }
             
         }
@@ -95,6 +97,9 @@ public class Sword : MonoBehaviour
             {
                 ani.SetInteger("Attack", 0);
                 ani.SetBool("IsAtk", false);
+                attackCount = 0;
+                Player.speed = 5f;
+                HasReset = true;
             }
             
         }
@@ -111,6 +116,9 @@ public class Sword : MonoBehaviour
             {
                 ani.SetInteger("Attack", 0);
                 ani.SetBool("IsAtk", false);
+                attackCount = 0;
+                Player.speed = 5f;
+                HasReset = true;
             }
         }
     }
