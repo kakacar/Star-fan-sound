@@ -6,16 +6,37 @@ using UnityEngine.EventSystems;
 
 public class Upgrade : MonoBehaviour
 {
+    public Player player;
     public Canvas canvas;
     public Button[] upGrade;
     public Text info;
+    public Text title;
+    public int[] currentUpgreadTimes;
+    public string currentEffect;
+    private void FixedUpdate()
+    {
+        if (player == null)
+        {
+            player = GameObject.Find("Player").GetComponent<Player>();
+        }
+    }
     public void HpUpgrade()
     {
         upGrade[0].interactable = false;
         upGrade[1].interactable = true;
         upGrade[2].interactable = true;
         upGrade[3].interactable = true;
-        info.text = "1";
+        if (currentUpgreadTimes[0] == 5)
+        {
+            title.text = "生命LV + 1(目前LV."+ player.playerLevel[0]+")" + "\n" + "$500 + 生命精華*1";
+            info.text = "最大HP+10" + "\n" + "槍傷害增加";
+        }
+        else
+        {
+            title.text = "生命LV + 1(目前LV." + player.playerLevel[0] + ")" + "\n" + "$100";
+            info.text = "最大HP+10";
+        }
+        currentEffect = "HP";
     }
     public void CollectUpgrade()
     {
@@ -23,7 +44,17 @@ public class Upgrade : MonoBehaviour
         upGrade[1].interactable = false;
         upGrade[2].interactable = true;
         upGrade[3].interactable = true;
-        info.text = "2";
+        if (currentUpgreadTimes[2] == 5)
+        {
+            title.text = "採集LV + 1(目前LV." + player.playerLevel[2] + ")" + "\n" + "$500 + 生命精華*1";
+            info.text = "死亡後留下的資源+5%" + "\n" + "復活次數+1";
+        }
+        else
+        {
+            title.text = "採集LV + 1(目前LV." + player.playerLevel[2] + ")" + "\n" + "$100";
+            info.text = "死亡後留下的資源+5%";
+        }
+        currentEffect = "Collect";
     }
     public void SneakUpgrade()
     {
@@ -31,7 +62,17 @@ public class Upgrade : MonoBehaviour
         upGrade[1].interactable = true;
         upGrade[2].interactable = false;
         upGrade[3].interactable = true;
-        info.text = "3";
+        if (currentUpgreadTimes[1] == 5)
+        {
+            title.text = "潛行LV + 1(目前LV." + player.playerLevel[1] + ")" + "\n" + "$500 + 生命精華*1";
+            info.text = "開槍聲響-5" + "\n" + "技能冷卻-2s" + "\n" + "技能持續時間+1s";
+        }
+        else
+        {
+            title.text = "潛行LV + 1(目前LV." + player.playerLevel[1] + ")" + "\n" + "$100";
+            info.text = "開槍聲響-5" + "\n" + "技能冷卻-2s";
+        }
+        currentEffect = "Sneak";
     }
     public void UpGrade()
     {
@@ -39,7 +80,44 @@ public class Upgrade : MonoBehaviour
         upGrade[1].interactable = true;
         upGrade[2].interactable = true;
         upGrade[3].interactable = false;
+        title.text = "";
         info.text = "";
+        if (currentEffect == "HP")
+        {
+            player.playerLevel[0]++;
+            if (currentUpgreadTimes[0] == 5)
+            {
+                currentUpgreadTimes[0] = 0;
+            }
+            else
+            {
+                currentUpgreadTimes[0]++;
+            }
+        }
+        if (currentEffect == "Sneak")
+        {
+            player.playerLevel[1]++;
+            if (currentUpgreadTimes[1] == 5)
+            {
+                currentUpgreadTimes[1] = 0;
+            }
+            else
+            {
+                currentUpgreadTimes[1]++;
+            }
+        }
+        if (currentEffect == "Collect")
+        {
+            player.playerLevel[2]++;
+            if (currentUpgreadTimes[2] == 5)
+            {
+                currentUpgreadTimes[2] = 0;
+            }
+            else
+            {
+                currentUpgreadTimes[2]++;
+            }
+        }
     }
     public void CloseWindow()
     {

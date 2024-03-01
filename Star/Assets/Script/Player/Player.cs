@@ -31,6 +31,8 @@ public class Player : MonoBehaviour
     public bool StateSwitch;
     public bool firstToBase = true;
     public float OGSpeed;
+    public int[] playerLevel;
+    public int[] robotLevel;
 
     [Header("Ground Check")]
     [SerializeField] public float playerHeight;

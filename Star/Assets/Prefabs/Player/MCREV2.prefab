@@ -2768,6 +2768,8 @@ MonoBehaviour:
   StateSwitch: 0
   firstToBase: 1
   OGSpeed: 0
+  playerLevel: 000000000000000000000000
+  robotLevel: 000000000000000000000000
   playerHeight: 2
   whatIsGround:
     serializedVersion: 2
