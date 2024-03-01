@@ -33,6 +33,7 @@ public class FieldOfView : MonoBehaviour
     private Collider[] rangeChecks;
     private float StayTimer = 0;
     [SerializeField] Enemy Enemy;
+    public bool alarmEnemy;
     //public bool stop = true;
 
     public enum ActionState
@@ -106,111 +107,130 @@ public class FieldOfView : MonoBehaviour
     public void Action()
     {
         Vector3 playerPosition = new Vector3(playerRef.transform.position.x, transform.position.y, 0);
-
-        if (!canSeePlayer)
+        if (!alarmEnemy)
         {
-            if (PDestination == 0)
+            if (!canSeePlayer)
             {
-                
-                ActState = ActionState.Patrol;
-                transform.position = Vector3.MoveTowards(transform.position, PatrolPoints[0].position, 1.5f * Time.deltaTime);
-
-                if (Vector3.Distance(transform.position, PatrolPoints[0].position) < 0.2f)
+                if (PDestination == 0)
                 {
-                    ActState = ActionState.Standy;
-                    StayTimer += Time.deltaTime;
-                    
-                    if (StayTimer > 2)
+
+                    ActState = ActionState.Patrol;
+                    transform.position = Vector3.MoveTowards(transform.position, PatrolPoints[0].position, 1.5f * Time.deltaTime);
+
+                    if (Vector3.Distance(transform.position, PatrolPoints[0].position) < 0.2f)
                     {
-                        PDestination = 1;
-                        Vector3 Direction = PatrolPoints[PDestination].position - transform.position;
-                        Quaternion rotation = Quaternion.LookRotation(Direction);
-                        transform.rotation = rotation;
-                        //transform.rotation = Quaternion.Euler(0, 90, 0);
-                        StayTimer = 0;
+                        ActState = ActionState.Standy;
+                        StayTimer += Time.deltaTime;
+
+                        if (StayTimer > 2)
+                        {
+                            PDestination = 1;
+                            Vector3 Direction = PatrolPoints[PDestination].position - transform.position;
+                            Quaternion rotation = Quaternion.LookRotation(Direction);
+                            transform.rotation = rotation;
+                            //transform.rotation = Quaternion.Euler(0, 90, 0);
+                            StayTimer = 0;
+                        }
+
                     }
-                    
+                }
+
+                if (PDestination == 1)
+                {
+                    ActState = ActionState.Patrol;
+                    transform.position = Vector3.MoveTowards(transform.position, PatrolPoints[1].position, 1.5f * Time.deltaTime);
+
+                    if (Vector3.Distance(transform.position, PatrolPoints[1].position) < 0.2f)
+                    {
+                        ActState = ActionState.Standy;
+                        StayTimer += Time.deltaTime;
+
+                        if (StayTimer > 2)
+                        {
+                            PDestination = 0;
+                            Vector3 Direction = PatrolPoints[PDestination].position - transform.position;
+                            Quaternion rotation = Quaternion.LookRotation(Direction);
+                            transform.rotation = rotation;
+                            //transform.rotation = Quaternion.Euler(0, -90, 0);
+                            StayTimer = 0;
+                        }
+
+                    }
                 }
             }
 
-            if (PDestination == 1)
+            if (distanceToTarget > 7f && HasRoll == false && canSeePlayer)
             {
-                ActState = ActionState.Patrol;
-                transform.position = Vector3.MoveTowards(transform.position, PatrolPoints[1].position, 1.5f * Time.deltaTime);
+                RState = Random.Range(1, 10);
+                HasRoll = true;
+            }
+            else if (distanceToTarget <= 7f && HasRoll == false && canSeePlayer)
+            {
+                RState = Random.Range(1, 3);
+                HasRoll = true;
+            }
 
-                if (Vector3.Distance(transform.position, PatrolPoints[1].position) < 0.2f)
+            if (HasRoll == true)
+            {
+                if (RState > 3)
                 {
-                    ActState = ActionState.Standy;
-                    StayTimer += Time.deltaTime;
+                    ActState = ActionState.LongRangeAttack;
 
-                    if (StayTimer > 2)
-                    {
-                        PDestination = 0;
-                        Vector3 Direction = PatrolPoints[PDestination].position - transform.position;
-                        Quaternion rotation = Quaternion.LookRotation(Direction);
-                        transform.rotation = rotation;
-                        //transform.rotation = Quaternion.Euler(0, -90, 0);
-                        StayTimer = 0;
-                    }
-                    
                 }
+                else
+                {
+                    if (canSeePlayer && ActState != ActionState.Stun)
+                    {
+                        if (playerRef.transform.position.x > transform.position.x && ActState != ActionState.CloseCombat)
+                        {
+                            transform.rotation = Quaternion.Euler(0, 90, 0);
+                        }
+                        else if (playerRef.transform.position.x < transform.position.x && ActState != ActionState.CloseCombat)
+                        {
+                            transform.rotation = Quaternion.Euler(0, -90, 0);
+                        }
+
+                        if (distanceToTarget > 1.4f)
+                        {
+                            ActState = ActionState.Patrol;
+
+                            if (ActState == ActionState.Patrol)
+                            {
+                                transform.position = Vector3.MoveTowards(transform.position, playerPosition, 1.5f * Time.deltaTime);
+                            }
+
+
+                        }
+                        else
+                        {
+                            ActState = ActionState.CloseCombat;
+
+                        }
+
+                    }
+
+                }
+
             }
         }
-
-        if(distanceToTarget > 7f && HasRoll == false && canSeePlayer)
+        else
         {
-            RState = Random.Range(1, 10);
-            HasRoll = true;
-        }
-        else if(distanceToTarget <= 7f && HasRoll == false && canSeePlayer)
-        {
-            RState = Random.Range(1, 3);
-            HasRoll = true;
-        }
-
-        if(HasRoll == true)
-        {
-            if(RState > 3)
+            if(GameObject.FindGameObjectWithTag("Robot") == null)
             {
-                ActState = ActionState.LongRangeAttack;
-                
+                transform.position = Vector3.MoveTowards(transform.position, playerPosition, 1.5f * Time.deltaTime);
             }
             else
             {
-                if(canSeePlayer && ActState !=ActionState.Stun)
+                if (canSeePlayer)
                 {
-                    if (playerRef.transform.position.x > transform.position.x && ActState != ActionState.CloseCombat)
-                    {
-                        transform.rotation = Quaternion.Euler(0, 90, 0);
-                    }
-                    else if (playerRef.transform.position.x < transform.position.x && ActState != ActionState.CloseCombat)
-                    {
-                        transform.rotation = Quaternion.Euler(0, -90, 0);
-                    }
-
-                    if (distanceToTarget > 1.4f)
-                    {
-                        ActState = ActionState.Patrol;
-
-                        if(ActState == ActionState.Patrol)
-                        {
-                            transform.position = Vector3.MoveTowards(transform.position, playerPosition, 1.5f * Time.deltaTime);
-                        }
-                        
-                        
-                    }
-                    else
-                    {
-                        ActState = ActionState.CloseCombat;
-
-                    }
-
+                    transform.position = Vector3.MoveTowards(transform.position, playerPosition, 1.5f * Time.deltaTime);
                 }
-                
+                else
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, GameObject.FindGameObjectWithTag("Robot").transform.position, 1.5f * Time.deltaTime);
+                }
             }
-
         }
-        
     }
 
     public void StopChase()

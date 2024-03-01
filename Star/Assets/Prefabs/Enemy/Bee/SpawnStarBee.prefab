@@ -10001,6 +10001,7 @@ MonoBehaviour:
   BeStab: 0
   ActState: 0
   Enemy: {fileID: 6599616321637792250}
+  alarmEnemy: 1
 --- !u!114 &-6302845047384963425
 MonoBehaviour:
   m_ObjectHideFlags: 0

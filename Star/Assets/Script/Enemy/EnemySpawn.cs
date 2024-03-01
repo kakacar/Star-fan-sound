@@ -6,33 +6,38 @@ public class EnemySpawn : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public Camera mainCamera;
-    public GameObject spawn;
+    public GameObject[] spawn;
     public Alarm alarm;
-    private GameObject spawnedEnemy;
+    private GameObject[] spawnedEnemy;
     private Player player;
 
-    void Update()
+    void FixedUpdate()
     {
-        if (IsOutsideCameraView() && alarm.warning)
+        if (alarm.warning)
         {
-            StartCoroutine(SpawnEnemy());
+            if (spawnedEnemy[0] == null || spawnedEnemy[1] == null)
+            {
+                SpawnEnemy();
+            }
         }
         if(player == null)
         {
             player = GameObject.Find("Player").GetComponent<Player>();
         }
     }
-
-    bool IsOutsideCameraView()
+    public void SpawnEnemy()
     {
-        Vector3 enemyScreenPos = mainCamera.WorldToScreenPoint(spawn.transform.position);
-        return enemyScreenPos.x < 0 || enemyScreenPos.x > Screen.width || enemyScreenPos.y < 0 || enemyScreenPos.y > Screen.height;
-    }
-
-    IEnumerator SpawnEnemy()
-    {
-        yield return new WaitForSeconds(5);
-        spawnedEnemy = Instantiate(enemyPrefab, spawn.transform.position, Quaternion.identity);
-        spawnedEnemy.GetComponent<FieldOfView>().PatrolPoints[0] = player.collectingPoint.transform;
+        if(spawnedEnemy[0] == null)
+        {
+            spawnedEnemy[0] = Instantiate(enemyPrefab, spawn[0].transform.position, Quaternion.identity);
+        }
+        else if(spawnedEnemy[1] == null)
+        {
+            spawnedEnemy[1] = Instantiate(enemyPrefab, spawn[1].transform.position, Quaternion.identity);
+        }else if(player.transform.position.y < -2.5)
+        {
+            spawnedEnemy[0] = Instantiate(enemyPrefab, spawn[0].transform.position, Quaternion.identity);
+            spawnedEnemy[1] = Instantiate(enemyPrefab, spawn[1].transform.position, Quaternion.identity);
+        }
     }
 }
