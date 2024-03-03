@@ -12,7 +12,7 @@ public class BulletCount : MonoBehaviour
 
     void Awake()
     {
-        bulletText.GetComponent<Text>().text = bullet + "/" + bulletCount;
+        bulletText.GetComponent<Text>().text = "<size=20>" + bullet + "</size>" + "/" + bulletCount;
     }
 
     void Update()
@@ -30,6 +30,6 @@ public class BulletCount : MonoBehaviour
             bullet = bulletCount;
             bulletCount = 0;
         }
-        bulletText.GetComponent<Text>().text = bullet + "/" + bulletCount;
+        bulletText.GetComponent<Text>().text = "<size=20>" + bullet + "</size>" + "/" + bulletCount;
     }
 }
