@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.0938668, g: 0.0837565, b: 0.06900332, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5710,6 +5710,7 @@ MonoBehaviour:
   - 1-4
   player: {fileID: 7622084113964565032}
   loadedScene: 
+  level: 0
 --- !u!1 &1987604867
 GameObject:
   m_ObjectHideFlags: 0
@@ -7078,6 +7079,10 @@ PrefabInstance:
       propertyPath: result
       value: 
       objectReference: {fileID: 1565057407}
+    - target: {fileID: 4305143702059315583, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
+      propertyPath: respawn
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4305143702059315583, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
       propertyPath: hpSlider
       value: 

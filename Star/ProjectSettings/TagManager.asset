@@ -17,6 +17,7 @@ TagManager:
   - Duct
   - Cow
   - Robot
+  - Back
   layers:
   - Default
   - TransparentFX

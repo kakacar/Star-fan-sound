@@ -57,6 +57,7 @@ public class Player : MonoBehaviour
     private GameObject VCamera;
     public GameObject collectingPoint;
     public Next canvas;
+    public bool respawn = false;
     
     public static Player morePlayer { get; private set; }
 
@@ -120,11 +121,18 @@ public class Player : MonoBehaviour
     }
     private void Spawn()
     {
-        if(spawn == null && SceneManager.GetActiveScene().name != ("Player&UI"))
+        if(spawn == null && SceneManager.GetActiveScene().name != ("Player&UI") && !respawn)
         {
             spawn = GameObject.Find("Spawn");
             player.transform.position = spawn.transform.position;
             player.transform.rotation = spawn.transform.rotation;
+        }
+        else if (spawn == null && SceneManager.GetActiveScene().name != ("Player&UI") && respawn)
+        {
+            spawn = GameObject.Find("Respawn");
+            player.transform.position = spawn.transform.position;
+            player.transform.rotation = spawn.transform.rotation;
+            respawn = false;
         }
         if (currentScene == "MainMenu")
         {
@@ -189,12 +197,11 @@ public class Player : MonoBehaviour
         {
             hp = 0;
             CurrentState = LiveOrDie.Dead;
+            respawn = true;
             if (!HasPlayedDeadAni)
             {
-                
                 animator.SetTrigger("Dead");
                 HasPlayedDeadAni = true;
-                
             }
             
         }
@@ -410,6 +417,17 @@ public class Player : MonoBehaviour
                     result.SetActive(true);
                 }
             }
+        }
+        if(other.tag == "Back")
+        {
+            StateType = State.CanMove;
+            gameObject.GetComponent<Rigidbody>().useGravity = true;
+            SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+            SceneManager.LoadScene("Base", LoadSceneMode.Additive);
+            animator.SetFloat("ClimbLadder", 0.5f);
+            hp = 100;
+            speed = OGSpeed;
+            animator.SetBool("UsingLadder", false);
         }
         animator.SetBool("Jumping", false);
         animator.SetBool("InAir", false);
