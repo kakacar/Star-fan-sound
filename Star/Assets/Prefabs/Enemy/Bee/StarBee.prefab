@@ -9986,7 +9986,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   HeadLt: {fileID: 385063878917165620}
-  PatrolPoints: []
+  PatrolPoints:
+  - {fileID: 0}
+  - {fileID: 0}
   PDestination: 0
   Eye: {fileID: 7382768508911459077}
   radius: 0
