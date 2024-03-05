@@ -38,7 +38,7 @@ public class Sword : MonoBehaviour
 
     void Atk()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && Player.StateType == Player.State.CanMove)
         {
             
             attackCount ++;
@@ -91,7 +91,7 @@ public class Sword : MonoBehaviour
             if (attackCount > 2)
             {
                 ani.SetInteger("Attack", 3);
-                noCombo = 0.9f;
+                noCombo = 0.5f;
             }
             else if (noCombo < 0 && !HasReset)
             {
@@ -107,10 +107,12 @@ public class Sword : MonoBehaviour
         {
             if (attackCount > 3)
             {
+                noCombo = 0.3f;
                 attackCount = 1;
                 ani.SetInteger("Attack", 4);
                 ani.SetBool("IsAtk", true);
                 Player.speed = 1.5f;
+                
             }
             else if (noCombo < 0 && !HasReset)
             {

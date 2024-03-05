@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44694507, g: 0.49203563, b: 0.5492337, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6597,7 +6597,7 @@ PrefabInstance:
     - target: {fileID: 2053493928863803106, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: eb7510fefca88e046ab4b30e42c416b6, type: 2}
+      objectReference: {fileID: 9100000, guid: 62d3d5857aca67741bc0ac8259550c0c, type: 2}
     - target: {fileID: 2080886271349358928, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -7567,18 +7567,6 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6591966376573380149, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
-      propertyPath: m_Radius
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 6591966376573380149, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
-      propertyPath: m_ExtraColliders.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6591966376573380149, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
-      propertyPath: m_ExtraColliders.Array.data[0]
-      value: 
-      objectReference: {fileID: 7622084113964565034}
-    - target: {fileID: 6591966376573380149, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
       propertyPath: m_ExtraColliders.Array.data[1]
       value: 
       objectReference: {fileID: 8431711895693383996, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
@@ -7590,14 +7578,6 @@ PrefabInstance:
       propertyPath: m_ExtraColliders.Array.data[3]
       value: 
       objectReference: {fileID: 8471908736951573128, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
-    - target: {fileID: 6591966376573380149, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
-      propertyPath: m_RadiusCurve.m_Curve.Array.data[0].time
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6591966376573380149, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
-      propertyPath: m_RadiusCurve.m_Curve.Array.data[0].value
-      value: 0.30961415
-      objectReference: {fileID: 0}
     - target: {fileID: 6642700611880150625, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.000000017229425
@@ -8159,8 +8139,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 393750ed77976f04f835388163508357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!136 &7622084113964565034 stripped
-CapsuleCollider:
-  m_CorrespondingSourceObject: {fileID: 6494012037688593949, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
-  m_PrefabInstance: {fileID: 1748260575301419803}
-  m_PrefabAsset: {fileID: 0}

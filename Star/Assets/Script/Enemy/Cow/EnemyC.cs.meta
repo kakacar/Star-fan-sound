@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: a5114a2ea76e71247b718d8113a92cac
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - FOV: {instanceID: 0}
+  - Ani: {instanceID: 0}
+  - BeeATK: {instanceID: 0}
+  - hpSlider: {instanceID: 0}
+  - hpPrefab: {fileID: 7471772517008027809, guid: 66cbfbaa83fd439418455f143609c210, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

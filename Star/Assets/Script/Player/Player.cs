@@ -247,7 +247,7 @@ public class Player : MonoBehaviour
                 transform.Translate(climbMovement);
                 other.gameObject.GetComponent<Stair>().StairTD = false;
 
-
+                Debug.Log("1 check");
             }
             else if (Input.GetKey("s"))
             {
@@ -263,21 +263,16 @@ public class Player : MonoBehaviour
                 Vector3 climbMovement = new Vector3(0f, verticalInput * climbSpeed * Time.deltaTime, 0f);
                 transform.Translate(climbMovement);
                 other.gameObject.GetComponent<Stair>().StairTD = true;
+                Debug.Log("2 check");
             }
-            else if (!grounded)
+            else if (StateType == State.Ladder)
             {
-                StateType = State.Ladder;
+                
                 other.gameObject.GetComponent<Stair>().StairTD = true;
                 animator.SetFloat("ClimbLadder", 0.5f);
+                Debug.Log("3 check");
             }
-            else if (grounded)
-            {
-                StateType = State.CanMove;
-                other.gameObject.GetComponent<Stair>().StairTD = true;
-                gameObject.GetComponent<Rigidbody>().useGravity = true;
-                animator.SetBool("UsingLadder", false);
-                animator.SetFloat("ClimbLadder", 0.5f);
-            }
+            
         }
 
         if (other.gameObject.CompareTag("Enemy"))
@@ -367,7 +362,7 @@ public class Player : MonoBehaviour
                 //StateSwitch = true;
                 StateType = State.Animation;
                 transform.position = duct.Enter.transform.position;
-
+                speed = 5f;
 
                 animator.SetTrigger("DuctOut");
                 duct.DuctOut();
@@ -378,6 +373,7 @@ public class Player : MonoBehaviour
             {
                 
                     StateType = State.Animation;
+                    speed = 3.5f;
                     //StateSwitch = true;
 
                     transform.position = duct.Leave.transform.position;
@@ -440,6 +436,7 @@ public class Player : MonoBehaviour
             gameObject.GetComponent<Rigidbody>().useGravity = true;
             animator.SetBool("UsingLadder", false);
             animator.SetFloat("ClimbLadder", 0.5f);
+            Debug.Log("5 check");
         }
         if (other.tag == "Clear")
         {

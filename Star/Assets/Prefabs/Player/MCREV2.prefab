@@ -1368,18 +1368,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_ExtraColliders:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  m_Radius: 0.1
+  - {fileID: 6494012037688593949}
+  m_Radius: 0.06
   m_RadiusCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.49811554
+      value: 0.30961415
       inSlope: 0
       outSlope: 0
       tangentMode: 0
