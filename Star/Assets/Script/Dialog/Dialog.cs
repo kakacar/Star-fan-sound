@@ -134,8 +134,8 @@ public class Dialog : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             i++;
-            p1.GetComponent<RawImage>().color = new Color(255, 255, 255);
-            p2.GetComponent<RawImage>().color = new Color(125, 125, 125);
+            p1.GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+            p2.GetComponent<RawImage>().color = new Color(125, 125, 125, 255);
         }
     }
 }

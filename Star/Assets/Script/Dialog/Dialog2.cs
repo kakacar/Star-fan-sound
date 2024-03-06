@@ -16,6 +16,9 @@ public class Dialog2 : MonoBehaviour
     public Alarm alarm;
     public Animation black;
     public Player player;
+    [Header("People")]
+    public GameObject p1;
+    public GameObject p2;
     private void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
@@ -42,6 +45,7 @@ public class Dialog2 : MonoBehaviour
             {
                 Time.timeScale = 0f;
                 ThirdDialog();
+                Debug.Log("A");
             }
             else if (i >= dialog.Length)
             {
@@ -49,8 +53,7 @@ public class Dialog2 : MonoBehaviour
                 black.Play("Fade in");
                 if (black.transform.GetComponent<CanvasGroup>().alpha == 1)
                 {
-                    SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-                    SceneManager.LoadScene("Base", LoadSceneMode.Additive);
+                    player.Dead();
                 }
             }
         }
@@ -67,6 +70,8 @@ public class Dialog2 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             i++;
+            p1.GetComponent<RawImage>().color = new Color(255,255,255,255);
+            p2.GetComponent<RawImage>().color = new Color(125,125,125,255);
             if (i == 2)
             {
                 dialogBox.GetComponent<CanvasGroup>().alpha = 0;

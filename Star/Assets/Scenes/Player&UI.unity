@@ -7089,7 +7089,7 @@ PrefabInstance:
       objectReference: {fileID: 841596462}
     - target: {fileID: 4305143702059315583, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
       propertyPath: firstToBase
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4305143702059315583, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
       propertyPath: normalText.Array.data[0]
@@ -7526,6 +7526,10 @@ PrefabInstance:
     - target: {fileID: 6494012037688593949, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
       propertyPath: m_Center.z
       value: 0.013855222
+      objectReference: {fileID: 0}
+    - target: {fileID: 6494012037688593949, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6496038628003121402, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
       propertyPath: m_LocalPosition.x
