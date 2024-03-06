@@ -11,13 +11,19 @@ public class Dialog : MonoBehaviour
     public Animation fadeIn;
     public GameObject dialogBox;
     public Tutorial tutorial;
+    [Header("Action Bool")]
+    public bool move;
+    public bool jump;
+    public bool sword;
+    public bool gun;
+    public bool kill;
     private void Awake()
     {
         fadeIn.Play("Fade in");
     }
     private void Update()
     {
-        if(dialogBox.GetComponent<CanvasGroup>().alpha == 1 && i <= 5)
+        if(dialogBox.GetComponent<CanvasGroup>().alpha == 1 && i <= 1)
         {
             Time.timeScale = 0f;
             FirstDialog();
@@ -44,11 +50,18 @@ public class Dialog : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             i++;
-            if (i == 6)
+            if (i == 2)
             {
                 dialogBox.GetComponent<CanvasGroup>().alpha = 0;
                 Time.timeScale = 1f;
             }
+        }
+    }
+    private void Action()
+    {
+        if (move && !jump && !sword && !gun && !kill)
+        {
+            
         }
     }
     private void SecondDialog()

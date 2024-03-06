@@ -1806,7 +1806,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.7985111, b: 0.4470588, a: 1}
+  m_Color: {r: 0.9433962, g: 0.9351167, b: 0.8490566, a: 1}
   m_Intensity: 1
   m_Range: 28.96
   m_SpotAngle: 30
@@ -2362,7 +2362,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9433962, g: 0.9351167, b: 0.8490566, a: 1}
   m_Intensity: 1
   m_Range: 9.26
   m_SpotAngle: 150
@@ -5574,7 +5574,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.7985111, b: 0.4470588, a: 1}
+  m_Color: {r: 0.9433962, g: 0.9351167, b: 0.8490566, a: 1}
   m_Intensity: 1
   m_Range: 28.96
   m_SpotAngle: 30
@@ -5852,7 +5852,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.7985111, b: 0.4470588, a: 1}
+  m_Color: {r: 0.9433962, g: 0.9351167, b: 0.8490566, a: 1}
   m_Intensity: 1
   m_Range: 28.96
   m_SpotAngle: 30
@@ -7941,7 +7941,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.7985111, b: 0.4470588, a: 1}
+  m_Color: {r: 0.9433962, g: 0.9351167, b: 0.8490566, a: 1}
   m_Intensity: 1
   m_Range: 28.96
   m_SpotAngle: 30
@@ -8729,7 +8729,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.7985111, b: 0.4470588, a: 1}
+  m_Color: {r: 0.9433962, g: 0.9351167, b: 0.8490566, a: 1}
   m_Intensity: 1
   m_Range: 28.96
   m_SpotAngle: 30
@@ -9049,7 +9049,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.7985111, b: 0.4470588, a: 1}
+  m_Color: {r: 0.9433962, g: 0.9351167, b: 0.8490566, a: 1}
   m_Intensity: 1
   m_Range: 28.96
   m_SpotAngle: 30
@@ -10084,7 +10084,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.7985111, b: 0.4470588, a: 1}
+  m_Color: {r: 0.9433962, g: 0.9351167, b: 0.8490566, a: 1}
   m_Intensity: 1
   m_Range: 28.96
   m_SpotAngle: 30
@@ -11161,7 +11161,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.7985111, b: 0.4470588, a: 1}
+  m_Color: {r: 0.9433962, g: 0.9351167, b: 0.8490566, a: 1}
   m_Intensity: 1
   m_Range: 28.96
   m_SpotAngle: 30
@@ -12284,7 +12284,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.7985111, b: 0.4470588, a: 1}
+  m_Color: {r: 0.9433962, g: 0.9351167, b: 0.8490566, a: 1}
   m_Intensity: 1
   m_Range: 28.96
   m_SpotAngle: 30
