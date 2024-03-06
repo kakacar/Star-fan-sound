@@ -3,7 +3,67 @@ guid: 8fc9fc48ab3b3d541ab6949fe700ec60
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chandelier_1
+    second: {fileID: 2100000, guid: d23edacb7d26be74197aa95bbb086a42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chandelier_2
+    second: {fileID: 2100000, guid: 46a3af219ae8fa549b67e1c9cde10eaa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chandelier_3
+    second: {fileID: 2100000, guid: e2e52da3396d6394790a8281300429c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chandelier_bulb
+    second: {fileID: 2100000, guid: b8eccf95bb6bae74e8943256029ad3a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: di_ban
+    second: {fileID: 2100000, guid: 4b0b6485a21f20b43a48f613e33eb0ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: di_ban_2
+    second: {fileID: 2100000, guid: 280cdb6faf4396b4d9c9fbc5968e681e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 5f517ab249899c942a4cb098133d6904, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: men
+    second: {fileID: 2100000, guid: fabba0e7928659142af3008e14bea5ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sheng_xiu_shui_guang
+    second: {fileID: 2100000, guid: ad074c87f15c39449aa125f1b85db24e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ti_zi
+    second: {fileID: 2100000, guid: 0b5cdfbe4810f8e4ca6bcf02473167d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tie_ge_wang
+    second: {fileID: 2100000, guid: c1a1c3faabb6bdf4b8f2f1a6ed3c880c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tie_wang
+    second: {fileID: 2100000, guid: e442e146a02799343a45fa59337b832b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

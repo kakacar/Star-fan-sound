@@ -3,7 +3,102 @@ guid: 5b2860ece66cdbb49ab10cd317c1b767
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: deng
+    second: {fileID: 2100000, guid: b9695e8b4074a63488ec55682f0f4b30, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: e7b0497c79e693e48a7ddf2c3b6d3140, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert10
+    second: {fileID: 2100000, guid: 065f97a3a89fedb43849f35aee2f02e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert11
+    second: {fileID: 2100000, guid: 4eea01fb79397c648a9b9910bd912d54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert12
+    second: {fileID: 2100000, guid: 62992dbb80c94524bbe9b781d04e98cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert13
+    second: {fileID: 2100000, guid: f716bd6fc9d2ada44a20be6f86664c89, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert14
+    second: {fileID: 2100000, guid: f3a5c204a69713e40be5b2e07d1d237d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert15
+    second: {fileID: 2100000, guid: 1560da821a6ece74b8d4097c9d327b6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert16
+    second: {fileID: 2100000, guid: c81a7a8a434097d459acfeba4752d3bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert7
+    second: {fileID: 2100000, guid: a8f4920de9de6cb44ae777287d083d2f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert8
+    second: {fileID: 2100000, guid: e5a4deaaff96b6d4e86719b0a0840e64, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert9
+    second: {fileID: 2100000, guid: 9ad0f35ca82149a4d9a0e4d01874341f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: robot_basic
+    second: {fileID: 2100000, guid: 803a2c1e5be0de64385d59365b299904, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: robot_black
+    second: {fileID: 2100000, guid: 0c4a20864c017cb49aedddbca8041e83, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: robot_gray
+    second: {fileID: 2100000, guid: 93c323be71792504c85db5815886c370, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: robot_pinkwhite
+    second: {fileID: 2100000, guid: 39eb12518a95c8e45a6083ef19001afc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: robot_red
+    second: {fileID: 2100000, guid: 9b49a67db345f964c943ab3d0c26a63f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: standardSurface1
+    second: {fileID: 2100000, guid: 97d56da5628ea164680dbf6b8d248ede, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ying_mu
+    second: {fileID: 2100000, guid: 5b83c855553b00b49906514331b9463d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
