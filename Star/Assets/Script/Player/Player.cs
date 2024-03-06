@@ -70,8 +70,8 @@ public class Player : MonoBehaviour
         Duct
     }
 
-    [SerializeField] private LiveOrDie CurrentState;
-    private enum LiveOrDie
+    [SerializeField] public LiveOrDie CurrentState;
+    public enum LiveOrDie
     {
         Alive,
         Dead

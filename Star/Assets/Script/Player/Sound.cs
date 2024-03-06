@@ -42,7 +42,8 @@ public class Sound : MonoBehaviour
         if(currentSound < 0)
         {
             currentSound = 0;
-        }else if(currentSound >= maxSound)
+        }
+        if(currentSound >= maxSound)
         {
             currentSound = maxSound;
         }
@@ -50,7 +51,7 @@ public class Sound : MonoBehaviour
         {
             enemyWarning = 0;
         }
-        else if (enemyWarning >= maxSound)
+        if (enemyWarning >= maxSound)
         {
             enemyWarning = maxSound;
         }

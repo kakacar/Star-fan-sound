@@ -7564,6 +7564,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1717227632}
     - target: {fileID: 6535583199580822034, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535583199580822034, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
       propertyPath: playerSound
       value: 
       objectReference: {fileID: 948704066}

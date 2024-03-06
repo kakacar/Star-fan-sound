@@ -12,7 +12,7 @@ public class RobotUpgrade : MonoBehaviour
     public Text title;
     public int[] currentUpgreadTimes;
     public string currentEffect;
-    private void FixedUpdate()
+    private void Start()
     {
         if(player == null)
         {

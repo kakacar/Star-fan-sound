@@ -22,7 +22,7 @@ public class Alarm : MonoBehaviour
 
     void TurnOnAlarm()
     {
-        if (Sound.enemyWarning != 100 || !warning)
+        if (Sound.enemyWarning != 100)
         {
             if (Sound.Soundloss <= 0)
             {
@@ -38,7 +38,7 @@ public class Alarm : MonoBehaviour
             normalLight.SetActive(true);
             redLight.SetActive(false);
         }
-        else if(Sound.enemyWarning == 100 || warning)
+        else if(Sound.enemyWarning == 100)
         {
             normalLight.SetActive(false);
             redLight.SetActive(true);
@@ -50,6 +50,10 @@ public class Alarm : MonoBehaviour
         if (Sound.currentSound == 100)
         {
             Sound.enemyWarning += Time.deltaTime;
+        }
+        if (warning)
+        {
+            Sound.enemyWarning = 100;
         }
     }
 }

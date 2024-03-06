@@ -45,15 +45,15 @@ public class Dialog2 : MonoBehaviour
             {
                 Time.timeScale = 0f;
                 ThirdDialog();
-                Debug.Log("A");
             }
             else if (i >= dialog.Length)
             {
                 Time.timeScale = 1f;
                 black.Play("Fade in");
+                player.hp = 0f;
                 if (black.transform.GetComponent<CanvasGroup>().alpha == 1)
                 {
-                    player.Dead();
+                    black.Stop();
                 }
             }
         }
