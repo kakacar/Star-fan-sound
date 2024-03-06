@@ -50,9 +50,10 @@ public class Tutorial : MonoBehaviour
         {
             dialog.fadeIn.Play("Fade in");
         }
-        if(enemy == null && Input.GetKeyDown(KeyCode.F))
+        if(enemy == null && !dialog.dialogEnded && dialog.box.GetComponent<NormalCollect>().collecting)
         {
             firstCollect = true;
+            dialog.dialogEnded = true;
             dialog.fadeIn.Play("Fade in");
         }
     }

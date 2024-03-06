@@ -13,6 +13,12 @@ public class Dialog : MonoBehaviour
     public Tutorial tutorial;
     public Player player;
     public GameObject enemy;
+    public GameObject boxPos;
+    public GameObject box;
+    public GameObject clear;
+    [Header("People")]
+    public GameObject p1;
+    public GameObject p2;
     [Header("Action Bool")]
     public bool action;
     public bool move;
@@ -20,6 +26,7 @@ public class Dialog : MonoBehaviour
     public bool sword;
     public bool gun;
     public bool kill;
+    public bool dialogEnded;
     private void Awake()
     {
         fadeIn.Play("Fade in");
@@ -27,6 +34,8 @@ public class Dialog : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
+        boxPos.SetActive(false);
+        clear.SetActive(false);
     }
     private void Update()
     {
@@ -49,6 +58,7 @@ public class Dialog : MonoBehaviour
         {
             dialogBox.GetComponent<CanvasGroup>().alpha = 0;
             Time.timeScale = 1f;
+            clear.SetActive(true);
         }
         if (action)
         {
@@ -61,34 +71,29 @@ public class Dialog : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             i++;
-            if(i <= 5 && i >1)
+            if(i <= 6 && i >1)
             {
                 dialogBox.GetComponent<CanvasGroup>().alpha = 0;
                 action = true;
-                Time.timeScale = 1f;
-            }
-            if (i == 6)
-            {
-                dialogBox.GetComponent<CanvasGroup>().alpha = 0;
                 Time.timeScale = 1f;
             }
         }
     }
     private void Action()
     {
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) && !move)
+        if (Input.GetKey(KeyCode.A) && !move || Input.GetKey(KeyCode.D) && !move && i == 2)
         {
             move = true;
             fadeIn.Play("Fade in");
             action = false;
         }
-        if(player.jumpCount == 0 && !jump)
+        if(player.jumpCount == 0 && !jump && i ==3)
         {
             jump = true;
             fadeIn.Play("Fade in");
             action = false;
         }
-        if(Input.GetKey(KeyCode.Alpha2) && !sword)
+        if(player.CanAss && !sword && i == 4)
         {
             if (Input.GetKey(KeyCode.Mouse0))
             {
@@ -97,7 +102,7 @@ public class Dialog : MonoBehaviour
                 action = false;
             }
         }
-        if(Input.GetKey(KeyCode.Alpha1) && !gun)
+        if(!player.CanAss && !gun && i == 5)
         {
             if (Input.GetKey(KeyCode.Mouse0))
             {
@@ -106,10 +111,10 @@ public class Dialog : MonoBehaviour
                 action = false;
             }
         }
-        if(enemy == null && !kill)
+        if(enemy == null && !kill && i == 6)
         {
             kill = true;
-            fadeIn.Play("Fade in");
+            boxPos.SetActive(true);
             action = false;
         }
     }
@@ -129,6 +134,8 @@ public class Dialog : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             i++;
+            p1.GetComponent<RawImage>().color = new Color(255, 255, 255);
+            p2.GetComponent<RawImage>().color = new Color(125, 125, 125);
         }
     }
 }
