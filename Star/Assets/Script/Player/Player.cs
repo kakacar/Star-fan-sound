@@ -58,6 +58,7 @@ public class Player : MonoBehaviour
     public GameObject collectingPoint;
     public Next canvas;
     public bool respawn = false;
+    float t; //互動按鈕自動消失時間
     
     public static Player morePlayer { get; private set; }
 
@@ -106,6 +107,11 @@ public class Player : MonoBehaviour
         hpLeft();
         GroundCheck();
         CollectedCount();
+        t -= Time.deltaTime;
+        if(t <= 0)
+        {
+            F.SetActive(false);
+        }
     }
 
     private void VCameraSet()
@@ -405,6 +411,7 @@ public class Player : MonoBehaviour
         if(other.tag == "Clear")
         {
             F.SetActive(true);
+            t = 0.5f;
             if (Input.GetKeyUp(KeyCode.F))
             {
                 if(SceneManager.GetActiveScene().name == "Base")
