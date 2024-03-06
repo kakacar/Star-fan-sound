@@ -11,7 +11,7 @@ public class Dash : MonoBehaviour
     [SerializeField] private Animator Ani;
     public bool isWall;
     public LayerMask whatIsWall;
-    private float t;
+    public float t;
     private bool canDash;
     public GameObject dashUI;
     [SerializeField] Player Player;
