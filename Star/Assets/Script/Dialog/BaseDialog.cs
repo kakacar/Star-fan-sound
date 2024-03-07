@@ -16,6 +16,10 @@ public class BaseDialog : MonoBehaviour
     public GameObject people;
     public GameObject peopleName;
     public Player player;
+    public GameObject p1;
+    public GameObject p2;
+    public GameObject p1n;
+    public GameObject p2n;
     private void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
@@ -95,6 +99,10 @@ public class BaseDialog : MonoBehaviour
                 dialogBox.GetComponent<RawImage>().texture = null;
                 dialogBox.GetComponent<RawImage>().color = new Color(0, 0, 0, 0.51f);
                 dialogBox.GetComponent<CanvasGroup>().alpha = 0;
+                p1.SetActive(true);
+                p2.SetActive(false);
+                p1n.SetActive(true);
+                p2n.SetActive(false);
                 Time.timeScale = 1f;
             }
         }

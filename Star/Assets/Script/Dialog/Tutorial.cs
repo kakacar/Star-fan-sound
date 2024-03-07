@@ -46,11 +46,11 @@ public class Tutorial : MonoBehaviour
         {
             img[4].SetActive(false);
         }
-        if(enemy == null && dialog.i == 6 && dialog.dialogBox.GetComponent<CanvasGroup>().alpha == 0)
+        if(!enemy.activeSelf && dialog.i == 6 && dialog.dialogBox.GetComponent<CanvasGroup>().alpha == 0)
         {
             dialog.fadeIn.Play("Fade in");
         }
-        if(enemy == null && !dialog.dialogEnded && dialog.box.GetComponent<NormalCollect>().collecting)
+        if(!enemy.activeSelf && !dialog.dialogEnded && dialog.box.GetComponent<NormalCollect>().collecting)
         {
             firstCollect = true;
             dialog.dialogEnded = true;

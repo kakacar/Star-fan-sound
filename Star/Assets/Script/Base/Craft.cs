@@ -32,7 +32,7 @@ public class Craft : MonoBehaviour
     }
     private void CanCraftOrNot()
     {
-        if (player.stuff[0] != 0 || player.stuff[1]!= 0 || player.stuff[4]!= 0)
+        if (player.stuff[0] != 0 && player.stuff[1]!= 0 && player.stuff[4]!= 0)
         {
             craftButton[0].interactable = true;
         }
@@ -41,7 +41,7 @@ public class Craft : MonoBehaviour
             craftButton[0].interactable = false;
         }
 
-        if (player.stuff[5] != 0 || player.stuff[6] != 0 || player.stuff[7]!= 0)
+        if (player.stuff[5] != 0 && player.stuff[6] != 0 && player.stuff[7]!= 0)
         {
             craftButton[1].interactable = true;
         }
@@ -50,7 +50,7 @@ public class Craft : MonoBehaviour
             craftButton[1].interactable = false;
         }
 
-        if (player.stuff[0] != 0 || player.stuff[1] != 0 || player.stuff[2] != 0)
+        if (player.stuff[0] != 0 && player.stuff[1] != 0 &&  player.stuff[2] != 0)
         {
             craftButton[2].interactable = true;
         }
@@ -59,7 +59,7 @@ public class Craft : MonoBehaviour
             craftButton[2].interactable = false;
         }
 
-        if (player.stuff[3] != 0 || player.stuff[4] != 0 || player.stuff[5] != 0 || player.stuff[7] != 0)
+        if (player.stuff[3] != 0 && player.stuff[4] != 0 && player.stuff[5] != 0 && player.stuff[7] != 0)
         {
             craftButton[3].interactable = true;
         }

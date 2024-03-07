@@ -20,6 +20,8 @@ public class Dialog : MonoBehaviour
     [Header("People")]
     public GameObject p1;
     public GameObject p2;
+    public GameObject p1n;
+    public GameObject p2n;
     [Header("Action Bool")]
     public bool action;
     public bool move;
@@ -112,7 +114,7 @@ public class Dialog : MonoBehaviour
                 action = false;
             }
         }
-        if(enemy == null && !kill && i == 6)
+        if(!enemy.activeSelf && !kill && i == 6)
         {
             kill = true;
             boxPos.SetActive(true);
@@ -137,8 +139,10 @@ public class Dialog : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             i++;
-            p1.GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
-            p2.GetComponent<RawImage>().color = new Color(125, 125, 125, 255);
+            p1.SetActive(true);
+            p2.SetActive(false);
+            p1n.SetActive(true);
+            p2n.SetActive(false);
         }
     }
 }

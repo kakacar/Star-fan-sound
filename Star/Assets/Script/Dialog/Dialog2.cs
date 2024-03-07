@@ -19,6 +19,8 @@ public class Dialog2 : MonoBehaviour
     [Header("People")]
     public GameObject p1;
     public GameObject p2;
+    public GameObject p1n;
+    public GameObject p2n;
     private void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
@@ -70,8 +72,10 @@ public class Dialog2 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             i++;
-            p1.GetComponent<RawImage>().color = new Color(255,255,255,255);
-            p2.GetComponent<RawImage>().color = new Color(125,125,125,255);
+            p1.SetActive(true);
+            p2.SetActive(false);
+            p1n.SetActive(true);
+            p2n.SetActive(false);
             if (i == 2)
             {
                 dialogBox.GetComponent<CanvasGroup>().alpha = 0;

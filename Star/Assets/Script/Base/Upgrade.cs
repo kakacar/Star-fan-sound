@@ -25,16 +25,23 @@ public class Upgrade : MonoBehaviour
         upGrade[0].interactable = false;
         upGrade[1].interactable = true;
         upGrade[2].interactable = true;
-        upGrade[3].interactable = true;
         if (currentUpgreadTimes[0] == 5)
         {
             title.text = "生命LV + 1(目前LV."+ player.playerLevel[0]+")" + "\n" + "$500 + 生命精華*1";
             info.text = "最大HP+10" + "\n" + "彈匣容量+1";
+            if (player.money >= 500 && player.item[3] >= 1)
+            {
+                upGrade[3].interactable = true;
+            }
         }
         else
         {
             title.text = "生命LV + 1(目前LV." + player.playerLevel[0] + ")" + "\n" + "$100";
             info.text = "最大HP+10";
+            if (player.money >= 100)
+            {
+                upGrade[3].interactable = true;
+            }
         }
         currentEffect = "HP";
     }
@@ -43,7 +50,6 @@ public class Upgrade : MonoBehaviour
         upGrade[0].interactable = true;
         upGrade[1].interactable = false;
         upGrade[2].interactable = true;
-        upGrade[3].interactable = true;
         if (currentUpgreadTimes[2] == 5)
         {
             title.text = "採集LV + 1(目前LV." + player.playerLevel[2] + ")" + "\n" + "$500 + 生命精華*1";
@@ -61,17 +67,25 @@ public class Upgrade : MonoBehaviour
         upGrade[0].interactable = true;
         upGrade[1].interactable = true;
         upGrade[2].interactable = false;
-        upGrade[3].interactable = true;
         if (currentUpgreadTimes[1] == 4)
         {
             title.text = "潛行LV + 1(目前LV." + player.playerLevel[1] + ")" + "\n" + "$500 + 生命精華*1";
             info.text = "開槍聲響-3" + "\n" + "技能冷卻-2s" + "\n" + "技能持續時間+2s";
+            if(player.money >= 500 && player.item[3] >= 1)
+            {
+                upGrade[3].interactable = true;
+            }
         }
         else if (currentUpgreadTimes[1] < 4)
         {
             title.text = "潛行LV + 1(目前LV." + player.playerLevel[1] + ")" + "\n" + "$100";
             info.text = "開槍聲響-3" + "\n" + "技能冷卻-2s";
-        }else if (player.playerLevel[1] >= 5)
+            if (player.money >= 100)
+            {
+                upGrade[3].interactable = true;
+            }
+        }
+        else if (player.playerLevel[1] >= 5)
         {
             title.text = "潛行LV." + player.playerLevel[1];
             info.text = "已升至最高等級";
@@ -94,10 +108,13 @@ public class Upgrade : MonoBehaviour
             {
                 currentUpgreadTimes[0] = 1;
                 player.GetComponent<PlayerLevel>().bullet.maxBullet += 1;
+                player.money -= 500;
+                player.item[3] -= 1;
             }
             else
             {
                 currentUpgreadTimes[0]++;
+                player.money -= 100;
             }
         }
         if (currentEffect == "Sneak")
@@ -106,10 +123,13 @@ public class Upgrade : MonoBehaviour
             if (currentUpgreadTimes[1] == 4)
             {
                 player.GetComponent<DisableSoundSkill>().skillDuration += 2;
+                player.money -= 500;
+                player.item[3] -= 1;
             }
             else
             {
                 currentUpgreadTimes[1]++;
+                player.money -= 100;
             }
         }
         if (currentEffect == "Collect")
