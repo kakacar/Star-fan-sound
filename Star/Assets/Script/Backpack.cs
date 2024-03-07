@@ -9,13 +9,10 @@ public class Backpack : MonoBehaviour
     {
         backpack.SetActive(false);
     }
-    private void Update()
+    public void Close()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            backpack.SetActive(false);
-            Time.timeScale = 1.0f;
-        }
+        backpack.SetActive(false);
+        Time.timeScale = 1.0f;
     }
     public void OpenBackpack()
     {
