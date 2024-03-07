@@ -22,12 +22,12 @@ public class Alarm : MonoBehaviour
 
     void TurnOnAlarm()
     {
-        if (Sound.enemyWarning != 100)
+        if (Sound.enemyWarning != 200)
         {
             if (Sound.Soundloss <= 0)
             {
-                Sound.enemyWarning -= 5f;
-                Sound.currentSound -= 10f;
+                Sound.enemyWarning -= 10f;
+                Sound.currentSound -= 20f;
 
                 Sound.Soundloss = 3f;
             }
@@ -38,7 +38,7 @@ public class Alarm : MonoBehaviour
             normalLight.SetActive(true);
             redLight.SetActive(false);
         }
-        else if(Sound.enemyWarning == 100)
+        else if(Sound.enemyWarning == 200)
         {
             normalLight.SetActive(false);
             redLight.SetActive(true);
@@ -47,13 +47,13 @@ public class Alarm : MonoBehaviour
                 anim[i].Play("Flash");
             }
         }
-        if (Sound.currentSound == 100)
+        if (Sound.currentSound == 200)
         {
             Sound.enemyWarning += Time.deltaTime;
         }
         if (warning)
         {
-            Sound.enemyWarning = 100;
+            Sound.enemyWarning = 200;
         }
     }
 }

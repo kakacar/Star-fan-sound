@@ -9961,8 +9961,8 @@ MonoBehaviour:
   StunTime: 5
   StunTimer: 0
   BeeATK: {fileID: -6302845047384963425}
-  maxHp: 10
-  hp: 20
+  maxHp: 30
+  hp: 30
   hpSlider: {fileID: 0}
   hpPrefab: {fileID: 6359988537636185169, guid: 23f42ae930363ab4ab44d64730663d56, type: 3}
   enemyDead: 0

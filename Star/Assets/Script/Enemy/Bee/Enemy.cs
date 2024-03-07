@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
     public bool enemyDead = false;
     private void Start()
     {
-        maxHp = hp;
+        hp = maxHp;
     }
 
     void Update()

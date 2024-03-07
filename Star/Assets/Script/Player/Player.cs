@@ -337,6 +337,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("Computer"))
         {
             F.SetActive(true);
+            t = 0.5f;
             if (Input.GetKeyDown(KeyCode.F) && StateType == State.CanMove)
             {
                 StateType = State.Animation;
@@ -392,6 +393,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("Duct"))
         {
             F.SetActive(true);
+            t = 0.5f;
             Duct duct = other.GetComponent<Duct>();
             if (Input.GetKeyUp(KeyCode.F) && StateType == State.Duct)
             {

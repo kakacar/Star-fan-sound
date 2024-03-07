@@ -16,6 +16,7 @@ public class Dialog : MonoBehaviour
     public GameObject boxPos;
     public GameObject box;
     public GameObject clear;
+    public GameObject hintBG;
     [Header("People")]
     public GameObject p1;
     public GameObject p2;
@@ -121,6 +122,7 @@ public class Dialog : MonoBehaviour
     private void SecondDialog()
     {
         dialogText.text = dialog[i];
+        hintBG.SetActive(false);
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             i++;
@@ -131,6 +133,7 @@ public class Dialog : MonoBehaviour
     private void ThirdDialog()
     {
         dialogText.text = dialog[i];
+        hintBG.SetActive(false);
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             i++;

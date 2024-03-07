@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.054488547, g: 0.048512734, b: 0.026861796, a: 1}
+  m_IndirectSpecularColor: {r: 0.05155369, g: 0.044693932, b: 0.023200557, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6110,7 +6110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.94117653, g: 0.25882354, b: 0.30588236, a: 1}
+  m_Color: {r: 0.7169812, g: 0.11160557, b: 0.15335585, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7245,7 +7245,7 @@ PrefabInstance:
       objectReference: {fileID: 841596462}
     - target: {fileID: 4305143702059315583, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
       propertyPath: firstToBase
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4305143702059315583, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
       propertyPath: rareText.Array.size

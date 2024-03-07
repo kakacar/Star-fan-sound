@@ -62,19 +62,20 @@ public class Upgrade : MonoBehaviour
         upGrade[1].interactable = true;
         upGrade[2].interactable = false;
         upGrade[3].interactable = true;
-        if (currentUpgreadTimes[1] == 5)
+        if (currentUpgreadTimes[1] == 4)
         {
             title.text = "潛行LV + 1(目前LV." + player.playerLevel[1] + ")" + "\n" + "$500 + 生命精華*1";
             info.text = "開槍聲響-3" + "\n" + "技能冷卻-2s" + "\n" + "技能持續時間+2s";
         }
-        else if (currentUpgreadTimes[1] != 5)
+        else if (currentUpgreadTimes[1] < 4)
         {
             title.text = "潛行LV + 1(目前LV." + player.playerLevel[1] + ")" + "\n" + "$100";
             info.text = "開槍聲響-3" + "\n" + "技能冷卻-2s";
-        }else if (player.playerLevel[1] >= 6)
+        }else if (player.playerLevel[1] >= 5)
         {
             title.text = "潛行LV." + player.playerLevel[1];
             info.text = "已升至最高等級";
+            upGrade[3].interactable = false;
         }
         currentEffect = "Sneak";
     }
@@ -102,7 +103,7 @@ public class Upgrade : MonoBehaviour
         if (currentEffect == "Sneak")
         {
             player.playerLevel[1]++;
-            if (currentUpgreadTimes[1] == 5)
+            if (currentUpgreadTimes[1] == 4)
             {
                 player.GetComponent<DisableSoundSkill>().skillDuration += 2;
             }
