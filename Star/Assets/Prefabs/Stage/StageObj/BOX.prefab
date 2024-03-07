@@ -116,10 +116,10 @@ MonoBehaviour:
   collecting: 0
   time: 0
   collectText: {fileID: 0}
-  normalCollecting: 10
+  normalCollecting: 20
   i: 0
   sound: {fileID: 0}
-  CollectTime: 15
+  CollectTime: 35
   Bot: {fileID: 0}
   BotModel: {fileID: 5306425957888643739, guid: 5254d7e6f20ec3544b4c32f3c3aafe0c, type: 3}
   BotPos: {fileID: 2061355904771076606}

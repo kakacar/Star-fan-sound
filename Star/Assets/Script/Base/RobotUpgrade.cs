@@ -64,12 +64,12 @@ public class RobotUpgrade : MonoBehaviour
         if (currentUpgreadTimes[1] == 1)
         {
             title.text = "潛行LV + 1(目前LV." + player.robotLevel[1] + ")" + "\n" + "$500 + 電磁裝置*1";
-            info.text = "產生聲音的間隔+1s" + "\n" + "採集產生的聲音減少5%";
+            info.text = "採集產生的聲音減少5%" + "\n" + "未完成的效果";
         }
         else
         {
             title.text = "潛行LV + 1(目前LV." + player.robotLevel[1] + ")" + "\n" + "$100";
-            info.text = "產生聲音的間隔+1s";
+            info.text = "採集產生的聲音減少5%";
         }
         currentEffect = "Sneak";
     }
@@ -86,7 +86,7 @@ public class RobotUpgrade : MonoBehaviour
             player.robotLevel[0]++;
             if(currentUpgreadTimes[0] == 3)
             {
-                currentUpgreadTimes[0] = 0;
+                currentUpgreadTimes[0] = 1;
             }
             else
             {
@@ -96,21 +96,14 @@ public class RobotUpgrade : MonoBehaviour
         if(currentEffect == "Sneak")
         {
             player.robotLevel[1]++;
-            if (currentUpgreadTimes[1] == 1)
-            {
-                currentUpgreadTimes[1] = 0;
-            }
-            else
-            {
-                currentUpgreadTimes[1]++;
-            }
+            player.GetComponent<PlayerLevel>().RobotSoundLess();
         }
         if(currentEffect == "Collect")
         {
             player.robotLevel[2]++;
             if (currentUpgreadTimes[2] == 2)
             {
-                currentUpgreadTimes[2] = 0;
+                currentUpgreadTimes[2] = 1;
             }
             else
             {

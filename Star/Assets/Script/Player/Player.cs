@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     public int jumpCount;
     [SerializeField] bool jumpPress;
     public float hp = 100;
+    public float maxHp;
     public bool CanAss;
     public bool StateSwitch;
     public bool firstToBase = true;
@@ -43,6 +44,7 @@ public class Player : MonoBehaviour
     [SerializeField] public float rareCollected;
     [SerializeField] public float normalCollected;
     [SerializeField] private Text[] normalText;
+    [SerializeField] private Text[] rareText;
 
     [Header("Items")]
     [SerializeField] public int money;
@@ -515,7 +517,7 @@ public class Player : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         SceneManager.LoadScene("Base", LoadSceneMode.Additive);
-        hp = 100;
+        hp = maxHp;
         speed = OGSpeed;
         CurrentState = LiveOrDie.Alive;
         HasPlayedDeadAni = false;
@@ -524,13 +526,13 @@ public class Player : MonoBehaviour
     private void CollectedCount()
     {
         normalText[0].text = "電路板" + "\n" + "：" + stuff[0];
-        normalText[1].text = "貴金屬" + "\n" + "：" + stuff[1];
-        normalText[2].text = "能源金屬" + "\n" + "：" + stuff[2];
-        normalText[3].text = "合成液" + "\n" + "：" + stuff[3];
-        normalText[4].text = "生物組織" + "\n" + "：" + stuff[4];
-        normalText[5].text = "生物DNA" + "\n" + "：" + stuff[5];
-        normalText[6].text = "複合金屬" + "\n" + "：" + stuff[6];
-        normalText[7].text = "能量精華" + "\n" + "：" + stuff[7];
+        rareText[0].text = "貴金屬" + "\n" + "：" + stuff[5];
+        normalText[1].text = "能源金屬" + "\n" + "：" + stuff[1];
+        rareText[1].text = "合成液" + "\n" + "：" + stuff[6];
+        normalText[2].text = "生物組織" + "\n" + "：" + stuff[2];
+        rareText[2].text = "生物DNA" + "\n" + "：" + stuff[7];
+        normalText[3].text = "複合金屬" + "\n" + "：" + stuff[3];
+        normalText[4].text = "能量精華" + "\n" + "：" + stuff[4];
     }
     public void LoadData(GameData data)
     {

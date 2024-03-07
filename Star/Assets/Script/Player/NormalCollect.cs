@@ -9,9 +9,8 @@ public class NormalCollect : MonoBehaviour
     public bool collecting = false;
     public float time;
     public GameObject collectText;
-    private float plus; //每10秒加1次
+    private float plus; //每1秒加1次音量
     public int normalCollecting = 10;
-    public float i;
     public Sound sound;
 
     [SerializeField] float CollectTime;
@@ -38,36 +37,33 @@ public class NormalCollect : MonoBehaviour
     }
     private void Collect()
     {
-        plus = time / 10;
         if (collecting)
         {
-            time += Time.deltaTime;
-            CollectBar.GetComponent<Slider>().value = time;
-            if (Mathf.Floor(plus) == i)
+            time += Time.deltaTime; 
+            plus += Time.deltaTime;
+            CollectBar.GetComponent<Slider>().value = time; 
+            if (plus >= 1)
             {
-                player.GetComponent<Player>().stuff[0] += normalCollecting;
-                player.GetComponent<Player>().stuff[1] += normalCollecting;
-                player.GetComponent<Player>().stuff[2] += normalCollecting;
-                player.GetComponent<Player>().stuff[3] += normalCollecting;
-                player.GetComponent<Player>().stuff[4] += normalCollecting;
-                player.GetComponent<Player>().stuff[5] += normalCollecting;
-                player.GetComponent<Player>().stuff[6] += normalCollecting;
-                player.GetComponent<Player>().stuff[7] += normalCollecting;
-                i++;
+                float amount = 5f;
+                sound.addSound(amount);
+                plus = 0;
             }
-            float amount = 0.05f;
-            sound.addSound(amount);
             player.GetComponent<Player>().collectingPoint = this.gameObject;
         }
         if (Mathf.Floor(time) >= CollectTime)
         {
+            for (int i = 0; i < normalCollecting; i++)
+            {
+                int j = Random.Range(0, 4);
+                player.GetComponent<Player>().stuff[j] += 1;
+            }
             collecting = false;
-            Debug.Log("Collect End");
             time = 0;
+            plus = 0;
             Destroy(Bot);
             Destroy(CollectBar);
-            i = 1;
             player.GetComponent<Player>().collectingPoint = null;
+            Destroy(this.gameObject);
         }
         CollectSlider();
     }

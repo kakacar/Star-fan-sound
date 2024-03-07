@@ -11,6 +11,7 @@ public class DisableSoundSkill : MonoBehaviour
     public bool isUsingSkill;
     public float skillDuration;
     [SerializeField] GameObject skillUsingIcon;
+    public float maxCD;
     private void Start()
     {
         if (skillUI == null)
@@ -43,7 +44,7 @@ public class DisableSoundSkill : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && !isUsingSkill && canUse)
         {
             StartCoroutine(UseingSkill());
-            t = 10f;
+            t = maxCD;
         }
     }
     IEnumerator UseingSkill()

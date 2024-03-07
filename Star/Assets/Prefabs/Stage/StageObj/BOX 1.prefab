@@ -134,13 +134,15 @@ MonoBehaviour:
   collecting: 0
   time: 0
   collectText: {fileID: 0}
-  rareCollecting: 5
+  rareCollecting: 10
   i: 0
   sound: {fileID: 0}
-  CollectTime: 15
+  CollectTime: 60
   Bot: {fileID: 0}
   BotModel: {fileID: 5306425957888643739, guid: 5254d7e6f20ec3544b4c32f3c3aafe0c, type: 3}
   BotPos: {fileID: 5188873424631483121}
+  CollectBar: {fileID: 0}
+  CollectPrefab: {fileID: 0}
 --- !u!65 &8248919331408928414
 BoxCollider:
   m_ObjectHideFlags: 0

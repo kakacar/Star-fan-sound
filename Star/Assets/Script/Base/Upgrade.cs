@@ -29,7 +29,7 @@ public class Upgrade : MonoBehaviour
         if (currentUpgreadTimes[0] == 5)
         {
             title.text = "生命LV + 1(目前LV."+ player.playerLevel[0]+")" + "\n" + "$500 + 生命精華*1";
-            info.text = "最大HP+10" + "\n" + "槍傷害增加";
+            info.text = "最大HP+10" + "\n" + "彈匣容量+1";
         }
         else
         {
@@ -87,7 +87,7 @@ public class Upgrade : MonoBehaviour
             player.playerLevel[0]++;
             if (currentUpgreadTimes[0] == 5)
             {
-                currentUpgreadTimes[0] = 0;
+                currentUpgreadTimes[0] = 1;
             }
             else
             {
@@ -99,7 +99,7 @@ public class Upgrade : MonoBehaviour
             player.playerLevel[1]++;
             if (currentUpgreadTimes[1] == 5)
             {
-                currentUpgreadTimes[1] = 0;
+                currentUpgreadTimes[1] = 1;
             }
             else
             {

@@ -14,6 +14,7 @@ public class Gun : MonoBehaviour
 
     [SerializeField] float bulletForce = 20f;
     [SerializeField] float noCombo;
+    public int addsound;
 
     private bool CanShoot;
 
@@ -74,7 +75,7 @@ public class Gun : MonoBehaviour
 
             if (!skill.isUsingSkill)
             {
-                float amount = 5f;
+                float amount = addsound;
                 sound.addSound(amount);
             }
         }

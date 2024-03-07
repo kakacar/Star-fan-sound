@@ -79,10 +79,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 4296625924960749694, guid: f358544bf2f0a904fb8a85d3b673df3a, type: 3}
   firePoint: {fileID: 8265666394925342580}
-  bulletForce: 20
-  GunSpot: {fileID: 0}
   ani: {fileID: 0}
+  BC: {fileID: 0}
+  bulletForce: 20
   noCombo: 0
+  addsound: 30
 --- !u!1001 &1469537747675975578
 PrefabInstance:
   m_ObjectHideFlags: 0

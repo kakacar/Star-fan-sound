@@ -2654,6 +2654,7 @@ MonoBehaviour:
   whatIsWall:
     serializedVersion: 2
     m_Bits: 520
+  t: 0
   dashUI: {fileID: 0}
   Player: {fileID: 4305143702059315583}
 --- !u!114 &193757560784002693
@@ -2760,6 +2761,7 @@ MonoBehaviour:
   jumpCount: 0
   jumpPress: 0
   hp: 100
+  maxHp: 100
   CanAss: 0
   StateSwitch: 0
   firstToBase: 1
@@ -2782,11 +2784,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  money: 0
+  rareText: []
+  money: 300
   stuff: 0000000000000000000000000000000000000000000000000000000000000000
   item: 00000000000000000000000000000000
   collectingPoint: {fileID: 0}
   canvas: {fileID: 0}
+  respawn: 0
   StateType: 0
   CurrentState: 0
 --- !u!114 &6535583199580822034
@@ -2803,7 +2807,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSound: {fileID: 0}
   warning: {fileID: 0}
-  maxSound: 100
+  maxSound: 200
   currentSound: 0
   enemyWarning: 0
   Soundloss: 3

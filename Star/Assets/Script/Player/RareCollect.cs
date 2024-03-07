@@ -9,10 +9,10 @@ public class RareCollect : MonoBehaviour
     public bool collecting = false;
     public float time;
     public GameObject collectText;
-    private float plus; //每10秒加1次
-    public float rareCollecting = 5;
-    public float i;
+    private float plus; //每1秒加1次音量
+    public int rareCollecting = 5;
     public Sound sound;
+    public float addsound;
 
     [SerializeField] float CollectTime;
     [SerializeField] GameObject Bot;
@@ -38,26 +38,33 @@ public class RareCollect : MonoBehaviour
     }
     private void Collect()
     {
-        plus = time / 10;
         if (collecting)
         {
             time += Time.deltaTime;
+            plus += Time.deltaTime;
             CollectBar.GetComponent<Slider>().value = time;
-            if (Mathf.Floor(plus) == i)
+            if(plus >= 1)
             {
-                player.GetComponent<Player>().rareCollected += rareCollecting;
-                i++;
+                float amount = addsound;
+                sound.addSound(amount);
+                plus = 0;
             }
-            float amount = 0.05f;
-            sound.addSound(amount);
+            player.GetComponent<Player>().collectingPoint = this.gameObject;
         }
         if (Mathf.Floor(time) > CollectTime)
         {
+            for (int i = 0; i < rareCollecting; i++)
+            {
+                int j = Random.Range(5, 7);
+                player.GetComponent<Player>().stuff[j] += 1;
+            }
             collecting = false;
-            Debug.Log("Collect End");
             time = 0;
+            plus = 0;
             Destroy(Bot);
-            i = 1;
+            Destroy(CollectBar);
+            player.GetComponent<Player>().collectingPoint = null;
+            Destroy(this.gameObject);
         }
         CollectSlider();
     }
