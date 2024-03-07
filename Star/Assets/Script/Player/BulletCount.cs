@@ -8,7 +8,7 @@ public class BulletCount : MonoBehaviour
     public GameObject bulletText;
     public int bulletCount = 21;
     public int bullet = 7;
-    private int maxBullet = 7;
+    public int maxBullet = 7;
 
     void Awake()
     {

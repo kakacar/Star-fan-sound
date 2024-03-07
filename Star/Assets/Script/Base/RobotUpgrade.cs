@@ -28,7 +28,7 @@ public class RobotUpgrade : MonoBehaviour
         if(currentUpgreadTimes[0] == 3)
         {
             title.text = "生命LV + 1(目前LV." + player.robotLevel[0] + ")" + "\n" + "$500 + 電磁裝置*1";
-            info.text = "最大HP+1" + "\n" + "機器人可復活一次";
+            info.text = "最大HP+1" + "\n" + "機器人無敵時間增加0.5秒";
         }
         else
         {
@@ -87,6 +87,7 @@ public class RobotUpgrade : MonoBehaviour
             if(currentUpgreadTimes[0] == 3)
             {
                 currentUpgreadTimes[0] = 1;
+                player.GetComponent<PlayerLevel>().robot.t += 0.5f;
             }
             else
             {
@@ -104,6 +105,8 @@ public class RobotUpgrade : MonoBehaviour
             if (currentUpgreadTimes[2] == 2)
             {
                 currentUpgreadTimes[2] = 1;
+                player.GetComponent<PlayerLevel>().nc.normalCollecting += 5;
+                player.GetComponent<PlayerLevel>().rc.rareCollecting += 5;
             }
             else
             {
