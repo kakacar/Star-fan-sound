@@ -27,6 +27,13 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if (other.tag == "Cow")
+        {
+            other.gameObject.GetComponent<EnemyC>().TakeDamage(5);
+            Instantiate(ImpactPar, transform.position, Quaternion.LookRotation(transform.forward));
+            Destroy(gameObject);
+        }
+
         if (other.tag == "Ground")
         {
             

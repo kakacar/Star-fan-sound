@@ -134,6 +134,12 @@ public class Sword : MonoBehaviour
             
         }
 
+        if (other.tag == "Cow" && !HasDealDamage)
+        {
+            HasDealDamage = true;
+            other.gameObject.GetComponent<EnemyC>().TakeDamage(1);
+
+        }
     }
 
     void HitBoxSwitch()

@@ -4617,11 +4617,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484784717}
   m_CullTransparentMesh: 1
---- !u!1 &1502386548 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8179667930878361918, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
-  m_PrefabInstance: {fileID: 1748260575301419803}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1507191230
 GameObject:
   m_ObjectHideFlags: 0
@@ -6759,7 +6754,7 @@ PrefabInstance:
     - target: {fileID: 2053493928863803106, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 62d3d5857aca67741bc0ac8259550c0c, type: 2}
+      objectReference: {fileID: 9100000, guid: eb7510fefca88e046ab4b30e42c416b6, type: 2}
     - target: {fileID: 2080886271349358928, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -8527,28 +8522,9 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4305143702059315583, guid: 761e6e45e852ef440b6d2ec5c2ccb80b, type: 3}
   m_PrefabInstance: {fileID: 1748260575301419803}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502386548}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 393750ed77976f04f835388163508357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7622084113964565045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502386548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2834e1c420b7754b8979ef5baeff456, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 7622084113964565032}
-  robot: {fileID: 8866437622406391344, guid: 5254d7e6f20ec3544b4c32f3c3aafe0c, type: 3}
-  nc: {fileID: 3229597428847055960, guid: baf2bcff7c3b10a4185a66e20c95cd42, type: 3}
-  rc: {fileID: 748234835165274144, guid: 39c99cdafd8074c4fbd37093b94d4b79, type: 3}
-  skill: {fileID: 0}
-  gun: {fileID: 0}
-  bullet: {fileID: 0}

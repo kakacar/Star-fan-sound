@@ -312,6 +312,28 @@ public class Player : MonoBehaviour
             }
         }
 
+        if (other.gameObject.CompareTag("Cow"))
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse1) && StateType == State.CanMove && CanAss == true && grounded)
+            {
+                //Debug.Log("ASS");
+                StateType = State.Animation;
+                StateSwitch = true;
+                animator.SetTrigger("Assing1");
+
+                FOVC FOV = other.GetComponent<FOVC>();
+                EnemyC Ene = other.GetComponent<EnemyC>();
+                Animator EnemyAni = other.GetComponent<Animator>();
+
+                FOV.BeStab = true;
+                Ene.hp = 0;
+                
+                
+                EnemyAni.SetTrigger("Dead");
+
+            }
+        }
+
         if (other.gameObject.CompareTag("Computer"))
         {
             F.SetActive(true);

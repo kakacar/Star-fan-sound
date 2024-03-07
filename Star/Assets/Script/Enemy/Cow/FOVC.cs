@@ -115,7 +115,7 @@ public class FOVC : MonoBehaviour
                 ActState = ActionState.Patrol;
                 transform.position = Vector3.MoveTowards(transform.position, PatrolPoints[0].position, 1.5f * Time.deltaTime);
 
-                if (Vector3.Distance(transform.position, PatrolPoints[0].position) < 0.2f)
+                if (Vector3.Distance(transform.position, PatrolPoints[0].position) < 0.8f)
                 {
                     ActState = ActionState.Standy;
                     StayTimer += Time.deltaTime;
@@ -123,10 +123,10 @@ public class FOVC : MonoBehaviour
                     if (StayTimer > 2)
                     {
                         PDestination = 1;
-                        Vector3 Direction = PatrolPoints[PDestination].position - transform.position;
-                        Quaternion rotation = Quaternion.LookRotation(Direction);
-                        transform.rotation = rotation;
-                        //transform.rotation = Quaternion.Euler(0, 90, 0);
+                        //Vector3 Direction = PatrolPoints[PDestination].position - transform.position;
+                        //Quaternion rotation = Quaternion.LookRotation(Direction);
+                        //transform.rotation = rotation;
+                        transform.rotation = Quaternion.Euler(0, 0, 0);
                         StayTimer = 0;
                     }
                     
@@ -138,7 +138,7 @@ public class FOVC : MonoBehaviour
                 ActState = ActionState.Patrol;
                 transform.position = Vector3.MoveTowards(transform.position, PatrolPoints[1].position, 1.5f * Time.deltaTime);
 
-                if (Vector3.Distance(transform.position, PatrolPoints[1].position) < 0.2f)
+                if (Vector3.Distance(transform.position, PatrolPoints[1].position) < 0.8f)
                 {
                     ActState = ActionState.Standy;
                     StayTimer += Time.deltaTime;
@@ -146,10 +146,10 @@ public class FOVC : MonoBehaviour
                     if (StayTimer > 2)
                     {
                         PDestination = 0;
-                        Vector3 Direction = PatrolPoints[PDestination].position - transform.position;
-                        Quaternion rotation = Quaternion.LookRotation(Direction);
-                        transform.rotation = rotation;
-                        //transform.rotation = Quaternion.Euler(0, -90, 0);
+                        //Vector3 Direction = PatrolPoints[PDestination].position - transform.position;
+                        //Quaternion rotation = Quaternion.LookRotation(Direction);
+                        //transform.rotation = rotation;
+                        transform.rotation = Quaternion.Euler(0, 180, 0);
                         StayTimer = 0;
                     }
                     
@@ -159,7 +159,7 @@ public class FOVC : MonoBehaviour
 
         if(distanceToTarget > 7f && HasRoll == false && canSeePlayer)
         {
-            RState = Random.Range(1, 10);
+            RState = Random.Range(1, 3);
             HasRoll = true;
         }
         else if(distanceToTarget <= 7f && HasRoll == false && canSeePlayer)
@@ -181,11 +181,11 @@ public class FOVC : MonoBehaviour
                 {
                     if (playerRef.transform.position.x > transform.position.x && ActState != ActionState.CloseCombat)
                     {
-                        transform.rotation = Quaternion.Euler(0, 90, 0);
+                        transform.rotation = Quaternion.Euler(0, 0, 0);
                     }
                     else if (playerRef.transform.position.x < transform.position.x && ActState != ActionState.CloseCombat)
                     {
-                        transform.rotation = Quaternion.Euler(0, -90, 0);
+                        transform.rotation = Quaternion.Euler(0, 180, 0);
                     }
 
                     if (distanceToTarget > 1.4f)
@@ -229,18 +229,14 @@ public class FOVC : MonoBehaviour
                 if(Vector3.Distance(transform.position, PatrolPoints[0].position) < Vector3.Distance(transform.position, PatrolPoints[1].position))
                 {
                     PDestination = 0;
-                    Vector3 Direction = PatrolPoints[PDestination].position - transform.position;
-                    Quaternion rotation = Quaternion.LookRotation(Direction);
-                    transform.rotation = rotation;
-                    
+                    transform.rotation = Quaternion.Euler(0, 180, 0);
+
                 }
                 else if((Vector3.Distance(transform.position, PatrolPoints[0].position) > Vector3.Distance(transform.position, PatrolPoints[1].position)))
                 {
                     
                     PDestination = 1;
-                    Vector3 Direction = PatrolPoints[PDestination].position - transform.position;
-                    Quaternion rotation = Quaternion.LookRotation(Direction);
-                    transform.rotation = rotation;
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
                 }
                 else
                 {

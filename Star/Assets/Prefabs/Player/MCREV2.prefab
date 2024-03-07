@@ -2542,6 +2542,7 @@ GameObject:
   - component: {fileID: 4305143702059315583}
   - component: {fileID: 6535583199580822034}
   - component: {fileID: 5728375283758796001}
+  - component: {fileID: 4813579780391038524}
   m_Layer: 7
   m_Name: MCREV2
   m_TagString: Player
@@ -2634,6 +2635,7 @@ MonoBehaviour:
   isUsingSkill: 0
   skillDuration: 5
   skillUsingIcon: {fileID: 0}
+  maxCD: 0
 --- !u!114 &8434109482748931001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2672,6 +2674,7 @@ MonoBehaviour:
   bulletText: {fileID: 0}
   bulletCount: 21
   bullet: 7
+  maxBullet: 7
 --- !u!114 &4466912657720721472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2902,6 +2905,25 @@ MonoBehaviour:
   - {fileID: 4707100988131599113}
   - {fileID: 5573753366430871062}
   - {fileID: 8158357161660395359}
+--- !u!114 &4813579780391038524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8179667930878361918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2834e1c420b7754b8979ef5baeff456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 4305143702059315583}
+  robot: {fileID: 8866437622406391344, guid: 5254d7e6f20ec3544b4c32f3c3aafe0c, type: 3}
+  nc: {fileID: 3229597428847055960, guid: baf2bcff7c3b10a4185a66e20c95cd42, type: 3}
+  rc: {fileID: 748234835165274144, guid: 39c99cdafd8074c4fbd37093b94d4b79, type: 3}
+  skill: {fileID: 2464753572929609167}
+  gun: {fileID: 1329999730627395354, guid: b578459503db88648aed33344edd18b7, type: 3}
+  bullet: {fileID: 193757560784002693}
 --- !u!1 &8235961982475249348
 GameObject:
   m_ObjectHideFlags: 0
