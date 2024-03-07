@@ -166,6 +166,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeleteButton (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4356900803755663584, guid: a80ecf68d2ce5d44cb0054520194c00d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6858503566048334713, guid: a80ecf68d2ce5d44cb0054520194c00d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3257,6 +3261,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1988567463}
     m_Modifications:
+    - target: {fileID: 2462094003371498423, guid: 2cb74c8dfea62124fae29a56ac17e2f4, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2462094003371498423, guid: 2cb74c8dfea62124fae29a56ac17e2f4, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2462094003371498423, guid: 2cb74c8dfea62124fae29a56ac17e2f4, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2462094003371498423, guid: 2cb74c8dfea62124fae29a56ac17e2f4, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2462094003621963512, guid: 2cb74c8dfea62124fae29a56ac17e2f4, type: 3}
       propertyPath: profileId
       value: 2
@@ -3633,6 +3653,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1988567463}
     m_Modifications:
+    - target: {fileID: 2462094003371498423, guid: 2cb74c8dfea62124fae29a56ac17e2f4, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2462094003371498423, guid: 2cb74c8dfea62124fae29a56ac17e2f4, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2462094003371498423, guid: 2cb74c8dfea62124fae29a56ac17e2f4, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2462094003371498423, guid: 2cb74c8dfea62124fae29a56ac17e2f4, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2462094003621963512, guid: 2cb74c8dfea62124fae29a56ac17e2f4, type: 3}
       propertyPath: profileId
       value: 1
@@ -4160,6 +4196,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeleteButton (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4356900803755663584, guid: a80ecf68d2ce5d44cb0054520194c00d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6858503566048334713, guid: a80ecf68d2ce5d44cb0054520194c00d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4403,6 +4443,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1988567463}
     m_Modifications:
+    - target: {fileID: 2462094003371498423, guid: 2cb74c8dfea62124fae29a56ac17e2f4, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2462094003371498423, guid: 2cb74c8dfea62124fae29a56ac17e2f4, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2462094003371498423, guid: 2cb74c8dfea62124fae29a56ac17e2f4, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2462094003371498423, guid: 2cb74c8dfea62124fae29a56ac17e2f4, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2462094003621963512, guid: 2cb74c8dfea62124fae29a56ac17e2f4, type: 3}
       propertyPath: profileId
       value: 0
@@ -4605,6 +4661,10 @@ PrefabInstance:
     - target: {fileID: 4356900803755663584, guid: a80ecf68d2ce5d44cb0054520194c00d, type: 3}
       propertyPath: m_Name
       value: DeleteButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356900803755663584, guid: a80ecf68d2ce5d44cb0054520194c00d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6858503566048334713, guid: a80ecf68d2ce5d44cb0054520194c00d, type: 3}
       propertyPath: m_Pivot.x
