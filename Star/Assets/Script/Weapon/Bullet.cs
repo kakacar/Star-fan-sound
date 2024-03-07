@@ -29,7 +29,7 @@ public class Bullet : MonoBehaviour
 
         if (other.tag == "Cow")
         {
-            other.gameObject.GetComponent<EnemyC>().TakeDamage(5);
+            other.gameObject.GetComponent<EnemyC>().TakeDamage(10);
             Instantiate(ImpactPar, transform.position, Quaternion.LookRotation(transform.forward));
             Destroy(gameObject);
         }

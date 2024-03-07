@@ -21,6 +21,7 @@ public class EnemyC : MonoBehaviour
     public GameObject hpSlider;
     public GameObject hpPrefab;
     public bool enemyDead = false;
+    public GameObject drop;
     private void Start()
     {
         hp = maxHp;
@@ -91,7 +92,11 @@ public class EnemyC : MonoBehaviour
 
     public void Dead()
     {
-        Destroy(hpSlider.gameObject);
-        Destroy(this.gameObject);
+        hpSlider.SetActive(false);
+        gameObject.SetActive(false);
+        if (Random.value <= 0.33)
+        {
+            Instantiate(drop, gameObject.transform.position, Quaternion.identity);
+        }
     }
 }

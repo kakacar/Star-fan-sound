@@ -9966,6 +9966,7 @@ MonoBehaviour:
   hpSlider: {fileID: 0}
   hpPrefab: {fileID: 6359988537636185169, guid: 23f42ae930363ab4ab44d64730663d56, type: 3}
   enemyDead: 0
+  drop: {fileID: 1942024747297496617, guid: f887a2c9a7a572642a0469e286aab237, type: 3}
 --- !u!114 &6599616321637792251
 MonoBehaviour:
   m_ObjectHideFlags: 0

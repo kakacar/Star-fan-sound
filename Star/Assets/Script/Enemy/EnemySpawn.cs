@@ -6,19 +6,18 @@ public class EnemySpawn : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public Camera mainCamera;
-    public GameObject[] spawn;
     public Alarm alarm;
-    private GameObject[] spawnedEnemy;
+    public GameObject[] spawnedBee;
+    public GameObject[] spawnedCow;
     private Player player;
+    private float t;
 
     void FixedUpdate()
     {
-        if (alarm.warning)
+        t -= Time.deltaTime;
+        if (alarm.warning && t <= 0)
         {
-            if (spawnedEnemy[0] == null || spawnedEnemy[1] == null)
-            {
-                SpawnEnemy();
-            }
+            SpawnEnemy();
         }
         if(player == null)
         {
@@ -27,17 +26,32 @@ public class EnemySpawn : MonoBehaviour
     }
     public void SpawnEnemy()
     {
-        if(spawnedEnemy[0] == null)
+        for (int i = 0; i < spawnedBee.Length; i++)
         {
-            spawnedEnemy[0] = Instantiate(enemyPrefab, spawn[0].transform.position, Quaternion.identity);
+            if (spawnedBee[i] != null)
+            {
+                spawnedBee[i].GetComponent<Enemy>().hp = spawnedBee[i].GetComponent<Enemy>().maxHp;
+                spawnedBee[i].SetActive(true);
+                spawnedBee[i].GetComponent<Enemy>().hpSlider.SetActive(true);
+            }
+            else
+            {
+                i++;
+            }
         }
-        else if(spawnedEnemy[1] == null)
+        for (int i = 0;i < spawnedCow.Length; i++)
         {
-            spawnedEnemy[1] = Instantiate(enemyPrefab, spawn[1].transform.position, Quaternion.identity);
-        }else if(player.transform.position.y < -2.5)
-        {
-            spawnedEnemy[0] = Instantiate(enemyPrefab, spawn[0].transform.position, Quaternion.identity);
-            spawnedEnemy[1] = Instantiate(enemyPrefab, spawn[1].transform.position, Quaternion.identity);
+            if (spawnedCow[i] != null)
+            {
+                spawnedCow[i].GetComponent<EnemyC>().hp = spawnedCow[i].GetComponent<EnemyC>().maxHp;
+                spawnedCow[i].SetActive(true);
+                spawnedCow[i].GetComponent<EnemyC>().hpSlider.SetActive(true);
+            }
+            else
+            {
+                i++;
+            }
         }
+        t = 10;
     }
 }

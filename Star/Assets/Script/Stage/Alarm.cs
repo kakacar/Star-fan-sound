@@ -42,6 +42,7 @@ public class Alarm : MonoBehaviour
         {
             normalLight.SetActive(false);
             redLight.SetActive(true);
+            warning = true;
             for (int i = 0; i < anim.Length; i++)
             {
                 anim[i].Play("Flash");
@@ -50,10 +51,6 @@ public class Alarm : MonoBehaviour
         if (Sound.currentSound == 200)
         {
             Sound.enemyWarning += Time.deltaTime;
-        }
-        if (warning)
-        {
-            Sound.enemyWarning = 200;
         }
     }
 }
