@@ -7,6 +7,7 @@ public class Pause : MonoBehaviour
 {
     public GameObject pauseWindow;
     public GameObject settingWindow;
+    public GameObject BackpackWindow;
 
     [Header("Be Choose")]
     [SerializeField] private GameObject resumeBeChoose;
@@ -21,11 +22,14 @@ public class Pause : MonoBehaviour
             pauseWindow.SetActive(true);
             Time.timeScale = 0;
         }
-        if (settingWindow.activeSelf || pauseWindow.activeSelf)
+        if (settingWindow.activeSelf || pauseWindow.activeSelf || BackpackWindow.activeSelf)
         {
             GetComponent<Canvas>().sortingOrder = 100;
         }
-        else
+        else if(!settingWindow.activeSelf && !pauseWindow.activeSelf && !BackpackWindow.activeSelf && Time.timeScale == 1)
+        {
+            GetComponent<Canvas>().sortingOrder = 1;
+        }else if (Time.timeScale == 0 && !settingWindow.activeSelf && !pauseWindow.activeSelf && !BackpackWindow.activeSelf)
         {
             GetComponent<Canvas>().sortingOrder = 0;
         }

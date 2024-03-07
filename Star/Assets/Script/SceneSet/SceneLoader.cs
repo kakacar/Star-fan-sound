@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     public Player player;
+    public Canvas canvas;
     void Awake()
     {
         if (player.firstToBase && SceneManager.sceneCount<=1)

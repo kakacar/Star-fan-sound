@@ -3329,6 +3329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7622084113964565032}
+  canvas: {fileID: 1964876294}
 --- !u!4 &1074663813
 Transform:
   m_ObjectHideFlags: 0
@@ -5802,6 +5803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseWindow: {fileID: 1162671093}
   settingWindow: {fileID: 2142970749}
+  BackpackWindow: {fileID: 452548547}
   resumeBeChoose: {fileID: 2086571748}
   settingBeChoose: {fileID: 463491325}
   quitBeChoose: {fileID: 214044351}
@@ -5923,8 +5925,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e18651282fdd54cab76e379171ce89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notBeFoundQuest: {fileID: 0}
-  noDamageQuest: {fileID: 0}
+  notBeFoundQuest: {fileID: 1037357199}
+  noDamageQuest: {fileID: 1136069723}
   notBeFound: 1
   noDamage: 1
 --- !u!114 &1964876298
