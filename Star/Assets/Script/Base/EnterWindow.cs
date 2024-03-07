@@ -11,7 +11,7 @@ public class EnterWindow : MonoBehaviour
     float t;
     private void Update()
     {
-        t = Time.deltaTime;
+        t -= Time.deltaTime;
         if(t <= 0)
         {
             Text.SetActive(false);
