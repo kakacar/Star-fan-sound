@@ -6391,8 +6391,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 6599616321637792196, guid: a10562c8591b41645b110a47feacfa49, type: 3}
-  mainCamera: {fileID: 0}
-  alarm: {fileID: 0}
+  mainCamera: {fileID: 963194227}
+  alarm: {fileID: 111275121}
   spawnedBee:
   - {fileID: 1401019245}
   - {fileID: 109927112}
