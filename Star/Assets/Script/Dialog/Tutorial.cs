@@ -55,6 +55,7 @@ public class Tutorial : MonoBehaviour
             firstCollect = true;
             dialog.dialogEnded = true;
             dialog.fadeIn.Play("Fade in");
+            dialog.clear.SetActive(true);
         }
     }
 }
