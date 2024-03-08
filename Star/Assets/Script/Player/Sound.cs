@@ -55,6 +55,15 @@ public class Sound : MonoBehaviour
         {
             enemyWarning = maxSound;
         }
+        if(currentScene != SceneManager.GetActiveScene().name)
+        {
+            currentSound = 0;
+            enemyWarning = 0;
+        }else if(currentScene == "Base")
+        {
+            currentSound = 0;
+            enemyWarning = 0;
+        }
     }
 
     public void minusSound(float amount)

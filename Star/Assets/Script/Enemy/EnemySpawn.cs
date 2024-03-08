@@ -26,30 +26,36 @@ public class EnemySpawn : MonoBehaviour
     }
     public void SpawnEnemy()
     {
-        for (int i = 0; i < spawnedBee.Length; i++)
+        if (spawnedBee.Length != 0)
         {
-            if (spawnedBee[i] != null)
+            for (int i = 0; i < spawnedBee.Length; i++)
             {
-                spawnedBee[i].GetComponent<Enemy>().hp = spawnedBee[i].GetComponent<Enemy>().maxHp;
-                spawnedBee[i].SetActive(true);
-                spawnedBee[i].GetComponent<Enemy>().hpSlider.SetActive(true);
-            }
-            else
-            {
-                i++;
+                if (spawnedBee[i] != null)
+                {
+                    spawnedBee[i].GetComponent<Enemy>().hp = spawnedBee[i].GetComponent<Enemy>().maxHp;
+                    spawnedBee[i].SetActive(true);
+                    spawnedBee[i].GetComponent<Enemy>().hpSlider.SetActive(true);
+                }
+                else
+                {
+                    i++;
+                }
             }
         }
-        for (int i = 0;i < spawnedCow.Length; i++)
+        if(spawnedCow.Length != 0)
         {
-            if (spawnedCow[i] != null)
+            for (int i = 0; i < spawnedCow.Length; i++)
             {
-                spawnedCow[i].GetComponent<EnemyC>().hp = spawnedCow[i].GetComponent<EnemyC>().maxHp;
-                spawnedCow[i].SetActive(true);
-                spawnedCow[i].GetComponent<EnemyC>().hpSlider.SetActive(true);
-            }
-            else
-            {
-                i++;
+                if (spawnedCow[i] != null)
+                {
+                    spawnedCow[i].GetComponent<EnemyC>().hp = spawnedCow[i].GetComponent<EnemyC>().maxHp;
+                    spawnedCow[i].SetActive(true);
+                    spawnedCow[i].GetComponent<EnemyC>().hpSlider.SetActive(true);
+                }
+                else
+                {
+                    i++;
+                }
             }
         }
         t = 10;
