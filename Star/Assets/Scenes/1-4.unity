@@ -3534,6 +3534,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 748234835165274144, guid: 39c99cdafd8074c4fbd37093b94d4b79, type: 3}
+      propertyPath: collectText
+      value: 
+      objectReference: {fileID: 1155563295}
     - target: {fileID: 7322066705119318711, guid: 39c99cdafd8074c4fbd37093b94d4b79, type: 3}
       propertyPath: m_Name
       value: BOX 1
@@ -4429,7 +4433,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952083011}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.45, z: 0.43}
+  m_LocalPosition: {x: 0, y: 0.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5227,7 +5231,7 @@ PrefabInstance:
     - target: {fileID: 3229597428847055960, guid: baf2bcff7c3b10a4185a66e20c95cd42, type: 3}
       propertyPath: collectText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1155563295}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baf2bcff7c3b10a4185a66e20c95cd42, type: 3}
 --- !u!65 &1114097066
@@ -7500,7 +7504,7 @@ PrefabInstance:
     - target: {fileID: 3229597428847055960, guid: baf2bcff7c3b10a4185a66e20c95cd42, type: 3}
       propertyPath: collectText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1155563295}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baf2bcff7c3b10a4185a66e20c95cd42, type: 3}
 --- !u!1 &1882078143
