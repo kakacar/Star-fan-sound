@@ -457,14 +457,16 @@ public class Player : MonoBehaviour
         }
         if(other.tag == "Back")
         {
-            StateType = State.CanMove;
-            gameObject.GetComponent<Rigidbody>().useGravity = true;
-            SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-            SceneManager.LoadScene("Base", LoadSceneMode.Additive);
-            animator.SetFloat("ClimbLadder", 0.5f);
-            hp = 100;
-            speed = OGSpeed;
-            animator.SetBool("UsingLadder", false);
+            if(StateType == State.CanMove)
+            {
+                gameObject.GetComponent<Rigidbody>().useGravity = true;
+                SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+                SceneManager.LoadScene("Base", LoadSceneMode.Additive);
+                animator.SetFloat("ClimbLadder", 0.5f);
+                hp = 100;
+                speed = OGSpeed;
+                animator.SetBool("UsingLadder", false);
+            }
         }
         animator.SetBool("Jumping", false);
         animator.SetBool("InAir", false);
