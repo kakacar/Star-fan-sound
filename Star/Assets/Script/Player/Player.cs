@@ -346,52 +346,49 @@ public class Player : MonoBehaviour
             {
                 StateType = State.Animation;
                 StateSwitch = true;
-            }
 
-            if (StateType == State.Animation && StateSwitch == true)
-            {
-                if (Vector3.Distance(transform.position, other.transform.position) > 0.1f)
+                if (StateType == State.Animation && StateSwitch == true)
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, other.transform.position, speed * Time.deltaTime);
-                    transform.LookAt(other.transform.position);
-                    animator.SetBool("Walking", true);
-
-                }
-                else
-                {
-                    animator.SetBool("Walking", false);
-                    player.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
-                    if (!UsingComputer)
+                    if (Vector3.Distance(transform.position, other.transform.position) > 0.1f)
                     {
-                        animator.SetTrigger("Computer");
-                        UsingComputer = true;
+                        transform.position = Vector3.MoveTowards(transform.position, other.transform.position, speed * Time.deltaTime);
+                        transform.LookAt(other.transform.position);
+                        animator.SetBool("Walking", true);
+
                     }
-                    //Debug.Log("This is Computer");
+                    else
+                    {
+                        animator.SetBool("Walking", false);
+                        player.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+                        if (!UsingComputer)
+                        {
+                            animator.SetTrigger("Computer");
+                            UsingComputer = true;
+                        }
+                        //Debug.Log("This is Computer");
+                    }
                 }
-
-            }
-
-            if (StateType == State.Animation && StateSwitch == false)
-            {
-
-                UsingComputer = false;
-                Vector3 Return = new Vector3(transform.position.x, transform.position.y, 0);
-                if (transform.position != Return)
+                else if (StateType == State.Animation && StateSwitch == false)
                 {
-                    animator.SetBool("Walking", true);
-                    transform.position = Vector3.MoveTowards(transform.position, Return, speed * Time.deltaTime);
-                    transform.LookAt(Return);
+
+                    UsingComputer = false;
+                    Vector3 Return = new Vector3(transform.position.x, transform.position.y, 0);
+                    if (transform.position != Return)
+                    {
+                        animator.SetBool("Walking", true);
+                        transform.position = Vector3.MoveTowards(transform.position, Return, speed * Time.deltaTime);
+                        transform.LookAt(Return);
+
+                    }
+                    else
+                    {
+                        animator.SetBool("Walking", false);
+                        player.gameObject.transform.rotation = Quaternion.Euler(0, 90, 0);
+                        StateType = State.CanMove;
+                    }
 
                 }
-                else
-                {
-                    animator.SetBool("Walking", false);
-                    player.gameObject.transform.rotation = Quaternion.Euler(0, 90, 0);
-                    StateType = State.CanMove;
-                }
-
             }
-
         }
 
         if (other.gameObject.CompareTag("Duct"))
