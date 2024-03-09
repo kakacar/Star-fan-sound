@@ -4955,7 +4955,7 @@ MonoBehaviour:
   BotModel: {fileID: 5306425957888643739, guid: 5254d7e6f20ec3544b4c32f3c3aafe0c, type: 3}
   BotPos: {fileID: 5188873424631483121}
   CollectBar: {fileID: 0}
-  CollectPrefab: {fileID: 0}
+  CollectPrefab: {fileID: 1670735397760561575, guid: 48e8283cba7be2c45864f0fc57fe2643, type: 3}
 --- !u!65 &8248919331408928414
 BoxCollider:
   m_ObjectHideFlags: 0
