@@ -146,6 +146,10 @@ public class Player : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        if(currentScene == "Base")
+        {
+            StateType = State.CanMove;
+        }
     }
 
     private void Move()
