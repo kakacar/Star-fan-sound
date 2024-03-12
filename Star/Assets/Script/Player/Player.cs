@@ -346,9 +346,10 @@ public class Player : MonoBehaviour
             {
                 StateType = State.Animation;
                 StateSwitch = true;
+                UsingComputer = true;
             }
 
-            if (StateType == State.Animation && StateSwitch == true)
+            if (StateType == State.Animation && StateSwitch == true && UsingComputer)
             {
                 if (Vector3.Distance(transform.position, other.transform.position) > 0.1f)
                 {
@@ -361,20 +362,20 @@ public class Player : MonoBehaviour
                 {
                     animator.SetBool("Walking", false);
                     player.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
-                    if (!UsingComputer)
+                    if (!animator.GetCurrentAnimatorStateInfo(0).IsName("UsingComputer"))
                     {
                         animator.SetTrigger("Computer");
-                        UsingComputer = true;
-                    }
+                    }                   
+
                     //Debug.Log("This is Computer");
                 }
 
             }
 
-            if (StateType == State.Animation && StateSwitch == false)
+            if (StateType == State.Animation && StateSwitch == false && UsingComputer)
             {
 
-                UsingComputer = false;
+                
                 Vector3 Return = new Vector3(transform.position.x, transform.position.y, 0);
                 if (transform.position != Return)
                 {
@@ -387,6 +388,7 @@ public class Player : MonoBehaviour
                 {
                     animator.SetBool("Walking", false);
                     player.gameObject.transform.rotation = Quaternion.Euler(0, 90, 0);
+                    UsingComputer = false;
                     StateType = State.CanMove;
                 }
 
