@@ -58,6 +58,7 @@ public class Pause : MonoBehaviour
             {
                 SceneManager.SetActiveScene(SceneManager.GetSceneByName("Base"));
             };
+            Time.timeScale = 1;
         }
         else
         {
