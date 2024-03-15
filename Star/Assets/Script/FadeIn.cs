@@ -30,7 +30,7 @@ public class FadeIn : MonoBehaviour
         {
             i++;
             anim[i].Play("Fade in");
-        }else if (Input.GetKeyDown(KeyCode.Mouse0))
+        }else if (Input.anyKeyDown)
         {
             SceneManager.LoadScene("Player&UI");
         }
