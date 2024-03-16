@@ -145,4 +145,11 @@ public class Dialog : MonoBehaviour
             p2n.SetActive(false);
         }
     }
+    public void Skip()
+    {
+        Time.timeScale = 1;
+        i = 9;
+        dialogBox.GetComponent<CanvasGroup>().alpha = 0;
+        action = false;
+    }
 }

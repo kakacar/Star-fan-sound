@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BulletCount : MonoBehaviour
 {
@@ -31,5 +32,10 @@ public class BulletCount : MonoBehaviour
             bulletCount = 0;
         }
         bulletText.GetComponent<Text>().text = "<size=20>" + bullet + "</size>" + "/" + bulletCount;
+        if(SceneManager.GetActiveScene().name == "Base")
+        {
+            bullet = maxBullet;
+            bulletCount = 21;
+        }
     }
 }

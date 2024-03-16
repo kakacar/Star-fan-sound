@@ -16,7 +16,7 @@ public class NextStage : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Player") && !ResultWindow.activeSelf)
         {
             clearText.SetActive(true);
             if (Input.GetKey(KeyCode.F))

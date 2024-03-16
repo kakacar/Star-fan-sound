@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -107,5 +108,20 @@ public class Dialog2 : MonoBehaviour
         {
             i++;
         }
+    }
+    public void Skip()
+    {
+        Time.timeScale = 1;
+        if(i == 0)
+        {
+            i = 1;
+        }else if(i == 1)
+        {
+            i = 2;
+        }else if (i == 3)
+        {
+            i = 4;
+        }else { i = 5;}
+        dialogBox.GetComponent<CanvasGroup>().alpha = 0;
     }
 }

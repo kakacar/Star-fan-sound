@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -83,8 +84,13 @@ public class BaseDialog : MonoBehaviour
                 black.transform.GetComponent<CanvasGroup>().alpha = 1;
                 dialogBox.GetComponent<RawImage>().texture = cg2;
                 dialogBox.GetComponent<RawImage>().color = new Color(255, 255, 255, 255);
+                dialogBox.GetComponent<CanvasGroup>().alpha = 0;
+                fadeIn.Play("Fade in");
                 Time.timeScale = 1f;
-                black.Play("Fade out");
+                if(dialogBox.GetComponent<CanvasGroup>().alpha == 1)
+                {
+                    black.GetComponent<CanvasGroup>().alpha = 0;
+                }
             }
         }
     }
@@ -131,5 +137,12 @@ public class BaseDialog : MonoBehaviour
             GetComponent<Canvas>().sortingOrder = -1;
             Time.timeScale = 1f;
         }
+    }
+    public void Skip()
+    {
+        Time.timeScale = 1;
+        i = 9;
+        dialogBox.GetComponent<CanvasGroup>().alpha = 0;
+        black.transform.GetComponent<CanvasGroup>().alpha = 0;
     }
 }
